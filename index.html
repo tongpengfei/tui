@@ -17,7 +17,7 @@
     <div class="wrapper">
       <header>
         <h1 class="header">Tui</h1>
-        <p class="header">a flash pro based game ui editer for cocos2d-x</p>
+        <p class="header">A flash pro based game UI editer for cocos2d-x</p>
 
         <ul>
           <li class="download"><a class="buttons" href="https://github.com/tongpengfei/tui/zipball/master">Download ZIP</a></li>
@@ -30,32 +30,85 @@
 
       </header>
       <section>
-        <h3>Welcome to GitHub Pages.</h3>
+	    <h3>Tui</h3>
+<p>A Flash Pro based game UI editer for cocos2d-x</p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+		<h3>FAQ</h3>
+<h4>What is Tui?</h4>
+<p>Tui is a game UI editer. It is a FlashCS6 extension, writen in jsfl and as3.
+</br>You can edit game UI in FlashCS6 with real-time preview. The editer outputs
+</br>a xml file. The current version( v1.0 ) supports 2 schemes: iphone(320*480 or 480*320)
+</br>and ipad(1024*768 or 768*1024).
+</br>Below are the features of Tui:
+</br>* what you seen is what you get.
+</br>* Seperate the work of artists, designers and programmers.
+</br>* Easy to learn and easy to use.
+</br>* Stable.
+</br>* As long as your working environment supports Flash, it will work.
+</br>* One of the best feature is the support for event! For example, you may test a button click 
+  event in Tui's preview panel, and see debug log like "receive button click event ***" in debug panel, (if the event is currectly configured.)
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<h4>What can it do?</h4>
+<p>  * You may edit game UI visually in FlashCS.
+</br>  * Export a xml file that describes the UI layout.
+</br>  * Test a button click in real time.
+</br>  * Parse a xml file and generate the UI in game.
+</br>  * Just check out the codes below:
+</br>  You may show a UI panel via 
+<pre><code>GameUIController::sharedGameUIController()->showTui( "panel_name" );</code></pre>
+</br>  or hide a panel via
+<pre><code>GameUIController::sharedGameUIController()->hideTui( "panel_name" );</code></pre>
+</br>  * You may access a child UI control in a panel via
+<pre><code>Tui* panel = GameUIController::sharedGameUIController()->getTui( "panel_name" );
+CCNode* control = panel->getControl( "control_name" );</code></pre>
+</br>  ...now you get the child control.
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<h4>How it works?</h4>
+<p>  * Edit UI in FlashCS, a panel is a movieclip, a panel could include multiple images, buttons or panels.
+</br>  * Preview your work in the preview panel
+</br>  * Use Tui export Flash layer data to xml via jsfl.
+</br>  * Import xml file and generate UI panel in game programm.
 
-<h3>Designer Templates</h3>
+<h4>How it support multiple schemes?</h4>
+<p>  * In Flash: you create multiple folders in library, like img_iphone, img_ipad that include corresponding image resource.
+</br>  * NOTICE: the folder MUST be img_iphone for iphone or img_ipad for ipad. Other target platforms are not supported for now.
+</br>  * In game: Tui distinguishes the different schemes by directory name, for example: iphone resource placed in Resource/ui_iphone, iphonehd resource placed in Resource/ui_iphonehd, ipad resource placed in Resource/ui_ipad.
+</br>  * You may output two xml files: tui_iphone.xml, tui_ipad.xml
+</br>  * Just simply load tui_iphone.xml for iphone or tui_ipad.xml for ipad.
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<h4>How do I make an iphone HD scheme?</h4>
+<p>  * In tui xml there is a node named "scheme" which has a attribute named "is_retina", you can access it via your game, it will be HD mode if it is "1" other wise it is "0".
+</br>  * NOTICE: In Tui extension, is_retina is "0" by default, you just need edit standard definition version in Tui, then change is_retina to "0" or "1" if it is a HD version.
 
-<h3>Rather Drive Stick?</h3>
+<h4>How can I handle a button event?</h4>
+<p>  * Tui will generate a gameuievent.h file that includes all controls and panels name, all used events in this scheme. It looks like:
+<pre><code>static TuiEventCallBackTable tui_event_cb_table[] = { 
+    { "panel_menu_click_btn_start", tuievent_cb(GameUIController::on_event_panel_menu_click_btn_start) },
+    ...
+    };</code></pre>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+</br>    You just need to add a class named GameUIController extending from TuiManager and implementing the callback:
+<pre><code>class GameUIController : public TuiManager{
+    public:
+        void on_event_panel_menu_click_btn_start( void* o, TEvent* e ){
+            //TODO add your code here
+        }
+};</code></pre>
 
-<h3>Authors and Contributors</h3>
+<h4>Author</h4>
+<p>  pengfei tong     27001909#qq.com ( replace # to @ please )
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<h4>License</h4>
+<p>  MIT License
 
-<h3>Support or Contact</h3>
+<h4>NOTICE</h4>
+<p>  * Every button or panel you make is REQUIRES a name, you need it to access that control in your game.
+</br>  * In flash library, iphone image MUST be placed in img_iphone forder and ipad image MUST be placed in img_ipad forder.
+</br>  * DO NOT forget to set "portrait" or "landscape" mode in Tui extension.
+</br>  * DO NOT forget to choose the scheme when exporting, the default scheme is iphone4.
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+		<h3>Samples</h3>
+
       </section>
       <footer>
         <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
