@@ -1,10 +1,10 @@
 ﻿
 /////////////////////////////////////////////////////////////////////
 ExportElementXMLErrorStrings = {};
-ExportElementXMLErrorStrings.kNoOpenedFla = "当前没有打开的fla文档!";
-ExportElementXMLErrorStrings.kNullDocument = "导出数据出错，空文档!";
-ExportElementXMLErrorStrings.kNoSetScheme = "导出数据错误,没有指定主题!";
-ExportElementXMLErrorStrings.kCanNotFindLibraryItem = "未找到库资源!";
+ExportElementXMLErrorStrings.kNoOpenedFla = "no opened fla document!";
+ExportElementXMLErrorStrings.kNullDocument = "export error, empty document!";
+ExportElementXMLErrorStrings.kNoSetScheme = "export error, no such scheme!";
+ExportElementXMLErrorStrings.kCanNotFindLibraryItem = "can not find library item!";
 /////////////////////////////////////////////////////////////////////
 /*给函数原型增加一个extend函数，实现继承*/  
 Function.prototype.extend = function(superClass){  

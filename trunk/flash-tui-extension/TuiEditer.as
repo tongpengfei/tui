@@ -128,7 +128,7 @@
 				
 		private function onExprotCurrentLayer( e:MouseEvent ):void{
 			var isportrait:String = radio_portrait.selected ? "1" : "0";
-			current_xml = runJSFL( JSFL_URL, "'export_current_layer', 'ui_fuck', '" + current_scheme + "', '" + isportrait + "'" );
+			current_xml = runJSFL( JSFL_URL, "'export_current_layer', 'ui_panel', '" + current_scheme + "', '" + isportrait + "'" );
 			//trace( current_xml );
 			txt_result_xml.text = current_xml;
 			
@@ -137,7 +137,7 @@
 
 		private function onExprotVisibleLayer( e:MouseEvent ):void{
 			var isportrait:String = radio_portrait.selected ? "1" : "0";
-			current_xml = runJSFL( JSFL_URL, "'export_visible_layer', 'ui_fuck', '" + current_scheme + "', '" + isportrait + "'" );
+			current_xml = runJSFL( JSFL_URL, "'export_visible_layer', 'ui_panel', '" + current_scheme + "', '" + isportrait + "'" );
 			//trace( current_xml );
 			txt_result_xml.text = current_xml;
 			
@@ -156,17 +156,16 @@
 		}
 		
 		private function refreshPanelList():void{
-			//创建预览对象
+			//create preview panels
 			tui.clear();
 			tui.parseXML( XML(txt_result_xml.text) );
-			pushDebugInfo( "共有" + tui.npanels + "个面板\n" );
+			pushDebugInfo( "panels count" + tui.npanels + "\n" );
 			convertXMLToCpp( XML(txt_result_xml.text) );
 			
-			//清空list
+			//clear preview list
 			clearPanelList();
 			for( var i:String in tui.ui_panels ){
-				pushDebugInfo( "面板" + i + " " + tui.ui_panels[i] + "\n" );
-				//把面板的名字填加到list里
+				pushDebugInfo( "panel " + i + " " + tui.ui_panels[i] + "\n" );
 				pushPanelNameToList( i );
 			}
 			
@@ -326,7 +325,7 @@
 		
 		private function getControlElement( xml:XMLList, father:XML ):void {
 			if ( xml ) {
-				//获取当前属性
+				//get current node attribute
 				for ( var i:int = 0; i < xml.length(); ++i ) {
 					//pushDebugInfo( xml[i].@type + " " + xml[i].@name + "\n" );
 					
@@ -337,18 +336,18 @@
 						}
 					}
 					
-					//看是否有event
+					//record events
 					if( xml[i].@type == "button" ){
 						if( xml[i].@click_event != null ){
 							var e:String = father.@name + "_" + xml[i].@click_event;
 							//var cb:String = e.split( "_" ).join( "" );
 							//pushDebugInfo( ">>>" + father.@name + "\n" );
 							var cb:String = e;
-							event_cb_table +="\t{ \"" + e + "\", TuiEvent_cb(GameUIController::on_event_" + cb + ") },\r\n";
+							event_cb_table +="\t{ \"" + e + "\", tuievent_cb(GameUIController::on_event_" + cb + ") },\r\n";
 						}
 					}
 					
-					//取得子属性
+					//get child element
 					getControlElement( xml[i].control, xml[i] );
 				}
 			}

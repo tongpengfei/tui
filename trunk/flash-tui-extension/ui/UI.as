@@ -20,27 +20,27 @@
 	 */
 	public class UI extends Sprite 
 	{
-		//所有的面板,{ 面板的名字:面板数据 }
+		//all panels dictionary,{ panel name:data }
 		public var ui_panels:Dictionary = null;
-		//当前显示的面板名字
+		//all preview list panels's name
 		private var current_show_panel:String = "";
-		//一共有多少个面板
+		//panels count in preview list
 		public var npanels:int = 0;
-		//jsfl库目录转换为资源目录的回调
+		//the callback of convert flash pro library path to resource path 
 		private var cbGetResourcePath:Function = null;
-		//debug信息面板
+		//debug info
 		private var txt_debug_panel:* = null;
-		//当前监听的事件
+		//all registerd events
 		private var btn_events:Array = new Array();
 		
-		//每个面板里的button和button的事件
-		//{面板: PanelEvent, PanelEvent };
+		//the button and events in a panel
+		//{panel: Button, PanelEvent };
 		private var panel_events:Dictionary = null;
-		//当前解析到哪个panel
+
 		private var current_parse_panel:String = "";
 		/**
-		 @param getResourcePathByLibraryPath 把库路径换为资源路径
-		 @param debugpanel debug面板,是个textfield
+		 @param getResourcePathByLibraryPath convert flash pro library path to resource path
+		 @param debugpanel debug panel, type of textfield
 		 */
 		public function UI( getResourcePathByLibraryPath:Function = null, debugpanel:* = null ) {
 			cbGetResourcePath = getResourcePathByLibraryPath;
@@ -87,7 +87,7 @@
 
 		private function clearEvent():void{
 			for( var i:int = 0; i < btn_events.length; ++i ){
-				pushDebugInfo( "删除事件监听:" + btn_events[i] + "\n" );
+				pushDebugInfo( "remove event listener:" + btn_events[i] + "\n" );
 				TEventController.RemoveEventListener( btn_events[i], onTestEvent );
 			}
 			btn_events.splice();
@@ -103,7 +103,6 @@
 			parseXML( xml );
 		}
 		
-		//显示一个panel
 		public function showPanel( panelname:String ):void{
 			clearEvent();
 			clearChildren();
@@ -111,7 +110,7 @@
 			var panel:TControl = ui_panels[panelname];
 			if( panel != null ){
 				addChild( panel );
-				pushDebugInfo( "显示" + panelname + "\n" );
+				pushDebugInfo( "preview " + panelname + "\n" );
 				current_show_panel = panelname;
 
 				if( panel.getWidth() > 515 ){
@@ -126,15 +125,14 @@
 				}
 			}
 			
-			//填加当前显示的panel的事件
 			for each( var pe:PanelEvent in panel_events[current_show_panel] ){
 				TEventController.AddEventListener( pe.event_type, onTestEvent );
-				pushDebugInfo( "监听按键消息: " + pe.event_type + "\n" );
+				pushDebugInfo( "register event listener: " + pe.event_type + "\n" );
 			}
 		}
 		
 		public function parseXML( xml:XML ):void {
-			//清除所有数据
+			//clear all panels
 			this.clear();
 			
 			ui_panels = new Dictionary();
@@ -146,12 +144,12 @@
 			for each( var c:TControl in ui_panels ) {
 				addChild( c );
 				npanels++;
-				//这里居中放panel
+				//place panel to center
 				//c.x += c.getWidth() / 2;
 				//c.y += c.getHeight() / 2;
 			}
 			
-			//显示第一个panel
+			//show first panel default
 			if( npanels > 0 ){
 				for( var panelname:String in ui_panels ){
 					showPanel( panelname );
@@ -166,12 +164,12 @@
 		
 		private function getControlElement( xml:XMLList, father:TControl ):void {
 			if ( xml ) {
-				//获取当前属性
+				//get current node attribute
 				for ( var i:int = 0; i < xml.length(); ++i ) {
 					trace( xml[i].@type + " " + xml[i].@name);
 					var c:TControl = createControlByXML( xml[i], father );
 					
-					//取得子属性
+					//get children element
 					getControlElement( xml[i].control, c );
 				}
 			}
@@ -188,7 +186,7 @@
 			var xml_height:Number = Number( xml.@height );
 			var xml_event:String = xml.@click_event;
 			var xml_img:String = xml.@image;
-			//需要把资源的库路径转为资源路径
+			//replace image library path in flash pro to resource path
 			var url_img:String = xml_img;
 			if( xml_img != null && xml_img != "" ){
 				url_img = cbGetResourcePath == null ? xml_img : cbGetResourcePath( xml_img );
@@ -212,9 +210,9 @@
 				//TEventController.AddEventListener( xml_event, onTestEvent );
 				
 				//btn_events.push( xml_event );
-				//pushDebugInfo( "监听按键消息: " + xml_event + "\n" );
+				//pushDebugInfo( "register event: " + xml_event + "\n" );
 				
-				//保存下当前解析面板的事件
+				//save current xml event
 				panel_events[current_parse_panel].push( new PanelEvent( btn, xml_event ) );				
 			}
 
@@ -230,7 +228,7 @@
 			//control.setBackgroundColor( 0x000000 );
 			control.setControlAlignment( TControlAlignment.VERTICAL_TOP, TControlAlignment.HORIZON_LEFT );
 			if ( xml_type == "panel" ) {
-				//因为panel是有中点的
+				//the anchor point of panel is (0.5, 0.5)
 				control.setRelationLocation( xml_x, xml_y );
 			}else{
 				control.setRelationLocation( xml_x - xml_ox, xml_y - xml_oy );
@@ -241,7 +239,7 @@
 		private function onTestEvent( e:TEvent ):void{
 			var ev:String = e.type;
 			var who:TControl = e.whosevent as TControl;
-			pushDebugInfo( "收到事件: " + ev + " " + who + "\n" );
+			pushDebugInfo( "receive event : " + ev + " " + who + "\n" );
 		}
 	}
 
