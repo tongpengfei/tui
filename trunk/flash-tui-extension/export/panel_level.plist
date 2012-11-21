@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>panel_level0000</key>
+			<dict>
+				<key>aliases</key>
+				<array/>
+				<key>sourceColorRect</key>
+				<string>{{0,0},{320,480}}</string>
+				<key>spriteOffset</key>
+				<string>{0,0}</string>
+				<key>spriteSize</key>
+				<string>{320,480}</string>
+				<key>spriteSourceSize</key>
+				<string>{320,480}</string>
+				<key>spriteTrimmed</key>
+				<false/>
+				<key>textureRect</key>
+				<string>{{0,0},{320,480}}</string>
+				<key>textureRotated</key>
+				<false/>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>3</integer>
+			<key>size</key>
+			<string>{512,512}</string>
+			<key>target</key>
+			<dict>
+				<key>name</key>
+				<string>panel_level.png</string>
+				<key>textureFileName</key>
+				<string>panel_level</string>
+				<key>textureFileExtension</key>
+				<string>png</string>
+				<key>premultipliedAlpha</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+</plist>

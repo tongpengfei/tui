@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macromedia-extension
+name="TGameUIEditer"
+version="1.0.0"
+type="command">
+<author name="tong pengfei" />
+<products>
+<product name="Flash" version="10" primary="true" />
+</products>
+<description>
+<![CDATA[
+This extension does A and B.
+]]>
+</description>
+<ui-access>
+<![CDATA[
+The command can be found in ¡®Commands > Sample Extension¡¯
+]]>
+</ui-access>
+<license-agreement>
+<![CDATA[
+]]>
+</license-agreement>
+<files>
+<file source="TGameUIEditer" destination="$flash/WindowSWF" />
+<file source="TGameUIEditer.swf" destination="$flash/WindowSWF" />
+</files>
+</macromedia-extension>

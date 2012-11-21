@@ -1,0 +1,2 @@
+xcopy D:\flashDemo\TGameUIEditer\TGameUIEditer "C:\Users\Administrator\AppData\Local\Adobe\Flash CS6\zh_CN\Configuration\WindowSWF" /S /Y /R
+xcopy D:\flashDemo\TGameUIEditer\TGameUIEditer.swf "C:\Users\Administrator\AppData\Local\Adobe\Flash CS6\zh_CN\Configuration\WindowSWF" /S /Y /R
