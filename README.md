@@ -3,8 +3,8 @@
 
   FAQ:
 * What is Tui?
-  Tui is a game ui editer. It is a FlashCS6 extension, writen in jsfl and as3.
-  You can edit game ui in FlashCS6 with real-time preview. The editer outputs
+  Tui is a game UI editer. It is a FlashCS6 extension, writen in jsfl and as3.
+  You can edit game UI in FlashCS6 with real-time preview. The editer outputs
   a xml file. The current version( v1.0 ) supports 2 schemes: iphone(320*480 or 480*320)
   and ipad(1024*768 or 768*1024).
     Below are the features of Tui:
@@ -18,26 +18,26 @@
  (if the event is currectly configured.)
 
 * What can it do?
-  * You may edit game ui visually in FlashCS.
+  * You may edit game UI visually in FlashCS.
   * Export a xml file that describes the UI layout.
   * Test a button click in real time.
   * Parse a xml file and generate the UI in game.
   * Just check out the codes below:
-    You may show a ui panel via 
+    You may show a UI panel via 
     GameUIController::sharedGameUIController()->showTui( "panel_name" );
     or hide a panel via
     GameUIController::sharedGameUIController()->hideTui( "panel_name" );
-  * You may access a child ui control in a panel via
+  * You may access a child UI control in a panel via
     Tui* panel = GameUIController::sharedGameUIController()->getTui( "panel_name" );
     CCNode* control = panel->getControl( "control_name" );
     ...now you get the child control.
 
 * How it works?
-  * Edit ui in FlashCS, a panel is a movieclip, a panel could include multiple images,
+  * Edit UI in FlashCS, a panel is a movieclip, a panel could include multiple images,
     buttons or panels.
   * Preview your work in the preview panel
   * Use Tui export Flash layer data to xml via jsfl.
-  * Import xml file and generate ui panel in game programm.
+  * Import xml file and generate UI panel in game programm.
 
 * How it support multiple schemes?
   * In Flash: you create multiple folders in library, like img_iphone, img_ipad that 
@@ -133,7 +133,7 @@
 * Tui是怎么工作的?
   * 在FlashCS6里创建UI面板影片剪辑(mc),一个mc可以包含多个子mc，图片或按钮控件。
   * 通过jsfl导出Flash的layer数据，生成xml。
-  * 工具里通过as3解析xml数据，生成ui预览，并处理相应的事件。
+  * 工具里通过as3解析xml数据，生成UI预览，并处理相应的事件。
   * 程序通过tui库导入xml文件生成游戏UI。
 
 * Tui是如何支持多个主题的?
