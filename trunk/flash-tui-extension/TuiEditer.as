@@ -17,8 +17,8 @@
 	import ui.UI;
 	import tcontrol.TImage;
 
-	public class TGameUIEditer extends MovieClip {
-		public static const JSFL_URL:String = "WindowSWF/TGameUIEditer/TGameUIEditer.jsfl";
+	public class TuiEditer extends MovieClip {
+		public static const JSFL_URL:String = "WindowSWF/TuiEditer/TuiEditer.jsfl";
 		
 		private var current_scheme:String = "iphone4";
 		
@@ -39,9 +39,7 @@
 		private var control_names:Dictionary = null;
 		private var event_cb_table:String = "";
 
-		//[Embed(source="D:/pspic/ipa/320x480/cogs.png")]
-		//public static var kImgBackGround:Class;
-		public function TGameUIEditer() {
+		public function TuiEditer() {
 			//scheme combobox
 			select_scheme.prompt = "scheme";
 			var sfUniversities:Array = new Array( 
@@ -67,19 +65,6 @@
 			//list_all_panels.dataProvider = new DataProvider(sfUniversities); 
 			//list_all_panels.addItem( {label:"label", data:"data"} );
 			list_all_panels.addEventListener( Event.CHANGE, onPanelList );	
-/*
-			pushPanelNameToList( "iphone40" );
-			pushPanelNameToList( "iphone51" );
-			pushPanelNameToList( "iphone42" );
-			pushPanelNameToList( "iphone53" );
-			pushPanelNameToList( "iphone44" );
-			pushPanelNameToList( "iphone55" );
-			pushPanelNameToList( "iphone46" );
-
-			//list_all_panels.dataProvider.getItemAt( i );
-			var nitem:int = list_all_panels.dataProvider.length;
-			pushDebugInfo( "共有" + nitem + "条记录\n" );
-*/
 			//填加预览sprite
 			ui_preview = new Sprite();
 			addChild( ui_preview );
@@ -89,10 +74,6 @@
 			
 			file_ref = new FileReference();
 			file_ref.addEventListener(Event.COMPLETE, onFileSaveComplete);
-			//file_ref.addEventListener(Event.COMPLETE, onSaveXml );
-			//file_ref.addEventListener(Event.SELECT, onFileSelected );
-			//file_ref.addEventListener(IOErrorEvent.IO_ERROR, onFileRefError);
-			//file_ref.addEventListener( FileList.SELECT_RESOURCES, getSavePath );
 			
 			file_cpp = new FileReference();
 			file_cpp.addEventListener( Event.COMPLETE, onFileCppSaveComplete );
@@ -167,7 +148,7 @@
 			//trace( "fuck" );
 			//runJSFL( JSFL_URL, "'trace', 'fuck you'" );
 			var isportrait:String = radio_portrait.selected ? "1" : "0";
-			current_xml = runJSFL( JSFL_URL, "'export_all_layer', 'ui_fuck', '" + current_scheme + "', '" + isportrait + "'" );
+			current_xml = runJSFL( JSFL_URL, "'export_all_layer', 'ui_panel', '" + current_scheme + "', '" + isportrait + "'" );
 			//trace( current_xml );
 			txt_result_xml.text = current_xml;
 			
@@ -206,7 +187,7 @@
 			txt_result_cpp.visible = radio_view_cpp.selected;
 			ui_preview.visible = radio_view_ui.selected;			
 			if( radio_view_ui.selected ){
-				pushDebugInfo( "预览" + tui.currentShowPanelName() + "\n" );
+				pushDebugInfo( "preview" + tui.currentShowPanelName() + "\n" );
 				ui_preview.graphics.beginFill( 0x000000 );
 				var sw:int = 0;
 				var sh:int = 0;
@@ -231,7 +212,7 @@
 
 		private function onPanelList( e:Event ):void{
 			if( list_all_panels.selectedItem != null ){
-				pushDebugInfo( "当前选中了" + list_all_panels.selectedItem.data + "\n" );
+				pushDebugInfo( "selected " + list_all_panels.selectedItem.data + "\n" );
 				tui.showPanel( list_all_panels.selectedItem.data );
 			}
 		}
@@ -363,7 +344,7 @@
 							//var cb:String = e.split( "_" ).join( "" );
 							//pushDebugInfo( ">>>" + father.@name + "\n" );
 							var cb:String = e;
-							event_cb_table +="\t{ \"" + e + "\", tuievent_cb(GameUIController::on_event_" + cb + ") },\r\n";
+							event_cb_table +="\t{ \"" + e + "\", TuiEvent_cb(GameUIController::on_event_" + cb + ") },\r\n";
 						}
 					}
 					
