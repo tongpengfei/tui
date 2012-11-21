@@ -1,0 +1,56 @@
+<ui version="1.0" name="ui_fuck">
+	<scheme name="iphone4" is_retina="0" screen_width="320" screen_height="480"></scheme>
+	<control name="panel_level" type="panel" x="160" y="240" ox="160" oy="240" width="320" height="480">
+		<control type="image" image="iphone/game_background.png" x="-160" y="-240" ox="0" oy="0" width="320" height="480"></control>
+		<control type="image" image="iphone/leveltable_pipe.png" x="-160" y="163" ox="0" oy="0" width="320" height="77"></control>
+		<control name="back" type="button" image="iphone/menu_back.png" click_event="click_back" x="-146.05" y="173.95" ox="-3.1" oy="21.45" width="104" height="33"></control>
+	</control>
+	<control name="panel_result" type="panel" x="137.6" y="137.85" ox="46" oy="46" width="92" height="92">
+		<control type="image" image="cogs/wall.png" x="-46" y="-46" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/wall.png" x="0" y="-46" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/wall.png" x="0" y="0" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/wall.png" x="-46" y="0" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/cogs.png" x="-30.95" y="-30.95" ox="0" oy="0" width="61" height="61"></control>
+		<control name="help" type="button" image="iphone/menu_help.png" click_event="click_help" x="-24.65" y="24.15" ox="21.35" oy="21.15" width="43" height="43"></control>
+	</control>
+	<control name="panel_fuck" type="panel" x="160" y="240" ox="160.5" oy="240.45" width="320.5" height="480.45">
+		<control type="image" image="iphone/game_background.png" x="-160" y="-240" ox="0" oy="0" width="320" height="480"></control>
+		<control type="image" image="iphone/result_pipe_2.png" x="-160.5" y="-240.45" ox="0" oy="0" width="320" height="480"></control>
+		<control type="image" image="cogs/pipe_b.png" x="-17.65" y="-217.7" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/pipe_cross.png" x="-17.65" y="-171.65" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/pipe_l.png" x="28.4" y="-80.15" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/pipe_lb.png" x="28.35" y="-171.65" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/pipe_lr.png" x="-63.65" y="-171.65" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/pipe_lrb.png" x="-109.65" y="-171.7" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/pipe_lrt.png" x="-63.65" y="-33.65" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/pipe_lt.png" x="74.65" y="-125.4" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/pipe_r.png" x="-155.65" y="-171.7" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/pipe_rb.png" x="-109.65" y="-33.65" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/pipe_rt.png" x="28.65" y="-125.65" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/pipe_t.png" x="-109.65" y="-125.7" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/pipe_tb.png" x="-17.65" y="-125.65" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/pipe_tbl.png" x="-17.65" y="-33.65" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/pipe_tbr.png" x="-17.65" y="-79.65" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/wall.png" x="-30.2" y="12.35" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/pipe_b.png" x="74.65" y="-171.45" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/wall.png" x="-97.15" y="11.85" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/pipe_b.png" x="-63.65" y="-79.65" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/pipe_t.png" x="-109.65" y="11.85" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/pipe_t.png" x="-17.65" y="11.85" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/blank.png" x="-160" y="-239.9" ox="0" oy="0" width="46" height="46"></control>
+		<control type="image" image="cogs/cogs.png" x="-117.65" y="-228.15" ox="0" oy="0" width="61" height="61"></control>
+		<control name="back" type="button" image="iphone/menu_back.png" click_event="click_back" x="-156.15" y="173.05" ox="-3.1" oy="21.45" width="104" height="33"></control>
+		<control name="next" type="button" image="iphone/menu_next.png" click_event="click_next" x="101.2" y="169.6" ox="52.15" oy="17.5" width="104" height="33"></control>
+		<control name="noname" type="panel" x="-97.5" y="-149" ox="30.5" oy="30.5" width="61" height="61">
+			<control type="image" image="cogs/cogs.png" x="-30.5" y="-30.5" ox="0" oy="0" width="61" height="61"></control>
+		</control>
+		<control name="fuck_result" type="panel" x="51.4" y="-57.15" ox="46" oy="46" width="92" height="92">
+			<control type="image" image="cogs/wall.png" x="-46" y="-46" ox="0" oy="0" width="46" height="46"></control>
+			<control type="image" image="cogs/wall.png" x="0" y="-46" ox="0" oy="0" width="46" height="46"></control>
+			<control type="image" image="cogs/wall.png" x="0" y="0" ox="0" oy="0" width="46" height="46"></control>
+			<control type="image" image="cogs/wall.png" x="-46" y="0" ox="0" oy="0" width="46" height="46"></control>
+			<control type="image" image="cogs/cogs.png" x="-30.95" y="-30.95" ox="0" oy="0" width="61" height="61"></control>
+			<control name="help" type="button" image="iphone/menu_help.png" click_event="click_help" x="-24.65" y="24.15" ox="21.35" oy="21.15" width="43" height="43"></control>
+		</control>
+	</control>
+</ui>
