@@ -72,20 +72,20 @@
     };
 
 * Where can I get it?
-  download: https://github.com/tongpengfei/tui/archive/master.zip
-  source:   https://github.com/tongpengfei/tui.git
+  * download: https://github.com/tongpengfei/tui/archive/master.zip
+  * source:   https://github.com/tongpengfei/tui.git
 
 * Author
-  pengfei tong     27001909#qq.com ( replace # to @ please )
+  * pengfei tong     27001909#qq.com ( replace # to @ please )
 
 * License
-  MIT license
-  Yes! It's all FREE! Just do what you like!
+  * MIT license
+  * Yes! It's all FREE! Just do what you like!
 
 * Requirements
-  FlashCS6
-  AdobeExtensionManager6.0All
-  cocos2d-x-2.0.3
+  * FlashCS6
+  * AdobeExtensionManager6.0All
+  * cocos2d-x-2.0.3
 
 * Have fun~
 
@@ -166,20 +166,20 @@
     };
 
 * Tui在哪里下载?
-  download: https://github.com/tongpengfei/tui/archive/master.zip
-  source:   https://github.com/tongpengfei/tui.git
+  * download: https://github.com/tongpengfei/tui/archive/master.zip
+  * source:   https://github.com/tongpengfei/tui.git
 
 * 作者
-  仝鹏飞   27001909#qq.com ( 请把#替换为@ )
+   *仝鹏飞   27001909#qq.com ( 请把#替换为@ )
 
 * 许可
-  MIT license
-  亲,免费哦~ 随便你搞!
+  * MIT license
+  * 亲,免费哦~ 随便你搞!
 
 * 环境需求
-  FlashCS6
-  AdobeExtensionManager6.0All
-  cocos2d-x-2.0.3
+  * FlashCS6
+  * AdobeExtensionManager6.0All
+  * cocos2d-x-2.0.3
 
 * 容易出错的地方
   * 每个控件或面板即只要是mc类型的控件就需要设置名字，否则在程序中就不能找到该控件。
