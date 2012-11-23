@@ -98,26 +98,35 @@
 #define tLogError( format, ... ) \
 	do{	\
 		HANDLE hstdout = GetStdHandle( STD_OUTPUT_HANDLE );	\
-		SetConsoleTextAttribute( hstdout, TXTCOLOR_RED ); \
-		printf( "[ERROR] %s %s %d #"format"\n", \
-			__FILENAME__, __FUN__, __LINE__, ##__VA_ARGS__ );	\
+		SetConsoleTextAttribute( hstdout, TXTCOLOR_GREEN ); \
+		char buff[512]; memset(buff, 0x00, sizeof(buff) ); \
+		snprintf( buff, sizeof(buff), "[ERROR] %s %s %d #"format"\n", \
+		__FILENAME__, __FUN__, __LINE__, ##__VA_ARGS__ );	\
+		printf( buff ); \
+		OutputDebugString( buff ); \
 		SetConsoleTextAttribute( hstdout, TXTCOLOR_DEFAULT ); \
 	}while(0);
 
 #define tLogWarning( format, ... ) \
 	do{	\
 		HANDLE hstdout = GetStdHandle( STD_OUTPUT_HANDLE );	\
-		SetConsoleTextAttribute( hstdout, TXTCOLOR_CYAN ); \
-		printf( "[WARNING] %s %s %d #"format"\n", \
-			__FILENAME__, __FUN__, __LINE__, ##__VA_ARGS__ );	\
+		SetConsoleTextAttribute( hstdout, TXTCOLOR_GREEN ); \
+		char buff[512]; memset(buff, 0x00, sizeof(buff) ); \
+		snprintf( buff, sizeof(buff), "[WARNING] %s %s %d #"format"\n", \
+		__FILENAME__, __FUN__, __LINE__, ##__VA_ARGS__ );	\
+		printf( buff ); \
+		OutputDebugString( buff ); \
 		SetConsoleTextAttribute( hstdout, TXTCOLOR_DEFAULT ); \
 	}while(0);
 #define tLogSystem( format, ... ) \
 	do{	\
 		HANDLE hstdout = GetStdHandle( STD_OUTPUT_HANDLE );	\
 		SetConsoleTextAttribute( hstdout, TXTCOLOR_GREEN ); \
-		printf( "[SYSTEM] %s %s %d #"format"\n", \
-			__FILENAME__, __FUN__, __LINE__, ##__VA_ARGS__ );	\
+		char buff[512]; memset(buff, 0x00, sizeof(buff) ); \
+		snprintf( buff, sizeof(buff), "[SYSTEM] %s %s %d #"format"\n", \
+		__FILENAME__, __FUN__, __LINE__, ##__VA_ARGS__ );	\
+		printf( buff ); \
+		OutputDebugString( buff ); \
 		SetConsoleTextAttribute( hstdout, TXTCOLOR_DEFAULT ); \
 	}while(0);
 #endif//WIN32
@@ -125,9 +134,23 @@
 
 //log defines
 #ifdef DEBUG
-#define tLogDebug( format, ... ) \
-	printf( "[DEBUG] %s %s %d ["format"]\n", \
-			__FILENAME__, __FUN__, __LINE__, ##__VA_ARGS__ ); 
+	#ifndef WIN32
+		#define tLogDebug( format, ... ) \
+			printf( "[DEBUG] %s %s %d ["format"]\n", \
+					__FILENAME__, __FUN__, __LINE__, ##__VA_ARGS__ ); 
+	#else
+		#define tLogDebug( format, ... ) \
+		do{	\
+			HANDLE hstdout = GetStdHandle( STD_OUTPUT_HANDLE );	\
+			SetConsoleTextAttribute( hstdout, TXTCOLOR_GREEN ); \
+			char buff[512]; memset(buff, 0x00, sizeof(buff) ); \
+			snprintf( buff, sizeof(buff), "[DEBUG] %s %s %d #"format"\n", \
+			__FILENAME__, __FUN__, __LINE__, ##__VA_ARGS__ );	\
+			printf( buff ); \
+			OutputDebugString( buff ); \
+			SetConsoleTextAttribute( hstdout, TXTCOLOR_DEFAULT ); \
+		}while(0);
+	#endif//WIN32
 #else
 #define tLogDebug( format, ... ) ((void)0)
 #endif //DEBUG
@@ -143,9 +166,12 @@
 #define tLogTrace( format, ... ) \
 	do{	\
 		HANDLE hstdout = GetStdHandle( STD_OUTPUT_HANDLE );	\
-		SetConsoleTextAttribute( hstdout, TXTCOLOR_BROWN ); \
-		printf( "[TRACE] %s %s %d #"format"\n",\
-			__FILENAME__, __FUN__, __LINE__, ##__VA_ARGS__ );	\
+		SetConsoleTextAttribute( hstdout, TXTCOLOR_GREEN ); \
+		char buff[512]; memset(buff, 0x00, sizeof(buff) ); \
+		snprintf( buff, sizeof(buff), "[TRACE] %s %s %d #"format"\n", \
+		__FILENAME__, __FUN__, __LINE__, ##__VA_ARGS__ );	\
+		printf( buff ); \
+		OutputDebugString( buff ); \
 		SetConsoleTextAttribute( hstdout, TXTCOLOR_DEFAULT ); \
 	}while(0);
 #endif//WIN32
