@@ -113,7 +113,7 @@ protected:
 	bool hasImageAttribute( const char* type );
 protected:
 	bool localizationFile( char* image, size_t size );
-
+	bool isFileExists( const char* file );
 public:
 	/** for test event, do not edit */
 	void onEventBack( void* o, TEvent* e );

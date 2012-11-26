@@ -5,6 +5,8 @@
 #include <tuiconsts.h>
 #include <tuilocalization.h>
 #include <tmenuitemimage.h>
+#include <fstream>
+#include <support/zip_support/unzip.h>
 #include "cocos2d.h"
 USING_NS_CC;
 using std::pair;
@@ -156,15 +158,8 @@ void TuiManager::hideAll()
 
 bool TuiManager::loadTuiXML( const char* xml )
 {
-#ifdef WIN32
-		const char* writeablepath = CCApplication::sharedApplication()->getResourceRootPath().c_str();
-#else
-	const char* writeablepath = CCApplication::sharedApplication()->getResourceRootPath();
-#endif
-	
-	char fullpath[256]; memset( fullpath, 0x00, sizeof(fullpath) );
-	sprintf( fullpath, "%s%s", writeablepath, xml );
-    tAssertc( reader.open( fullpath ), return false );
+//	const char* fullpath = CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(xml);
+    tAssertc( reader.open( xml ), return false );
 
     TiXmlElement* root = NULL;
     tAssertc( NULL != (root = reader.getRoot()), return false );
@@ -228,7 +223,7 @@ Tui* TuiManager::parseControl( XmlReader* reader, TiXmlElement* element, CCNode*
 	//return true;
 	//read control attribute
 	char c_type[32]; memset( c_type, 0x00, sizeof(c_type) );
-	char c_img[64]; memset( c_img, 0x00, sizeof(c_img) );
+	char c_img[256]; memset( c_img, 0x00, sizeof(c_img) );
 	char c_name[64]; memset( c_name, 0x00, sizeof(c_name) );
 	float c_x = 0.0f;
 	float c_y = 0.0f;
@@ -277,6 +272,7 @@ Tui* TuiManager::parseControl( XmlReader* reader, TiXmlElement* element, CCNode*
 			y = TuiUtil::convertTuiY( y + scheme_height/2 );
 			current->setPosition( ccp( x, y ) );
 			current->setVisible( false );
+			tLogDebug( "load panel %s, x: %.f y: %.f", c_name, x, y );
 		}
 		current->setContentSize( CCSize( c_width, c_height ) );
 	}else if( isImage( c_type ) ){
@@ -386,15 +382,12 @@ bool TuiManager::localizationFile( char* image, size_t size )
 		snprintf( full, sizeof(full), "%s%s", prefix, temp );
 	}
 	
-	const char* path = CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(full);
-	tAssertcm( path, return NULL, "%s", image );
-	FILE* fp = fopen( path, "r" );
-	if( fp ){
-		fclose( fp ); fp = NULL;
+	if( isFileExists( full ) ){
 		memset( image, 0x00, size );
 		snprintf( image, size, "%s", full );
 		return true;
 	}
+
 	if( file ){
 		snprintf( image, size, "%s/%s", temp, filename );
 	}else{
@@ -454,3 +447,49 @@ void TuiManager::onEventNext( void* o, TEvent* e )
 	tLogDebug( "--> on event click" );
 }
 
+#if( CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID )
+#include "jni/Java_org_cocos2dx_lib_Cocos2dxHelper.h"
+#endif
+bool TuiManager::isFileExists( const char* file )
+{
+	tAssertc( file, return false );
+#if( CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID )
+	string fullPath(file);
+	if(file[0] != '/'){
+		// read from apk
+		fullPath.insert(0, CCFileUtils::sharedFileUtils()->getResourceDirectory() );
+		fullPath.insert(0, "assets/");
+		const char* apk = getApkPath();
+
+		unzFile pFile = NULL;
+		bool res = false;
+		tAssertc( apk && fullPath.c_str(), return false );
+		tAssertc( strlen(apk), return false );
+		pFile = unzOpen(apk);
+		int nRet = unzLocateFile(pFile, fullPath.c_str(), 1);
+		tLogDebug( "zip: %s locatefile: %s %d", apk, fullPath.c_str(), nRet );
+
+		res = UNZ_OK == nRet;
+		if (pFile){
+			unzClose(pFile);
+		}
+		return res;
+	}else{
+		// read rrom other path than user set it
+		FILE *fp = fopen( file, "rb" );
+		if (fp){
+			fclose(fp);
+			return true;
+		}
+	}
+#else
+	const char* path = CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(file);
+	tAssertcm( path, return NULL, "%s", file );
+	FILE* fp = fopen( path, "r" );
+	if( fp ){
+		fclose( fp ); fp = NULL;
+		return true;
+	}
+#endif
+	return false;
+}
