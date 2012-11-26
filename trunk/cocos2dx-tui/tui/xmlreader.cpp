@@ -13,7 +13,17 @@ XmlReader::~XmlReader()
 
 bool XmlReader::open( const char* file )
 {
-	tAssertcm( xml_doc.LoadFile( file ), return false, "[XMLREADER] LoadFile[%s]", file );
+//	tAssertcm( xml_doc.LoadFile( file ), return false, "[XMLREADER] LoadFile[%s]", file );
+	const char* fullpath = CCFileUtils::sharedFileUtils()->fullPathFromRelativePath( file );
+	tAssertcm( fullpath, return false, "%s", file );
+	
+	unsigned long filesize = 0;
+	unsigned char* pBuffer = CCFileUtils::sharedFileUtils()->getFileData( fullpath, "rb", &filesize );
+	tAssertcm( pBuffer, return false, "%s", file );
+//	tAssertc( xml_doc.Parse( (const char*)pBuffer ), return false );
+	xml_doc.Parse( (const char*)pBuffer );
+	delete [] pBuffer;
+	pBuffer = NULL;
 	return true;
 }
 

@@ -7,6 +7,9 @@
  * @brief some usefull macro
  */
 
+#include "cocos2d.h"
+USING_NS_CC;
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -29,12 +32,12 @@
 #define strncasecmp strnicmp
 #endif//WIN32
 
-#ifndef max
-#define max( a, b ) ( (a) > (b) ? (a) : (b) )
-#endif//max
-#ifndef min
-#define min( a, b ) ( (a) < (b) ? (a) : (b) )
-#endif//min
+#ifndef tmax
+#define tmax( a, b ) ( (a) > (b) ? (a) : (b) )
+#endif//tmax
+#ifndef tmin
+#define tmin( a, b ) ( (a) < (b) ? (a) : (b) )
+#endif//tmin
 
 //console color
 #ifndef WIN32
@@ -84,15 +87,15 @@
 
 #ifndef WIN32
 #define tLogError( format, ... ) \
-	printf( TXTCOLOR_RED"[ERROR] %s %s %d #"format"#"TXTCOLOR_DEFAULT"\n", \
+	CCLog( TXTCOLOR_RED"[ERROR] %s %s %d #"format"#"TXTCOLOR_DEFAULT"\n", \
 			__FILENAME__, __FUN__, __LINE__, ##__VA_ARGS__ );
 
 #define tLogWarning( format, ... ) \
-	printf( TXTCOLOR_CYAN"[WARNING] %s %s %d #"format"#"TXTCOLOR_DEFAULT"\n", \
+	CCLog( TXTCOLOR_CYAN"[WARNING] %s %s %d #"format"#"TXTCOLOR_DEFAULT"\n", \
 			__FILENAME__, __FUN__, __LINE__, ##__VA_ARGS__ );
 
 #define tLogSystem( format, ... ) \
-	printf( TXTCOLOR_GREEN"[SYSTEM] %s %s %d #"format"#"TXTCOLOR_DEFAULT"\n", \
+	CCLog( TXTCOLOR_GREEN"[SYSTEM] %s %s %d #"format"#"TXTCOLOR_DEFAULT"\n", \
 			__FILENAME__, __FUN__, __LINE__, ##__VA_ARGS__ );
 #else
 #define tLogError( format, ... ) \
@@ -136,8 +139,8 @@
 #ifdef DEBUG
 	#ifndef WIN32
 		#define tLogDebug( format, ... ) \
-			printf( "[DEBUG] %s %s %d ["format"]\n", \
-					__FILENAME__, __FUN__, __LINE__, ##__VA_ARGS__ ); 
+			CCLog( "[DEBUG] %s %s %d ["format"]\n", \
+					__FILENAME__, __FUN__, __LINE__, ##__VA_ARGS__ );
 	#else
 		#define tLogDebug( format, ... ) \
 		do{	\
