@@ -21,9 +21,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     pDirector->setOpenGLView(CCEGLView::sharedOpenGLView());
     
 	//the default language is english
-	TuiLocalization::I()->setLocalization( "en" );
+	//TuiLocalization::I()->setLocalization( "en" );
 	//set language to simplify chinese
-	//TuiLocalization::I()->setLocalization( "zh-Hans" );
+	TuiLocalization::I()->setLocalization( "zh-Hans" );
 	GameUIController* uic = GameUIController::I();
 	uic->retain();
 	bool retina = false;
@@ -55,7 +55,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 		//        CCEGLView::sharedOpenGLView()->setDesignResolutionSize(960, 640, kResolutionNoBorder);
 		//        CCEGLView::sharedOpenGLView()->setDesignResolutionSize(320, 480, kResolutionNoBorder);
 
-		if( 0 ){
+		if( 1 ){
 			uic->loadTuiXML( "tui/tui_iphone4.xml" );
 			CCFileUtils::sharedFileUtils()->setResourceDirectory("res_iphone");
 		}else{
@@ -67,13 +67,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 		int w = uic->schemeWidth();
 		int h = uic->schemeHeight();
 		CCEGLView::sharedOpenGLView()->setDesignResolutionSize(w, h, kResolutionNoBorder);
-		//CCEGLView::sharedOpenGLView()->setDesignResolutionSize(960, 640, kResolutionNoBorder);
+		CCEGLView::sharedOpenGLView()->setDesignResolutionSize(960, 640, kResolutionNoBorder);
     }
-
-	int w = uic->schemeWidth();
-	int h = uic->schemeHeight();
-	//CCEGLView::sharedOpenGLView()->setDesignResolutionSize(w, h, kResolutionNoBorder);
-	CCEGLView::sharedOpenGLView()->setDesignResolutionSize(960, 640, kResolutionNoBorder);
 
     // turn on display FPS
     pDirector->setDisplayStats(false);
