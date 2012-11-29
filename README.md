@@ -5,8 +5,12 @@
 * What is Tui?
   Tui is a game UI editer. It is a FlashCS6 extension, writen in jsfl and as3.
   You can edit game UI in FlashCS6 with real-time preview. The editer outputs
-  a xml file. The current version( v1.0 ) supports 2 schemes: iphone(320*480 or 480*320)
-  and ipad(1024*768 or 768*1024).
+  a xml file. The current version( v1.0 ) supports the follow schemes: 
+    iphone(320*480 or 480*320)
+    iphone5(568*320 or 320*568)
+	ipad(1024*768 or 768*1024)
+	android(480*800 or 800*480).
+
     Below are the features of Tui:
     * Tui is "what you seen is what you get".
     * Seperate the work of artists, designers and programmers.
@@ -103,8 +107,13 @@
   FAQ:
 * Tui是什么?
     Tui是一个游戏UI编辑器,是FlashCS6的扩展插件。开发者可以使用FlashCS6编辑游戏UI,
-  然后通过Tui插扩展预览最终的UI效果，并生成相应的xml文件。当前版本(v1.0)支持iphone
-  (320*480或480*320)与ipad(1024*768或768*1024)尺寸。
+  然后通过Tui插扩展预览最终的UI效果，并生成相应的xml文件。当前版本(v1.0)支持以前
+  屏幕尺寸:
+    iphone(320*480 或 480*320)
+    iphone5(568*320 或 320*568)
+	ipad(1024*768 或 768*1024)
+	android(480*800 或 800*480).
+
     Tui的特点包括:
     * Tui的最主要特点是所见即所得。
     * 把美术工作,策划工作与程序的工作区分开来。
