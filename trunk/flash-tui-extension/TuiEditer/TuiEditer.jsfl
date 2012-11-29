@@ -364,10 +364,10 @@ UIControlType.kButton = "button";
 /////////////////////////////////////////////////////////////////////
 /** 控件的属性 */
 UIControlAttribute = {};
-/** 控件的名字,在程序中控制用 */
-UIControlAttribute.kName = "name";
 /** 控件的类型 */
 UIControlAttribute.kType = "type";
+/** 控件的名字,在程序中控制用 */
+UIControlAttribute.kName = "name";
 /** 是否可托动 */
 UIControlAttribute.kEnableDrag = "enable_drag";
 /** 用到的图片 */
@@ -451,6 +451,7 @@ UIButton.prototype.init = function(){
 kSchemeIPhone4 = "iphone4";
 kSchemeIPhone5 = "iphone5";
 kSchemeIPad = "ipad";
+kScheme480x800 = "480x800";
 
 Scheme = function(){
 	Scheme.superClass.call(this, XMLNode.scheme );
@@ -496,6 +497,29 @@ SchemeIPhone4.prototype.setModeToPortrait = function(){
 	this.setAttribute( SchemeAttribute.kScreenHeight, 480);
 }
 
+SchemeIPhone5 = function(){
+	SchemeIPhone5.superClass.call(this);
+}
+SchemeIPhone5.extend( Scheme );
+SchemeIPhone5.prototype.init = function(){
+	SchemeIPhone5.superClass.prototype.init.call(this);
+	this.setAttribute( SchemeAttribute.kName, kSchemeIPhone5 );
+	this.setAttribute( SchemeAttribute.kIsRetina, 0 );
+	this.setModeToPortrait();
+}
+
+/** 横向 */
+SchemeIPhone5.prototype.setModeToLandscape = function(){
+	this.setAttribute( SchemeAttribute.kScreenWidth, 568 );
+	this.setAttribute( SchemeAttribute.kScreenHeight, 320 );
+}
+
+/** 纵向 */
+SchemeIPhone5.prototype.setModeToPortrait = function(){
+	this.setAttribute( SchemeAttribute.kScreenWidth, 320 );
+	this.setAttribute( SchemeAttribute.kScreenHeight, 568 );
+}
+
 SchemeIPad = function(){
 	SchemeIPad.superClass.call(this);
 }
@@ -517,6 +541,30 @@ SchemeIPad.prototype.setModeToLandscape = function(){
 SchemeIPad.prototype.setModeToPortrait = function(){
 	this.setAttribute( SchemeAttribute.kScreenWidth, 768);
 	this.setAttribute( SchemeAttribute.kScreenHeight, 1024);
+}
+
+
+Scheme480x800 = function(){
+	Scheme480x800.superClass.call(this);
+}
+Scheme480x800.extend( Scheme );
+Scheme480x800.prototype.init = function(){
+	Scheme480x800.superClass.prototype.init.call(this);
+	this.setAttribute( SchemeAttribute.kName, kScheme480x800 );
+	this.setAttribute( SchemeAttribute.kIsRetina, 0 );
+	this.setModeToLandscape();
+}
+
+/** 横向 */
+Scheme480x800.prototype.setModeToLandscape = function(){
+	this.setAttribute( SchemeAttribute.kScreenWidth, 800 );
+	this.setAttribute( SchemeAttribute.kScreenHeight, 480 );
+}
+
+/** 纵向 */
+Scheme480x800.prototype.setModeToPortrait = function(){
+	this.setAttribute( SchemeAttribute.kScreenWidth, 480 );
+	this.setAttribute( SchemeAttribute.kScreenHeight, 800 );
 }
 
 /////////////////////////////////////////////////////////////////////
@@ -838,21 +886,34 @@ FlaToXML.prototype.outputXML = function(){
 }
 
 /**
+ @brief 通过名字得到主题
+ @param schemename:string 主题名
+ */
+getSupportScheme = function( schemename ){
+	var scheme = null;
+	if( schemename == kSchemeIPhone4 ){
+		scheme = new SchemeIPhone4();
+	}else if( schemename == kSchemeIPhone5 ){
+		scheme = new SchemeIPhone5();
+	}else if( schemename == kSchemeIPad ){
+		scheme = new SchemeIPad();
+	}else if( schemename == kScheme480x800 ){
+		scheme = new Scheme480x800();
+	}else{
+		alert( "未设定主题" );
+		return null;
+	}
+	return scheme;
+}
+
+/**
  @brief 导出当前打开的fla文件xml
  @param uiname:string uiname
  @param schemename:string 主题名
  @param isportrait:bool 是否竖屏
  */
 export_current_layer = function( uiname, schemename, isportrait ){
-	var scheme = null;
-	if( schemename == kSchemeIPhone4 ){
-		scheme = new SchemeIPhone4();
-	}else if( schemename == kSchemeIPad ){
-		scheme = new SchemeIPad();
-	}else{
-		alert( "未设定主题" );
-		return;
-	}
+	var scheme = getSupportScheme( schemename );
 
 	if( isportrait == "1" ){
 		scheme.setModeToPortrait();
@@ -872,15 +933,7 @@ export_current_layer = function( uiname, schemename, isportrait ){
  @param schemename:string 主题名
  */
 export_visible_layer = function( uiname, schemename, isportrait ){
-	var scheme = null;
-	if( schemename == kSchemeIPhone4 ){
-		scheme = new SchemeIPhone4();
-	}else if( schemename == kSchemeIPad ){
-		scheme = new SchemeIPad();
-	}else{
-		alert( "未设定主题" );
-		return;
-	}
+	var scheme = getSupportScheme( schemename );
 	
 	if( isportrait == "1" ){
 		scheme.setModeToPortrait();
@@ -900,15 +953,8 @@ export_visible_layer = function( uiname, schemename, isportrait ){
  @param schemename:string 主题名
  */
 export_all_layer = function( uiname, schemename, isportrait ){
-	var scheme = null;
-	if( schemename == kSchemeIPhone4 ){
-		scheme = new SchemeIPhone4();
-	}else if( schemename == kSchemeIPad ){
-		scheme = new SchemeIPad();
-	}else{
-		alert( "未设定主题" );
-		return;
-	}
+	var scheme = getSupportScheme( schemename );
+	if( null == scheme ) return null;
 
 	if( isportrait == "1" ){
 		scheme.setModeToPortrait();
@@ -924,6 +970,8 @@ export_all_layer = function( uiname, schemename, isportrait ){
 
 //cls();
 //trace( export_current_layer( "testui", "iphone4", "1" ) );
+//trace( export_current_layer( "testui", "iphone5", "1" ) );
+//trace( export_current_layer( "testui", "480x800", "0" ) );
 //trace( export_visible_layer( "testui", "iphone4" ) );
 //trace( export_all_layer( "testui", "iphone4" ) );
 

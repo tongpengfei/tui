@@ -45,7 +45,8 @@
 			var sfUniversities:Array = new Array( 
 			    {label:"iphone4", data:"iphone4"},
 				{label:"iphone5", data:"iphone5"},
-				{label:"ipad", data:"ipad"}
+				{label:"ipad", data:"ipad"},
+				{label:"480x800", data:"480x800"}
 			);
 			select_scheme.dataProvider = new DataProvider(sfUniversities); 
 			select_scheme.addEventListener( Event.CHANGE, onSchemeChange );
