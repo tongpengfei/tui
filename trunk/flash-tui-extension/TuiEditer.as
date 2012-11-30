@@ -62,6 +62,10 @@
 			radio_view_xml.addEventListener( MouseEvent.CLICK, onRadioGroupView );
 			radio_view_ui.addEventListener( MouseEvent.CLICK, onRadioGroupView );
 			radio_view_cpp.addEventListener( MouseEvent.CLICK, onRadioGroupView );
+			
+			slider_scale.addEventListener( Event.CHANGE, onSliderScale );
+			onSliderScale( null );
+			
 			//var fuck:Array = new Array( "iphon4", "iphone5", "ipad" );
 			//list_all_panels.dataProvider = new DataProvider(sfUniversities); 
 			//list_all_panels.addItem( {label:"label", data:"data"} );
@@ -214,6 +218,14 @@
 			if( list_all_panels.selectedItem != null ){
 				pushDebugInfo( "selected " + list_all_panels.selectedItem.data + "\n" );
 				tui.showPanel( list_all_panels.selectedItem.data );
+			}
+		}
+		
+		private function onSliderScale( e:Event ):void{
+			var s:Number = slider_scale.value / 10.0;
+			label_scale_value.text = s.toString();
+			if( tui ){
+				tui.setPreviewScale( s );
 			}
 		}
 		

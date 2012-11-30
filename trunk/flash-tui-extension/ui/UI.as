@@ -38,6 +38,11 @@
 		private var panel_events:Dictionary = null;
 
 		private var current_parse_panel:String = "";
+		
+		private var preview_scale:Number = 1.0;
+		
+		private var panel_init_info:Dictionary = null;
+		
 		/**
 		 @param getResourcePathByLibraryPath convert flash pro library path to resource path
 		 @param debugpanel debug panel, type of textfield
@@ -45,6 +50,11 @@
 		public function UI( getResourcePathByLibraryPath:Function = null, debugpanel:* = null ) {
 			cbGetResourcePath = getResourcePathByLibraryPath;
 			setTextDebugPanel( debugpanel );
+		}
+		
+		public function setPreviewScale( v:Number ){
+			preview_scale = v;
+			setCurrentPanelScale( v );
 		}
 		
 		public function setTextDebugPanel( v:* ):void{
@@ -103,6 +113,20 @@
 			parseXML( xml );
 		}
 		
+		private function setCurrentPanelScale( v:Number ):void{
+			if( current_show_panel == "" ) return;
+			var panel:TControl = ui_panels[current_show_panel];
+			if( null == panel ) return;
+			
+			var curinfo:* = panel_init_info[current_show_panel];
+			panel.scaleX = preview_scale;
+			panel.scaleY = preview_scale;
+			panel.x = curinfo.x * preview_scale;
+			panel.y = curinfo.y * preview_scale;
+			panel.setSize( curinfo.w * preview_scale, curinfo.h * preview_scale );
+			//pushDebugInfo( "x:" + curinfo.x + " y:" + curinfo.y + " w:" + curinfo.w + " h:" + curinfo.h + "\n" );
+		}
+		
 		public function showPanel( panelname:String ):void{
 			clearEvent();
 			clearChildren();
@@ -112,7 +136,11 @@
 				addChild( panel );
 				pushDebugInfo( "preview " + panelname + "\n" );
 				current_show_panel = panelname;
-
+				
+				if( null == panel_init_info[panelname] ){
+					panel_init_info[panelname] = { x:panel.x, y:panel.y, w:panel.getWidth(), h:panel.getHeight() };
+				}
+/*
 				if( panel.getWidth() > 515 ){
 					panel.scaleX = 0.5;
 					panel.scaleY = 0.5;
@@ -123,6 +151,11 @@
 					//panel.scaleX = 1.0;
 					//panel.scaleY = 1.0;
 				}
+*/
+				if( panel.getWidth() > 515 && preview_scale == 1.0 ){
+					//preview_scale = 0.5;
+				}
+				setCurrentPanelScale( preview_scale );
 			}
 			
 			for each( var pe:PanelEvent in panel_events[current_show_panel] ){
@@ -137,6 +170,7 @@
 			
 			ui_panels = new Dictionary();
 			panel_events = new Dictionary();
+			panel_init_info = new Dictionary()
 			
 			getSchemeElement( xml.scheme );
 			getControlElement( xml.control, null );	
