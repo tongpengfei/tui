@@ -954,7 +954,7 @@ export_visible_layer = function( uiname, schemename, isportrait ){
  */
 export_all_layer = function( uiname, schemename, isportrait ){
 	var scheme = getSupportScheme( schemename );
-	if( null == scheme ) return null;
+	if( null == scheme ) return ("unknown scheme: " + schemename);
 
 	if( isportrait == "1" ){
 		scheme.setModeToPortrait();
