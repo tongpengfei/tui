@@ -47,6 +47,12 @@ void TEventController::unregisterListener( string eventid, TEventListener* pTarg
 	}
 }
 
+
+/*
+	I think there has some problem when user remove or add IListener to TEventController
+	
+	you must copy the dispatch listener vector, and soon dispatch it
+*/
 void TEventController::dispatchEvent( void* o, TEvent* e )
 {
 	tAssertc( e, return );
@@ -54,7 +60,7 @@ void TEventController::dispatchEvent( void* o, TEvent* e )
 	if( it != event_listener_map.end() ){
 		TEventCBVector& vec = *(it->second);
 		int n = vec.size();
-		TListener* plistener = NULL;
+		/*TListener* plistener = NULL;
 		TEventListener* pTarget = NULL;
 		TEVENT_CALLBACK cb = NULL;
 		for( int i=0; i<n; ++i ){
@@ -62,7 +68,21 @@ void TEventController::dispatchEvent( void* o, TEvent* e )
 			pTarget = plistener->pTarget;
 			cb = plistener->cb;
 			(pTarget->*cb)( o, e );
+		}*/
+		
+		TEventCBVector vec_copy(n);  // this vec_copy can be an member variable of TEventController for optmize
+		std::copy(vec.begin(), vec.end(), vec_copy.begin());
+		
+		TListener* plistener = NULL;
+		TEventListener* pTarget = NULL;
+		TEVENT_CALLBACK cb = NULL;
+		for( int i=0; i<n; ++i ){
+			plistener = vec_copy[i];
+			pTarget = plistener->pTarget;
+			cb = plistener->cb;
+			(pTarget->*cb)( o, e );
 		}
+		
 	}
 }
 
