@@ -1,0 +1,99 @@
+CC      = gcc
+CXX     = g++
+TARGET	= main
+CCFLAGS = -Wall
+CXXFLAGS = -Wall
+VISIBILITY = 
+
+COCOS2DX_PATH = ../../../cocos2dx
+INCLUDES =  -I../ \
+			-I../Classes \
+			-I../Classes/tui \
+			-I$(COCOS2DX_PATH) \
+			-I$(COCOS2DX_PATH)/platform/third_party/linux \
+			-I$(COCOS2DX_PATH)/platform/third_party/linux/libfreetype2 \
+			-I$(COCOS2DX_PATH)/cocoa \
+			-I$(COCOS2DX_PATH)/include \
+			-I$(COCOS2DX_PATH)/platform \
+			-I$(COCOS2DX_PATH)/platform/linux \
+			-I$(COCOS2DX_PATH)/platform/third_party/linux/glew-1.7.0/glew-1.7.0/include/ \
+			-I$(COCOS2DX_PATH)/kazmath/include \
+			-I$(COCOS2DX_PATH)/platform/third_party/linux/libxml2 \
+			-I$(COCOS2DX_PATH)/platform/third_party/linux/libjpeg  \
+			-I$(COCOS2DX_PATH)/layers_scenes_transitions_nodes \
+			-I../lib/tinyxml/
+
+
+DEFINES = -DLINUX
+
+OBJECTS = ./main.o \
+        ../Classes/AppDelegate.o \
+        ../Classes/HelloWorldScene.o \
+		../Classes/tui/xmlreader.o \
+		../Classes/tui/tui.o \
+		../Classes/tui/tuiutil.o \
+		../Classes/tui/tuimanager.o \
+		../Classes/tui/tuilocalization.o \
+		../Classes/tui/tmenuitemimage.o \
+		../Classes/tui/tevent.o \
+		../Classes/gameuicontroller.o
+
+LBITS := $(shell getconf LONG_BIT)
+ifeq ($(LBITS),64)
+STATICLIBS_DIR = ../../../cocos2dx/platform/third_party/linux/libraries/lib64
+else
+STATICLIBS_DIR = ../../../cocos2dx/platform/third_party/linux/libraries
+endif
+STATICLIBS = 
+STATICLIBS = $(STATICLIBS_DIR)/libfreetype.a \
+				$(STATICLIBS_DIR)/libxml2.a \
+				$(STATICLIBS_DIR)/libpng.a \
+				$(STATICLIBS_DIR)/libjpeg.a \
+				$(STATICLIBS_DIR)/libtiff.a \
+#				$(STATICLIBS_DIR)/libGLEW.a \
+
+SHAREDLIBS = -lglfw -lcurl
+SHAREDLIBS += -Wl,-rpath,../../../../../cocos2dx/platform/third_party/linux/glew-1.7.0/glew-1.7.0/lib
+SHAREDLIBS += -L../../../cocos2dx/platform/third_party/linux/glew-1.7.0/glew-1.7.0/lib -lGLEW
+
+SHAREDLIBS += -Wl,-rpath,../lib/tinyxml
+SHAREDLIBS += -L../lib/tinyxml -ltinyxml
+
+
+#$(shell ../../build-linux.sh $<)
+
+BIN_DIR_ROOT=bin
+BIN_DIR = $(BIN_DIR_ROOT)
+
+debug: BIN_DIR = $(BIN_DIR_ROOT)/debug
+debug: CCFLAGS += -g3 -O0
+debug: CXXFLAGS += -g3 -O0
+debug: SHAREDLIBS += -L../../../lib/linux/Debug -lcocos2d -lrt -lz -lcocosdenshion
+#debug: SHAREDLIBS += -Wl,-rpath,../../../../../lib/linux/Debug/
+debug: SHAREDLIBS += -Wl,-rpath,../../../lib/linux/Debug/
+debug: DEFINES += -DDEBUG
+debug: $(TARGET)
+
+release: BIN_DIR = $(BIN_DIR_ROOT)/release
+release: CCFLAGS += -O3
+release: CXXFLAGS += -O3
+release: SHAREDLIBS += -L../../../lib/linux/Release -lcocos2d -lrt -lz -lcocosdenshion
+release: SHAREDLIBS += -Wl,-rpath,../../../../../lib/linux/Release/
+release: DEFINES += -DNDEBUG
+release: $(TARGET)
+
+####### Build rules
+$(TARGET): $(OBJECTS) 
+	$(CXX) $(CXXFLAGS) $(INCLUDES) $(DEFINES) $(OBJECTS) -o $(TARGET) $(SHAREDLIBS) $(STATICLIBS)
+#	mkdir -p $(BIN_DIR)
+#	$(CXX) $(CXXFLAGS) $(INCLUDES) $(DEFINES) $(OBJECTS) -o $(BIN_DIR)/$(TARGET) $(SHAREDLIBS) $(STATICLIBS)
+
+####### Compile
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) $(DEFINES) $(VISIBILITY) -c $< -o $@
+
+%.o: %.c
+	$(CC) $(CCFLAGS) $(INCLUDES) $(DEFINES) $(VISIBILITY) -c $< -o $@
+
+clean: 
+	rm -f $(OBJECTS) $(TARGET) core
