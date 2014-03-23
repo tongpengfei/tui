@@ -1,0 +1,1053 @@
+<skeleton name="armature_hero" frameRate="30" version="2.2">
+  <armatures>
+    <armature name="armature_hero">
+      <b name="leg" x="-2.65" y="-7" kX="0" kY="0" cX="1" cY="1" pX="-2.3" pY="-15.75" z="0">
+        <d name="heroLeg" isArmature="1"/>
+      </b>
+      <b name="gun" parent="body" x="25.35" y="48.95" kX="0" kY="0" cX="1" cY="1" pX="25.1" pY="48.1" z="1">
+        <d name="weapon_d" isArmature="1"/>
+        <d name="weapon_dds" isArmature="1"/>
+        <d name="weapon_ds" isArmature="1"/>
+        <d name="weapon_dss" isArmature="1"/>
+        <d name="weapon_s" isArmature="1"/>
+        <d name="weapon_uss" isArmature="1"/>
+        <d name="weapon_us" isArmature="1"/>
+        <d name="weapon_uus" isArmature="1"/>
+        <d name="weapon_u" isArmature="1"/>
+        <d name="heroDead-元件 1" pX="36.1" pY="27.5"/>
+        <d name="heroDead-元件3" pX="45.55" pY="19"/>
+        <d name="heroDead-Graphic-shape 558" pX="62.1" pY="26.9"/>
+        <d name="heroDead-元件 2" pX="30.55" pY="28"/>
+        <d name="heroDead-元件 3" pX="-7.05" pY="19"/>
+      </b>
+      <b name="body" x="0" y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2">
+        <d name="heroBodyGraphic-shape 21" pX="59.15" pY="143.55"/>
+        <d name="heroBodyGraphic-shape 22" pX="52.65" pY="141.25"/>
+        <d name="heroBodyGraphic-shape 23" pX="51.4" pY="137.2"/>
+        <d name="heroBodyGraphic-shape 24" pX="47.6" pY="136.8"/>
+        <d name="heroBodyGraphic-shape 25" pX="65.15" pY="135.2"/>
+        <d name="heroBodyGraphic-shape 26" pX="69.35" pY="136.6"/>
+        <d name="heroBodyGraphic-shape 27" pX="69.05" pY="138.9"/>
+        <d name="heroBodyGraphic-shape 28" pX="58.65" pY="140.9"/>
+        <d name="heroBodyGraphic-shape 29" pX="56.4" pY="143.3"/>
+        <d name="heroDead-sprite 2410" pX="48.05" pY="139.9"/>
+      </b>
+    </armature>
+    <armature name="heroLeg">
+      <b name="Layer 2" x="0" y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0">
+        <d name="heroLegGraphic-shape 31" pX="40.3" pY="48.7"/>
+      </b>
+      <b name="Layer 3" x="0" y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1">
+        <d name="heroLegGraphic-shape 32" pX="38.7" pY="32.8"/>
+        <d name="heroLegGraphic-shape 33" pX="35.65" pY="32.75"/>
+        <d name="heroLegGraphic-shape 34" pX="33.9" pY="33.5"/>
+        <d name="heroLegGraphic-shape 35" pX="33.8" pY="35.6"/>
+        <d name="heroLegGraphic-shape 36" pX="33.8" pY="37.3"/>
+        <d name="heroLegGraphic-shape 37" pX="33.3" pY="32.85"/>
+        <d name="heroLegGraphic-shape 38" pX="33.9" pY="32.8"/>
+        <d name="heroLegGraphic-shape 39" pX="48.15" pY="37.1"/>
+        <d name="heroLegGraphic-shape 40" pX="42.7" pY="36.15"/>
+      </b>
+    </armature>
+    <armature name="weapon_d">
+      <b name="gun" x="0" y="1.05" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0">
+        <d name="weapon5pgk-weaponGraphic-shape 366" pX="12.75" pY="76.15"/>
+        <d name="weapon0pgk-Graphic-shape 48" pX="26.2" pY="-3.1"/>
+      </b>
+      <b name="bullet1" x="-31.9" y="10.1" kX="0" kY="0" cX="0.7" cY="0.7" pX="0" pY="0" z="1">
+        <d name="sprite 116" pX="0" pY="0"/>
+        <d name="weapon0pgk-Graphic-shape 42" pX="26.2" pY="32.15"/>
+        <d name="weapon0pgk-Graphic-shape 43" pX="26.2" pY="-3.3"/>
+        <d name="weapon0pgk-Graphic-shape 45" pX="26.2" pY="-3.25"/>
+        <d name="weapon0pgk-Graphic-shape 46" pX="26.2" pY="-3.25"/>
+        <d name="weapon0pgk-Graphic-shape 47" pX="26.2" pY="-3.25"/>
+        <d name="weapon0pgk-Graphic-shape 49" pX="26.2" pY="32.15"/>
+        <d name="weapon3Graphic-shape 514" pX="10.55" pY="32.15"/>
+      </b>
+      <b name="bullet0" x="0" y="1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1">
+        <d name="weapon5pgk-weaponGraphic-shape 367" pX="42.85" pY="-16.65"/>
+        <d name="weapon5pgk-weaponGraphic-shape 305" pX="82.75" pY="-17.95"/>
+        <d name="weapon5pgk-weaponGraphic-shape 368" pX="59.15" pY="-13.1"/>
+        <d name="weapon0pgk-Graphic-shape 44" pX="21.3" pY="32.15"/>
+        <d name="weapon3Graphic-shape 515" pX="115" pY="185"/>
+        <d name="weapon3Graphic-shape 516" pX="112.5" pY="182.5"/>
+        <d name="weapon3Graphic-shape 517" pX="111" pY="181"/>
+      </b>
+    </armature>
+    <armature name="weapon_dds">
+      <b name="gun" x="-1" y="-0.8" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0">
+        <d name="weapon5pgk-weaponGraphic-shape 369" pX="43.95" pY="77.2"/>
+      </b>
+      <b name="bullet1" x="-74.85" y="2.8" kX="0" kY="0" cX="0.7" cY="0.7" pX="0" pY="0" z="1">
+        <d name="sprite 116" pX="0" pY="0"/>
+        <d name="weapon0pgk-Graphic-shape 51" pX="77.2" pY="8.05"/>
+        <d name="weapon0pgk-Graphic-shape 53" pX="75.55" pY="9.55"/>
+        <d name="weapon0pgk-Graphic-shape 54" pX="71.55" pY="11.45"/>
+        <d name="weapon0pgk-Graphic-shape 55" pX="68.75" pY="12.05"/>
+        <d name="weapon0pgk-Graphic-shape 56" pX="66.05" pY="12.9"/>
+        <d name="weapon0pgk-Graphic-shape 57" pX="63.2" pY="38.85"/>
+        <d name="weapon3Graphic-shape 518" pX="38.25" pY="33.8"/>
+      </b>
+      <b name="bullet0" x="2.95" y="4.4" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1">
+        <d name="weapon5pgk-weaponGraphic-shape 370" pX="116.9" pY="-4.15"/>
+        <d name="weapon5pgk-weaponGraphic-shape 371" pX="128.45" pY="18.15"/>
+        <d name="weapon5pgk-weaponGraphic-shape 372" pX="142.75" pY="0.95"/>
+        <d name="weapon0pgk-Graphic-shape 50" pX="61.7" pY="38.85"/>
+        <d name="weapon0pgk-Graphic-shape 52" pX="41.95" pY="38.85"/>
+        <d name="weapon3Graphic-shape 515" pX="115" pY="185"/>
+        <d name="weapon3Graphic-shape 516" pX="112.5" pY="182.5"/>
+        <d name="weapon3Graphic-shape 517" pX="111" pY="181"/>
+      </b>
+    </armature>
+    <armature name="weapon_ds">
+      <b name="gun" x="0" y="0.3" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0">
+        <d name="weapon5pgk-weaponGraphic-shape 373" pX="75.75" pY="77.3"/>
+        <d name="weapon0pgk-Graphic-shape 64" pX="92.6" pY="23.25"/>
+      </b>
+      <b name="bullet1" x="-120.1" y="-14.65" kX="0" kY="0" cX="0.7" cY="0.7" pX="0" pY="0" z="1">
+        <d name="sprite 116" pX="0" pY="0"/>
+        <d name="weapon0pgk-Graphic-shape 58" pX="88.75" pY="49.25"/>
+        <d name="weapon0pgk-Graphic-shape 59" pX="112.1" pY="22.3"/>
+        <d name="weapon0pgk-Graphic-shape 61" pX="106.55" pY="23.75"/>
+        <d name="weapon0pgk-Graphic-shape 62" pX="100.95" pY="26.05"/>
+        <d name="weapon0pgk-Graphic-shape 63" pX="96.8" pY="26.9"/>
+        <d name="weapon0pgk-Graphic-shape 65" pX="89.4" pY="49.25"/>
+        <d name="weapon3Graphic-shape 519" pX="52.75" pY="40.5"/>
+      </b>
+      <b name="bullet0" x="0" y="0.3" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1">
+        <d name="weapon5pgk-weaponGraphic-shape 374" pX="188.4" pY="22.4"/>
+        <d name="weapon5pgk-weaponGraphic-shape 375" pX="204.9" pY="53.15"/>
+        <d name="weapon5pgk-weaponGraphic-shape 376" pX="233.55" pY="18.8"/>
+        <d name="weapon0pgk-Graphic-shape 60" pX="60.85" pY="49.25"/>
+        <d name="weapon3Graphic-shape 515" pX="115" pY="185"/>
+        <d name="weapon3Graphic-shape 516" pX="112.5" pY="182.5"/>
+        <d name="weapon3Graphic-shape 517" pX="111" pY="181"/>
+      </b>
+    </armature>
+    <armature name="weapon_dss">
+      <b name="图层 1" x="0.45" y="-0.15" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0">
+        <d name="weapon5pgk-weaponGraphic-shape 377" pX="102.45" pY="71.85"/>
+        <d name="weapon0pgk-Graphic-shape 72" pX="115.25" pY="52.05"/>
+      </b>
+      <b name="bullet1" x="-157.2" y="-50.8" kX="0" kY="0" cX="0.7" cY="0.7" pX="0" pY="0" z="1">
+        <d name="sprite 116" pX="0" pY="0"/>
+        <d name="weapon0pgk-Graphic-shape 66" pX="110.6" pY="62.55"/>
+        <d name="weapon0pgk-Graphic-shape 67" pX="142.55" pY="46.55"/>
+        <d name="weapon0pgk-Graphic-shape 69" pX="137.45" pY="46.85"/>
+        <d name="weapon0pgk-Graphic-shape 70" pX="129.65" pY="47.5"/>
+        <d name="weapon0pgk-Graphic-shape 71" pX="120.2" pY="49.75"/>
+        <d name="weapon0pgk-Graphic-shape 73" pX="112.25" pY="62.55"/>
+        <d name="weapon3Graphic-shape 520" pX="63.45" pY="52.95"/>
+      </b>
+      <b name="bullet0" x="-5.25" y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1">
+        <d name="weapon5pgk-weaponGraphic-shape 378" pX="238.05" pY="59.9"/>
+        <d name="weapon5pgk-weaponGraphic-shape 379" pX="267" pY="97.75"/>
+        <d name="weapon5pgk-weaponGraphic-shape 380" pX="298.95" pY="58"/>
+        <d name="weapon0pgk-Graphic-shape 68" pX="70.65" pY="62.55"/>
+        <d name="weapon3Graphic-shape 515" pX="115" pY="185"/>
+        <d name="weapon3Graphic-shape 516" pX="112.5" pY="182.5"/>
+        <d name="weapon3Graphic-shape 517" pX="111" pY="181"/>
+      </b>
+    </armature>
+    <armature name="weapon_s">
+      <b name="gun" x="0.5" y="0.4" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0">
+        <d name="weapon5pgk-weaponGraphic-shape 381" pX="126.5" pY="84.45"/>
+      </b>
+      <b name="bullet1" x="-187" y="-102.95" kX="0" kY="0" cX="0.7" cY="0.7" pX="0" pY="0" z="1">
+        <d name="sprite 116" pX="0" pY="0"/>
+        <d name="weapon0pgk-Graphic-shape 74" pX="126.05" pY="94.85"/>
+        <d name="weapon0pgk-Graphic-shape 76" pX="162.6" pY="95.05"/>
+        <d name="weapon0pgk-Graphic-shape 77" pX="156.3" pY="95.15"/>
+        <d name="weapon0pgk-Graphic-shape 78" pX="150.4" pY="95.2"/>
+        <d name="weapon0pgk-Graphic-shape 79" pX="142.45" pY="95.2"/>
+        <d name="weapon0pgk-Graphic-shape 80" pX="136.05" pY="95.2"/>
+        <d name="weapon0pgk-Graphic-shape 81" pX="131.45" pY="95.2"/>
+        <d name="weapon3Graphic-shape 521" pX="82.45" pY="79.45"/>
+      </b>
+      <b name="bullet0" x="0.95" y="1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1">
+        <d name="weapon5pgk-weaponGraphic-shape 382" pX="266.95" pY="115.1"/>
+        <d name="weapon5pgk-weaponGraphic-shape 383" pX="309.95" pY="158.45"/>
+        <d name="weapon5pgk-weaponGraphic-shape 384" pX="342.5" pY="134.6"/>
+        <d name="weapon0pgk-Graphic-shape 75" pX="76.2" pY="86.15"/>
+        <d name="weapon3Graphic-shape 515" pX="115" pY="185"/>
+        <d name="weapon3Graphic-shape 516" pX="112.5" pY="182.5"/>
+        <d name="weapon3Graphic-shape 517" pX="111" pY="181"/>
+      </b>
+    </armature>
+    <armature name="weapon_uss">
+      <b name="gun" x="-1.3" y="2.15" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0">
+        <d name="weapon5pgk-weaponGraphic-shape 385" pX="105.65" pY="110.15"/>
+        <d name="weapon0pgk-Graphic-shape 82" pX="117.75" pY="118.05"/>
+        <d name="weapon0pgk-Graphic-shape 89" pX="120.6" pY="120.05"/>
+      </b>
+      <b name="bullet1" x="-155.35" y="-143.7" kX="0" kY="0" cX="0.7" cY="0.7" pX="0" pY="0" z="1">
+        <d name="sprite 116" pX="0" pY="0"/>
+        <d name="weapon0pgk-Graphic-shape 84" pX="154.1" pY="133.35"/>
+        <d name="weapon0pgk-Graphic-shape 85" pX="150.9" pY="132.2"/>
+        <d name="weapon0pgk-Graphic-shape 86" pX="144.5" pY="129.7"/>
+        <d name="weapon0pgk-Graphic-shape 87" pX="135.4" pY="125.9"/>
+        <d name="weapon0pgk-Graphic-shape 88" pX="127.3" pY="122.85"/>
+        <d name="weapon3Graphic-shape 522" pX="82.95" pY="96.6"/>
+      </b>
+      <b name="bullet0" x="0.05" y="1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1">
+        <d name="weapon5pgk-weaponGraphic-shape 386" pX="223.2" pY="185.35"/>
+        <d name="weapon5pgk-weaponGraphic-shape 387" pX="273.5" pY="196.55"/>
+        <d name="weapon5pgk-weaponGraphic-shape 388" pX="307.6" pY="206.45"/>
+        <d name="weapon0pgk-Graphic-shape 83" pX="75.6" pY="104.2"/>
+        <d name="weapon3Graphic-shape 515" pX="115" pY="185"/>
+        <d name="weapon3Graphic-shape 516" pX="112.5" pY="182.5"/>
+        <d name="weapon3Graphic-shape 517" pX="111" pY="181"/>
+      </b>
+    </armature>
+    <armature name="weapon_us">
+      <b name="gun" x="1.1" y="0.1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0">
+        <d name="weapon5pgk-weaponGraphic-shape 389" pX="91.1" pY="125.1"/>
+        <d name="weapon0pgk-Graphic-shape 90" pX="105.45" pY="143.75"/>
+      </b>
+      <b name="bullet1" x="-128.6" y="-171" kX="0" kY="0" cX="0.7" cY="0.7" pX="0" pY="0" z="1">
+        <d name="sprite 116" pX="0" pY="0"/>
+        <d name="weapon0pgk-Graphic-shape 92" pX="129.7" pY="168"/>
+        <d name="weapon0pgk-Graphic-shape 93" pX="125.2" pY="163.9"/>
+        <d name="weapon0pgk-Graphic-shape 94" pX="119.7" pY="158"/>
+        <d name="weapon0pgk-Graphic-shape 95" pX="114.85" pY="153.7"/>
+        <d name="weapon0pgk-Graphic-shape 96" pX="109.05" pY="146.9"/>
+        <d name="weapon0pgk-Graphic-shape 97" pX="106.3" pY="144.5"/>
+        <d name="weapon3Graphic-shape 523" pX="79.7" pY="106.65"/>
+      </b>
+      <b name="bullet0" x="0" y="-1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1">
+        <d name="weapon5pgk-weaponGraphic-shape 390" pX="175.1" pY="237.1"/>
+        <d name="weapon5pgk-weaponGraphic-shape 391" pX="216.7" pY="257.05"/>
+        <d name="weapon5pgk-weaponGraphic-shape 392" pX="237.95" pY="277.75"/>
+        <d name="weapon0pgk-Graphic-shape 91" pX="71.65" pY="121.6"/>
+        <d name="weapon3Graphic-shape 515" pX="115" pY="185"/>
+        <d name="weapon3Graphic-shape 516" pX="112.5" pY="182.5"/>
+        <d name="weapon3Graphic-shape 517" pX="111" pY="181"/>
+      </b>
+    </armature>
+    <armature name="weapon_uus">
+      <b name="gun" x="-0.15" y="-1.05" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0">
+        <d name="weapon5pgk-weaponGraphic-shape 393" pX="69.8" pY="137.95"/>
+        <d name="weapon0pgk-Graphic-shape 98" pX="72.6" pY="150.9"/>
+        <d name="weapon0pgk-Graphic-shape 105" pX="75.95" pY="157.3"/>
+      </b>
+      <b name="bullet1" x="-81.95" y="-203.35" kX="0" kY="0" cX="0.7" cY="0.7" pX="0" pY="0" z="1">
+        <d name="sprite 116" pX="0" pY="0"/>
+        <d name="weapon0pgk-Graphic-shape 100" pX="92.75" pY="199.85"/>
+        <d name="weapon0pgk-Graphic-shape 101" pX="90.2" pY="193.75"/>
+        <d name="weapon0pgk-Graphic-shape 102" pX="85.85" pY="184.55"/>
+        <d name="weapon0pgk-Graphic-shape 103" pX="81.85" pY="175.05"/>
+        <d name="weapon0pgk-Graphic-shape 104" pX="79.75" pY="167.85"/>
+        <d name="weapon3Graphic-shape 524" pX="62.65" pY="127.6"/>
+      </b>
+      <b name="bullet0" x="0.05" y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1">
+        <d name="weapon5pgk-weaponGraphic-shape 394" pX="102.15" pY="274.15"/>
+        <d name="weapon5pgk-weaponGraphic-shape 395" pX="142.35" pY="303.1"/>
+        <d name="weapon5pgk-weaponGraphic-shape 396" pX="133.85" pY="332.2"/>
+        <d name="weapon0pgk-Graphic-shape 99" pX="53.25" pY="131.3"/>
+        <d name="weapon3Graphic-shape 515" pX="115" pY="185"/>
+        <d name="weapon3Graphic-shape 516" pX="112.5" pY="182.5"/>
+        <d name="weapon3Graphic-shape 517" pX="111" pY="181"/>
+      </b>
+    </armature>
+    <armature name="weapon_u">
+      <b name="gun" x="1.05" y="2.3" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0">
+        <d name="weapon5pgk-weaponGraphic-shape 397" pX="13.05" pY="150.3"/>
+        <d name="weapon0pgk-Graphic-shape 106" pX="23.3" pY="155.4"/>
+      </b>
+      <b name="bullet1" x="-31.3" y="-197.6" kX="0" kY="0" cX="0.7" cY="0.7" pX="0" pY="0" z="1">
+        <d name="sprite 116" pX="0" pY="0"/>
+        <d name="weapon0pgk-Graphic-shape 107" pX="23.3" pY="218"/>
+        <d name="weapon0pgk-Graphic-shape 108" pX="23.3" pY="212.6"/>
+        <d name="weapon0pgk-Graphic-shape 109" pX="23.3" pY="205.35"/>
+        <d name="weapon0pgk-Graphic-shape 110" pX="23.3" pY="192.35"/>
+        <d name="weapon0pgk-Graphic-shape 111" pX="23.3" pY="183.7"/>
+        <d name="weapon0pgk-Graphic-shape 112" pX="23.3" pY="170.8"/>
+        <d name="weapon3Graphic-shape 515" pX="115" pY="185"/>
+        <d name="weapon3Graphic-shape 516" pX="112.5" pY="182.5"/>
+        <d name="weapon3Graphic-shape 517" pX="111" pY="181"/>
+      </b>
+      <b name="bullet0" x="-1.95" y="-7.95" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1">
+        <d name="weapon5pgk-weaponGraphic-shape 398" pX="40" pY="280.8"/>
+        <d name="weapon5pgk-weaponGraphic-shape 399" pX="84.05" pY="324.5"/>
+        <d name="weapon5pgk-weaponGraphic-shape 400" pX="41.4" pY="359.8"/>
+        <d name="weapon0pgk-Graphic-shape 106" pX="23.3" pY="155.4"/>
+      </b>
+    </armature>
+  </armatures>
+  <animations>
+    <animation name="heroLeg">
+      <mov name="stand" dr="1" to="6">
+        <b name="Layer 2" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="0" dr="1"/>
+        </b>
+        <b name="Layer 3" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="0" dr="1"/>
+        </b>
+      </mov>
+      <mov name="run" dr="9" to="6" drTW="9" lp="0" twE="NaN">
+        <b name="Layer 2" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="0" dr="8"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="0" dr="1"/>
+        </b>
+        <b name="Layer 3" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="1" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="2" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="3" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="4" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="5" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="6" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="7" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="8" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="0" dr="1"/>
+        </b>
+      </mov>
+    </animation>
+    <animation name="weapon_d">
+      <mov name="fire5" dr="6" to="6" drTW="6" lp="0" twE="NaN">
+        <b name="gun" sc="1" dl="0">
+          <f x="0" y="1.05" cocos2d_x="0" cocos2d_y="1.05" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="0" dr="6"/>
+        </b>
+        <b name="bullet1" sc="1" dl="0">
+          <f dr="2" dI="-1"/>
+          <f x="-31.9" y="10.1" cocos2d_x="-31.9" cocos2d_y="10.1" kX="0" kY="0" cX="0.7" cY="0.7" pX="0" pY="0" z="1" dI="0" twE="0" dr="1"/>
+          <f x="-29.8" y="11.25" cocos2d_x="-29.8" cocos2d_y="11.25" kX="0" kY="0" cX="0.6" cY="0.6" pX="0" pY="0" z="1" dI="0" twE="0" dr="1"/>
+          <f x="-12.75" y="22.15" cocos2d_x="-12.75" cocos2d_y="22.15" kX="0" kY="0" cX="0.2" cY="0.2" pX="0" pY="0" z="1" dI="0" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="1" cocos2d_x="0" cocos2d_y="1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="0" dr="1"/>
+          <f x="0" y="1" cocos2d_x="0" cocos2d_y="1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="1" dr="1"/>
+          <f x="0" y="1" cocos2d_x="0" cocos2d_y="1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="2" dr="1"/>
+          <f dr="2" dI="-1"/>
+        </b>
+      </mov>
+      <mov name="fire0" dr="10" to="6" drTW="10" lp="0" twE="NaN">
+        <b name="gun" sc="1" dl="0">
+          <f dr="8" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="1" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+        <b name="bullet1" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="1" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="2" dr="4"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="3" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="4" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="5" dr="1"/>
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="6" dr="1"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="3" dr="8"/>
+          <f dr="1" dI="-1"/>
+        </b>
+      </mov>
+      <mov name="fire3" dr="6" to="6" drTW="6" lp="0" twE="NaN">
+        <b name="bullet1" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="7" dr="6"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="4" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="5" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="6" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="5" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+      </mov>
+    </animation>
+    <animation name="weapon_dds">
+      <mov name="fire5" dr="6" to="6" drTW="6" lp="0" twE="NaN">
+        <b name="gun" sc="1" dl="0">
+          <f x="-1" y="-0.8" cocos2d_x="-1" cocos2d_y="-0.8" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="0" dr="6"/>
+        </b>
+        <b name="bullet1" sc="1" dl="0">
+          <f dr="2" dI="-1"/>
+          <f x="-74.85" y="2.8" cocos2d_x="-74.85" cocos2d_y="2.8" kX="0" kY="0" cX="0.7" cY="0.7" pX="0" pY="0" z="1" dI="0" twE="0" dr="1"/>
+          <f x="-71.75" y="7.7" cocos2d_x="-71.75" cocos2d_y="7.7" kX="0" kY="0" cX="0.6" cY="0.6" pX="0" pY="0" z="1" dI="0" twE="0" dr="1"/>
+          <f x="-50.2" y="16.85" cocos2d_x="-50.2" cocos2d_y="16.85" kX="0" kY="0" cX="0.2" cY="0.2" pX="0" pY="0" z="1" dI="0" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="2.95" y="4.4" cocos2d_x="2.95" cocos2d_y="4.4" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="0" dr="1"/>
+          <f x="2.95" y="4.4" cocos2d_x="2.95" cocos2d_y="4.4" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="1" dr="1"/>
+          <f x="2.95" y="4.4" cocos2d_x="2.95" cocos2d_y="4.4" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="2" dr="1"/>
+          <f dr="2" dI="-1"/>
+        </b>
+      </mov>
+      <mov name="fire0" dr="10" to="6" drTW="10" lp="0" twE="NaN">
+        <b name="bullet1" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="1" dr="4"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="2" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="3" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="4" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="5" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="6" dr="1"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="3" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="4" dr="8"/>
+          <f dr="1" dI="-1"/>
+        </b>
+      </mov>
+      <mov name="fire3" dr="6" to="6" drTW="6" lp="0" twE="NaN">
+        <b name="bullet1" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="7" dr="6"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="5" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="6" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="7" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="6" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+      </mov>
+    </animation>
+    <animation name="weapon_ds">
+      <mov name="fire5" dr="6" to="6" drTW="6" lp="0" twE="NaN">
+        <b name="gun" sc="1" dl="0">
+          <f x="0" y="0.3" cocos2d_x="0" cocos2d_y="0.3" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="0" dr="6"/>
+        </b>
+        <b name="bullet1" sc="1" dl="0">
+          <f dr="2" dI="-1"/>
+          <f x="-120.1" y="-14.65" cocos2d_x="-120.1" cocos2d_y="-14.65" kX="0" kY="0" cX="0.7" cY="0.7" pX="0" pY="0" z="1" dI="0" twE="0" dr="1"/>
+          <f x="-111.35" y="-13.35" cocos2d_x="-111.35" cocos2d_y="-13.35" kX="0" kY="0" cX="0.6" cY="0.6" pX="0" pY="0" z="1" dI="0" twE="0" dr="1"/>
+          <f x="-88.5" y="-1.7" cocos2d_x="-88.5" cocos2d_y="-1.7" kX="0" kY="0" cX="0.2" cY="0.2" pX="0" pY="0" z="1" dI="0" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0.3" cocos2d_x="0" cocos2d_y="0.3" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="0" dr="1"/>
+          <f x="0" y="0.3" cocos2d_x="0" cocos2d_y="0.3" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="1" dr="1"/>
+          <f x="0" y="0.3" cocos2d_x="0" cocos2d_y="0.3" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="2" dr="1"/>
+          <f dr="2" dI="-1"/>
+        </b>
+      </mov>
+      <mov name="fire0" dr="10" to="6" drTW="10" lp="0" twE="NaN">
+        <b name="gun" sc="1" dl="0">
+          <f dr="8" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="1" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+        <b name="bullet1" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="1" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="2" dr="4"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="3" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="4" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="5" dr="1"/>
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="6" dr="1"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="3" dr="8"/>
+          <f dr="1" dI="-1"/>
+        </b>
+      </mov>
+      <mov name="fire3" dr="6" to="6" drTW="6" lp="0" twE="NaN">
+        <b name="bullet1" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="7" dr="6"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="4" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="5" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="6" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="5" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+      </mov>
+    </animation>
+    <animation name="weapon_dss">
+      <mov name="fire5" dr="6" to="6" drTW="6" lp="0" twE="NaN">
+        <b name="图层 1" sc="1" dl="0">
+          <f x="0.45" y="-0.15" cocos2d_x="0.45" cocos2d_y="-0.15" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="0" dr="6"/>
+        </b>
+        <b name="bullet1" sc="1" dl="0">
+          <f dr="2" dI="-1"/>
+          <f x="-157.2" y="-50.8" cocos2d_x="-157.2" cocos2d_y="-50.8" kX="0" kY="0" cX="0.7" cY="0.7" pX="0" pY="0" z="1" dI="0" twE="0" dr="1"/>
+          <f x="-149.3" y="-45.75" cocos2d_x="-149.3" cocos2d_y="-45.75" kX="0" kY="0" cX="0.6" cY="0.6" pX="0" pY="0" z="1" dI="0" twE="0" dr="1"/>
+          <f x="-124.45" y="-33.25" cocos2d_x="-124.45" cocos2d_y="-33.25" kX="0" kY="0" cX="0.2" cY="0.2" pX="0" pY="0" z="1" dI="0" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="-5.25" y="0" cocos2d_x="-5.25" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="0" dr="1"/>
+          <f x="-5.25" y="0" cocos2d_x="-5.25" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="1" dr="1"/>
+          <f x="-5.25" y="0" cocos2d_x="-5.25" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="2" dr="1"/>
+          <f dr="2" dI="-1"/>
+        </b>
+      </mov>
+      <mov name="fire0" dr="10" to="6" drTW="10" lp="0" twE="NaN">
+        <b name="图层 1" sc="1" dl="0">
+          <f dr="8" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="1" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+        <b name="bullet1" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="1" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="2" dr="4"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="3" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="4" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="5" dr="1"/>
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="6" dr="1"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="3" dr="8"/>
+          <f dr="1" dI="-1"/>
+        </b>
+      </mov>
+      <mov name="fire3" dr="6" to="6" drTW="6" lp="0" twE="NaN">
+        <b name="bullet1" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="7" dr="6"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="4" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="5" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="6" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="5" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+      </mov>
+    </animation>
+    <animation name="weapon_s">
+      <mov name="fire5" dr="6" to="6" drTW="6" lp="0" twE="NaN">
+        <b name="gun" sc="1" dl="0">
+          <f x="0.5" y="0.4" cocos2d_x="0.5" cocos2d_y="0.4" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="0" dr="6"/>
+        </b>
+        <b name="bullet1" sc="1" dl="0">
+          <f dr="2" dI="-1"/>
+          <f x="-187" y="-102.95" cocos2d_x="-187" cocos2d_y="-102.95" kX="0" kY="0" cX="0.7" cY="0.7" pX="0" pY="0" z="1" dI="0" twE="0" dr="1"/>
+          <f x="-179.1" y="-99.85" cocos2d_x="-179.1" cocos2d_y="-99.85" kX="0" kY="0" cX="0.6" cY="0.6" pX="0" pY="0" z="1" dI="0" twE="0" dr="1"/>
+          <f x="-146.25" y="-83" cocos2d_x="-146.25" cocos2d_y="-83" kX="0" kY="0" cX="0.2" cY="0.2" pX="0" pY="0" z="1" dI="0" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0.95" y="1" cocos2d_x="0.95" cocos2d_y="1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="0" dr="1"/>
+          <f x="0.95" y="1" cocos2d_x="0.95" cocos2d_y="1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="1" dr="1"/>
+          <f x="0.95" y="1" cocos2d_x="0.95" cocos2d_y="1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="2" dr="1"/>
+          <f dr="2" dI="-1"/>
+        </b>
+      </mov>
+      <mov name="fire0" dr="10" to="6" drTW="10" lp="0" twE="NaN">
+        <b name="bullet1" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="1" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="2" dr="4"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="3" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="4" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="5" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="6" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="7" dr="1"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="3" dr="10"/>
+        </b>
+      </mov>
+      <mov name="fire3" dr="6" to="6" drTW="6" lp="0" twE="NaN">
+        <b name="bullet1" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="8" dr="6"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="4" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="5" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="6" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="5" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+      </mov>
+    </animation>
+    <animation name="weapon_uss">
+      <mov name="fire5" dr="6" to="6" drTW="6" lp="0" twE="NaN">
+        <b name="gun" sc="1" dl="0">
+          <f x="-1.3" y="2.15" cocos2d_x="-1.3" cocos2d_y="2.15" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="0" dr="6"/>
+        </b>
+        <b name="bullet1" sc="1" dl="0">
+          <f dr="2" dI="-1"/>
+          <f x="-155.35" y="-143.7" cocos2d_x="-155.35" cocos2d_y="-143.7" kX="0" kY="0" cX="0.7" cY="0.7" pX="0" pY="0" z="1" dI="0" twE="0" dr="1"/>
+          <f x="-151.85" y="-142.45" cocos2d_x="-151.85" cocos2d_y="-142.45" kX="0" kY="0" cX="0.6" cY="0.6" pX="0" pY="0" z="1" dI="0" twE="0" dr="1"/>
+          <f x="-128.65" y="-121.05" cocos2d_x="-128.65" cocos2d_y="-121.05" kX="0" kY="0" cX="0.2" cY="0.2" pX="0" pY="0" z="1" dI="0" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0.05" y="1" cocos2d_x="0.05" cocos2d_y="1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="0" dr="1"/>
+          <f x="0.05" y="1" cocos2d_x="0.05" cocos2d_y="1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="1" dr="1"/>
+          <f x="0.05" y="1" cocos2d_x="0.05" cocos2d_y="1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="2" dr="1"/>
+          <f dr="2" dI="-1"/>
+        </b>
+      </mov>
+      <mov name="fire0" dr="10" to="6" drTW="10" lp="0" twE="NaN">
+        <b name="gun" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="1" dr="1"/>
+          <f dr="8" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="2" dr="1"/>
+        </b>
+        <b name="bullet1" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="1" dr="4"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="2" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="3" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="4" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="5" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="3" dr="10"/>
+        </b>
+      </mov>
+      <mov name="fire3" dr="6" to="6" drTW="6" lp="0" twE="NaN">
+        <b name="bullet1" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="6" dr="6"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="4" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="5" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="6" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="5" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+      </mov>
+    </animation>
+    <animation name="weapon_us">
+      <mov name="fire5" dr="6" to="6" drTW="6" lp="0" twE="NaN">
+        <b name="gun" sc="1" dl="0">
+          <f x="1.1" y="0.1" cocos2d_x="1.1" cocos2d_y="0.1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="0" dr="6"/>
+        </b>
+        <b name="bullet1" sc="1" dl="0">
+          <f dr="2" dI="-1"/>
+          <f x="-128.6" y="-171" cocos2d_x="-128.6" cocos2d_y="-171" kX="0" kY="0" cX="0.7" cY="0.7" pX="0" pY="0" z="1" dI="0" twE="0" dr="1"/>
+          <f x="-124.1" y="-166.85" cocos2d_x="-124.1" cocos2d_y="-166.85" kX="0" kY="0" cX="0.6" cY="0.6" pX="0" pY="0" z="1" dI="0" twE="0" dr="1"/>
+          <f x="-100.7" y="-139.55" cocos2d_x="-100.7" cocos2d_y="-139.55" kX="0" kY="0" cX="0.2" cY="0.2" pX="0" pY="0" z="1" dI="0" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="-1" cocos2d_x="0" cocos2d_y="-1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="0" dr="1"/>
+          <f x="0" y="-1" cocos2d_x="0" cocos2d_y="-1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="1" dr="1"/>
+          <f x="0" y="-1" cocos2d_x="0" cocos2d_y="-1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="2" dr="1"/>
+          <f dr="2" dI="-1"/>
+        </b>
+      </mov>
+      <mov name="fire0" dr="10" to="6" drTW="10" lp="0" twE="NaN">
+        <b name="gun" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="1" dr="1"/>
+          <f dr="9" dI="-1"/>
+        </b>
+        <b name="bullet1" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="1" dr="4"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="2" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="3" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="4" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="5" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="6" dr="1"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="3" dr="10"/>
+        </b>
+      </mov>
+      <mov name="fire3" dr="6" to="6" drTW="6" lp="0" twE="NaN">
+        <b name="bullet1" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="7" dr="6"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="4" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="5" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="6" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="5" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+      </mov>
+    </animation>
+    <animation name="weapon_uus">
+      <mov name="fire5" dr="6" to="6" drTW="6" lp="0" twE="NaN">
+        <b name="gun" sc="1" dl="0">
+          <f x="-0.15" y="-1.05" cocos2d_x="-0.15" cocos2d_y="-1.05" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="0" dr="6"/>
+        </b>
+        <b name="bullet1" sc="1" dl="0">
+          <f dr="2" dI="-1"/>
+          <f x="-81.95" y="-203.35" cocos2d_x="-81.95" cocos2d_y="-203.35" kX="0" kY="0" cX="0.7" cY="0.7" pX="0" pY="0" z="1" dI="0" twE="0" dr="1"/>
+          <f x="-79.3" y="-194.65" cocos2d_x="-79.3" cocos2d_y="-194.65" kX="0" kY="0" cX="0.6" cY="0.6" pX="0" pY="0" z="1" dI="0" twE="0" dr="1"/>
+          <f x="-58.3" y="-171.25" cocos2d_x="-58.3" cocos2d_y="-171.25" kX="0" kY="0" cX="0.2" cY="0.2" pX="0" pY="0" z="1" dI="0" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0.05" y="0" cocos2d_x="0.05" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="0" dr="1"/>
+          <f x="0.05" y="0" cocos2d_x="0.05" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="1" dr="1"/>
+          <f x="0.05" y="0" cocos2d_x="0.05" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="2" dr="1"/>
+          <f dr="2" dI="-1"/>
+        </b>
+      </mov>
+      <mov name="fire0" dr="10" to="6" drTW="10" lp="0" twE="NaN">
+        <b name="gun" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="1" dr="1"/>
+          <f dr="8" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="2" dr="1"/>
+        </b>
+        <b name="bullet1" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="1" dr="4"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="2" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="3" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="4" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="5" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="3" dr="10"/>
+        </b>
+      </mov>
+      <mov name="fire3" dr="6" to="6" drTW="6" lp="0" twE="NaN">
+        <b name="bullet1" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="6" dr="6"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="4" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="5" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="6" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="5" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+      </mov>
+    </animation>
+    <animation name="weapon_u">
+      <mov name="fire5" dr="6" to="6" drTW="6" lp="0" twE="NaN">
+        <b name="gun" sc="1" dl="0">
+          <f x="1.05" y="2.3" cocos2d_x="1.05" cocos2d_y="2.3" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="0" dr="6"/>
+        </b>
+        <b name="bullet1" sc="1" dl="0">
+          <f dr="2" dI="-1"/>
+          <f x="-31.3" y="-197.6" cocos2d_x="-31.3" cocos2d_y="-197.6" kX="0" kY="0" cX="0.7" cY="0.7" pX="0" pY="0" z="1" dI="0" twE="0" dr="1"/>
+          <f x="-26.05" y="-191" cocos2d_x="-26.05" cocos2d_y="-191" kX="0" kY="0" cX="0.6" cY="0.6" pX="0" pY="0" z="1" dI="0" twE="0" dr="1"/>
+          <f x="-8.85" y="-164.25" cocos2d_x="-8.85" cocos2d_y="-164.25" kX="0" kY="0" cX="0.2" cY="0.2" pX="0" pY="0" z="1" dI="0" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="-1.95" y="-7.95" cocos2d_x="-1.95" cocos2d_y="-7.95" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="0" dr="1"/>
+          <f x="-1" y="-1" cocos2d_x="-1" cocos2d_y="-1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="1" dr="1"/>
+          <f x="-1" y="-1" cocos2d_x="-1" cocos2d_y="-1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="2" dr="1"/>
+          <f dr="2" dI="-1"/>
+        </b>
+      </mov>
+      <mov name="fire0" dr="10" to="6" drTW="10" lp="0" twE="NaN">
+        <b name="gun" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="1" dr="1"/>
+          <f dr="9" dI="-1"/>
+        </b>
+        <b name="bullet1" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="1" dr="4"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="2" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="3" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="4" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="5" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="6" dr="1"/>
+        </b>
+        <b name="bullet0" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="3" dr="1"/>
+          <f dr="9" dI="-1"/>
+        </b>
+      </mov>
+      <mov name="fire3" dr="6" to="6" drTW="6" lp="0" twE="NaN">
+        <b name="bullet1" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="7" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="8" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="9" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="8" dr="1"/>
+          <f dr="1" dI="-1"/>
+        </b>
+      </mov>
+    </animation>
+    <animation name="armature_hero">
+      <mov name="d" dr="5" to="6" drTW="5" lp="0" twE="NaN">
+        <b name="leg" sc="1" dl="0">
+          <f x="-2.65" y="-7" cocos2d_x="-0.35" cocos2d_y="8.75" kX="0" kY="0" cX="1" cY="1" pX="-2.3" pY="-15.75" z="0" dI="0" dr="5"/>
+        </b>
+        <b name="gun" sc="1" dl="0">
+          <f x="25.35" y="48.95" cocos2d_x="0.25" cocos2d_y="0.85" kX="0" kY="0" cX="1" cY="1" pX="25.1" pY="48.1" z="1" dI="0" dr="5"/>
+        </b>
+        <b name="body" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="5"/>
+        </b>
+      </mov>
+      <mov name="dds" dr="5" to="6" drTW="5" lp="0" twE="NaN">
+        <b name="leg" sc="1" dl="0">
+          <f x="-2.65" y="-7" cocos2d_x="-0.35" cocos2d_y="8.75" kX="0" kY="0" cX="1" cY="1" pX="-2.3" pY="-15.75" z="0" dI="0" dr="40"/>
+        </b>
+        <b name="gun" sc="1" dl="0">
+          <f x="34.4" y="49.4" cocos2d_x="0.3" cocos2d_y="2.8" kX="0" kY="0" cX="1" cY="1" pX="34.1" pY="46.6" z="1" dI="1" dr="5"/>
+        </b>
+        <b name="body" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="1" dr="5"/>
+        </b>
+      </mov>
+      <mov name="ds" dr="5" to="6" drTW="5" lp="0" twE="NaN">
+        <b name="leg" sc="1" dl="0">
+          <f x="-2.65" y="-7" cocos2d_x="-0.35" cocos2d_y="8.75" kX="0" kY="0" cX="1" cY="1" pX="-2.3" pY="-15.75" z="0" dI="0" dr="35"/>
+        </b>
+        <b name="gun" sc="1" dl="0">
+          <f x="45.15" y="44.4" cocos2d_x="0.2" cocos2d_y="0.7" kX="0" kY="0" cX="1" cY="1" pX="44.95" pY="43.7" z="1" dI="2" dr="5"/>
+        </b>
+        <b name="body" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="2" dr="5"/>
+        </b>
+      </mov>
+      <mov name="dss" dr="5" to="6" drTW="5" lp="0" twE="NaN">
+        <b name="leg" sc="1" dl="0">
+          <f x="-2.65" y="-7" cocos2d_x="-0.35" cocos2d_y="8.75" kX="0" kY="0" cX="1" cY="1" pX="-2.3" pY="-15.75" z="0" dI="0" dr="30"/>
+        </b>
+        <b name="gun" sc="1" dl="0">
+          <f x="53.25" y="36.05" cocos2d_x="0.55" cocos2d_y="0.15" kX="0" kY="0" cX="1" cY="1" pX="52.7" pY="35.9" z="1" dI="3" dr="5"/>
+        </b>
+        <b name="body" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="3" dr="5"/>
+        </b>
+      </mov>
+      <mov name="s" dr="5" to="6" drTW="5" lp="0" twE="NaN">
+        <b name="leg" sc="1" dl="0">
+          <f x="-2.65" y="-7" cocos2d_x="-0.35" cocos2d_y="8.75" kX="0" kY="0" cX="1" cY="1" pX="-2.3" pY="-15.75" z="0" dI="0" dr="25"/>
+        </b>
+        <b name="gun" sc="1" dl="0">
+          <f x="63.75" y="42.7" cocos2d_x="0.5" cocos2d_y="0.5" kX="0" kY="0" cX="1" cY="1" pX="63.25" pY="42.2" z="1" dI="4" dr="5"/>
+        </b>
+        <b name="body" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="4" dr="5"/>
+        </b>
+      </mov>
+      <mov name="uss" dr="5" to="6" drTW="5" lp="0" twE="NaN">
+        <b name="leg" sc="1" dl="0">
+          <f x="-2.65" y="-7" cocos2d_x="-0.35" cocos2d_y="8.75" kX="0" kY="0" cX="1" cY="1" pX="-2.3" pY="-15.75" z="0" dI="0" dr="20"/>
+        </b>
+        <b name="gun" sc="1" dl="0">
+          <f x="53.3" y="55.9" cocos2d_x="0.5" cocos2d_y="0.85" kX="0" kY="0" cX="1" cY="1" pX="52.8" pY="55.05" z="1" dI="5" dr="5"/>
+        </b>
+        <b name="body" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="5" dr="5"/>
+        </b>
+      </mov>
+      <mov name="us" dr="5" to="6" drTW="5" lp="0" twE="NaN">
+        <b name="leg" sc="1" dl="0">
+          <f x="-2.65" y="-7" cocos2d_x="-0.35" cocos2d_y="8.75" kX="0" kY="0" cX="1" cY="1" pX="-2.3" pY="-15.75" z="0" dI="0" dr="15"/>
+        </b>
+        <b name="gun" sc="1" dl="0">
+          <f x="45.45" y="62.65" cocos2d_x="-0.1" cocos2d_y="0.1" kX="0" kY="0" cX="1" cY="1" pX="45.55" pY="62.55" z="1" dI="6" dr="5"/>
+        </b>
+        <b name="body" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="6" dr="5"/>
+        </b>
+      </mov>
+      <mov name="uus" dr="5" to="6" drTW="5" lp="0" twE="NaN">
+        <b name="leg" sc="1" dl="0">
+          <f x="-2.65" y="-7" cocos2d_x="-0.35" cocos2d_y="8.75" kX="0" kY="0" cX="1" cY="1" pX="-2.3" pY="-15.75" z="0" dI="0" dr="10"/>
+        </b>
+        <b name="gun" sc="1" dl="0">
+          <f x="35.05" y="69.25" cocos2d_x="0.15" cocos2d_y="0.3" kX="0" kY="0" cX="1" cY="1" pX="34.9" pY="68.95" z="1" dI="7" dr="5"/>
+        </b>
+        <b name="body" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="7" dr="5"/>
+        </b>
+      </mov>
+      <mov name="u" dr="5" to="6" drTW="5" lp="0" twE="NaN">
+        <b name="leg" sc="1" dl="0">
+          <f x="-2.65" y="-7" cocos2d_x="-0.35" cocos2d_y="8.75" kX="0" kY="0" cX="1" cY="1" pX="-2.3" pY="-15.75" z="0" dI="0" dr="5"/>
+        </b>
+        <b name="gun" sc="1" dl="0">
+          <f x="12.85" y="75.85" cocos2d_x="-0.05" cocos2d_y="0.7" kX="0" kY="0" cX="1" cY="1" pX="12.9" pY="75.15" z="1" dI="8" dr="5"/>
+        </b>
+        <b name="body" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="8" dr="5"/>
+        </b>
+      </mov>
+      <mov name="dead" dr="28" to="6" drTW="28" lp="0" twE="NaN">
+        <b name="gun" sc="1" dl="0">
+          <f x="-2.05" y="0.35" cocos2d_x="-2.05" cocos2d_y="0.35" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="9" dr="13"/>
+          <f x="10.65" y="0.4" cocos2d_x="10.65" cocos2d_y="0.4" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="10" dr="1"/>
+          <f x="57.95" y="-4.6" cocos2d_x="0.65" cocos2d_y="0.35" kX="0" kY="0" cX="0.46" cY="0.38" pX="125.75" pY="-13" z="0" dI="11" dr="6"/>
+          <f x="0.65" y="0.4" cocos2d_x="0.65" cocos2d_y="0.4" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="12" dr="6"/>
+          <f x="-0.05" y="0.35" cocos2d_x="-0.05" cocos2d_y="0.35" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="13" dr="1"/>
+          <f x="59.15" y="0.3" cocos2d_x="59.15" cocos2d_y="0.3" kX="0" kY="0" cX="0.7" cY="0.38" pX="0" pY="0" z="0" dI="11" dr="1"/>
+        </b>
+        <b name="body" sc="1" dl="0">
+          <f x="-0.1" y="-0.2" cocos2d_x="-0.1" cocos2d_y="-0.2" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="9" twE="0" dr="2"/>
+          <f x="0.85" y="-1.75" cocos2d_x="0.85" cocos2d_y="-1.75" kX="3.06" kY="3.06" cX="1" cY="1" pX="0" pY="0" z="1" dI="9" twE="0" dr="4"/>
+          <f x="2.1" y="-4.95" cocos2d_x="2.1" cocos2d_y="-4.95" kX="8.53" kY="8.53" cX="1" cY="1" pX="0" pY="0" z="1" dI="9" twE="0" dr="2"/>
+          <f x="2.35" y="-5.6" cocos2d_x="2.35" cocos2d_y="-5.6" kX="9.53" kY="9.53" cX="1" cY="1" pX="0" pY="0" z="1" dI="9" twE="0" dr="1"/>
+          <f x="2.45" y="-5.7" cocos2d_x="2.45" cocos2d_y="-5.7" kX="9.79" kY="9.79" cX="1" cY="1" pX="0" pY="0" z="1" dI="9" twE="0" dr="1"/>
+          <f x="2.45" y="-5.85" cocos2d_x="2.45" cocos2d_y="-5.85" kX="10.03" kY="10.03" cX="1" cY="1" pX="0" pY="0" z="1" dI="9" twE="0" dr="1"/>
+          <f x="2.55" y="-5.9" cocos2d_x="2.55" cocos2d_y="-5.9" kX="10.06" kY="10.06" cX="1" cY="1" pX="0" pY="0" z="1" dI="9" twE="0" dr="1"/>
+          <f x="2.4" y="-6" cocos2d_x="2.4" cocos2d_y="-6" kX="10.26" kY="10.26" cX="1" cY="1" pX="0" pY="0" z="1" dI="9" twE="0" dr="1"/>
+          <f x="2.45" y="-6" cocos2d_x="2.45" cocos2d_y="-6" kX="10.27" kY="10.27" cX="1" cY="1" pX="0" pY="0" z="1" dI="9" dr="1"/>
+          <f x="2.35" y="-6" cocos2d_x="2.35" cocos2d_y="-6" kX="10.31" kY="10.31" cX="1" cY="1" pX="0" pY="0" z="1" dI="9" twE="0" dr="6"/>
+          <f x="2.35" y="-6" cocos2d_x="2.35" cocos2d_y="-6" kX="10.31" kY="10.31" cX="1" cY="1" pX="0" pY="0" z="1" dI="9" twE="0" dr="2"/>
+          <f x="4.1" y="-13.75" cocos2d_x="4.1" cocos2d_y="-13.75" kX="29.09" kY="29.09" cX="1" cY="1" pX="0" pY="0" z="1" dI="9" twE="0" dr="1"/>
+          <f x="6.05" y="-20.1" cocos2d_x="6.05" cocos2d_y="-20.1" kX="38.63" kY="38.63" cX="1" cY="1" pX="0" pY="0" z="1" dI="9" twE="0" dr="1"/>
+          <f x="5.85" y="-20.7" cocos2d_x="5.85" cocos2d_y="-20.7" kX="51.16" kY="51.16" cX="1" cY="1" pX="0" pY="0" z="1" dI="9" twE="0" dr="1"/>
+          <f x="8" y="-23.45" cocos2d_x="8" cocos2d_y="-23.45" kX="63.91" kY="63.91" cX="1" cY="1" pX="0" pY="0" z="1" dI="9" twE="0" dr="1"/>
+          <f x="13.25" y="-27.55" cocos2d_x="13.25" cocos2d_y="-27.55" kX="76.45" kY="76.45" cX="1" cY="1" pX="0" pY="0" z="1" dI="9" twE="0" dr="1"/>
+          <f x="21.7" y="-32.35" cocos2d_x="21.7" cocos2d_y="-32.35" kX="88.92" kY="88.92" cX="1" cY="1" pX="0" pY="0" z="1" dI="9" dr="1"/>
+        </b>
+      </mov>
+    </animation>
+  </animations>
+  <TextureAtlas name="armature_hero" width="2048" height="1024">
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 400" width="105" height="217" cocos2d_pX="41.4" cocos2d_pY="359.8" x="0" y="339"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 399" width="168" height="184" cocos2d_pX="84.05" cocos2d_pY="324.5" x="1437" y="183"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 398" width="86" height="141" cocos2d_pX="40" cocos2d_pY="280.8" x="1959" y="368"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 112" width="45" height="52" cocos2d_pX="23.3" cocos2d_pY="170.8" x="1094" y="652"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 111" width="45" height="56" cocos2d_pX="23.3" cocos2d_pY="183.7" x="815" y="621"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 110" width="45" height="64" cocos2d_pX="23.3" cocos2d_pY="192.35" x="768" y="570"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 109" width="45" height="77" cocos2d_pX="23.3" cocos2d_pY="205.35" x="768" y="491"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 108" width="45" height="85" cocos2d_pX="23.3" cocos2d_pY="212.6" x="815" y="461"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 107" width="45" height="90" cocos2d_pX="23.3" cocos2d_pY="218" x="1996" y="199"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 106" width="45" height="52" cocos2d_pX="23.3" cocos2d_pY="155.4" x="1229" y="654"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 397" width="26" height="50" cocos2d_pX="13.05" cocos2d_pY="150.3" x="1968" y="230"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 99" width="23" height="62" cocos2d_pX="53.25" cocos2d_pY="131.3" x="1777" y="184"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 396" width="126" height="204" cocos2d_pX="133.85" cocos2d_pY="332.2" x="874" y="194"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 395" width="172" height="196" cocos2d_pX="142.35" cocos2d_pY="303.1" x="1263" y="0"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 394" width="89" height="156" cocos2d_pX="102.15" cocos2d_pY="274.15" x="351" y="354"/>
+    <SubTexture name="weapon3Graphic-shape 524" width="26" height="64" cocos2d_pX="62.65" cocos2d_pY="127.6" x="1968" y="164"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 104" width="43" height="52" cocos2d_pX="79.75" cocos2d_pY="167.85" x="1887" y="646"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 103" width="43" height="58" cocos2d_pX="81.85" cocos2d_pY="175.05" x="613" y="644"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 102" width="43" height="64" cocos2d_pX="85.85" cocos2d_pY="184.55" x="627" y="578"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 101" width="45" height="71" cocos2d_pX="90.2" cocos2d_pY="193.75" x="815" y="548"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 100" width="47" height="75" cocos2d_pX="92.75" cocos2d_pY="199.85" x="1180" y="540"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 105" width="43" height="50" cocos2d_pX="75.95" cocos2d_pY="157.3" x="1495" y="659"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 98" width="43" height="50" cocos2d_pX="72.6" cocos2d_pY="150.9" x="1370" y="664"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 393" width="37" height="66" cocos2d_pX="69.8" cocos2d_pY="137.95" x="2005" y="68"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 91" width="30" height="55" cocos2d_pX="71.65" cocos2d_pY="121.6" x="1215" y="344"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 392" width="181" height="182" cocos2d_pX="237.95" cocos2d_pY="277.75" x="1621" y="0"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 391" width="185" height="192" cocos2d_pX="216.7" cocos2d_pY="257.05" x="878" y="0"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 390" width="117" height="148" cocos2d_pX="175.1" cocos2d_pY="237.1" x="107" y="339"/>
+    <SubTexture name="weapon3Graphic-shape 523" width="36" height="61" cocos2d_pX="79.7" cocos2d_pY="106.65" x="2005" y="136"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 97" width="47" height="47" cocos2d_pX="106.3" cocos2d_pY="144.5" x="258" y="658"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 96" width="47" height="47" cocos2d_pX="109.05" cocos2d_pY="146.9" x="307" y="658"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 95" width="49" height="47" cocos2d_pX="114.85" cocos2d_pY="153.7" x="361" y="657"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 94" width="52" height="49" cocos2d_pX="119.7" cocos2d_pY="158" x="1989" y="632"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 93" width="57" height="55" cocos2d_pX="125.2" cocos2d_pY="163.9" x="1311" y="611"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 92" width="61" height="58" cocos2d_pX="129.7" cocos2d_pY="168" x="862" y="599"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 90" width="47" height="47" cocos2d_pX="105.45" cocos2d_pY="143.75" x="862" y="659"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 389" width="60" height="64" cocos2d_pX="91.1" cocos2d_pY="125.1" x="1712" y="527"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 83" width="33" height="47" cocos2d_pX="75.6" cocos2d_pY="104.2" x="1215" y="401"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 388" width="214" height="136" cocos2d_pX="307.6" cocos2d_pY="206.45" x="459" y="224"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 387" width="199" height="162" cocos2d_pX="273.5" cocos2d_pY="196.55" x="1804" y="0"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 386" width="130" height="118" cocos2d_pX="223.2" cocos2d_pY="185.35" x="442" y="362"/>
+    <SubTexture name="weapon3Graphic-shape 522" width="39" height="66" cocos2d_pX="82.95" cocos2d_pY="96.6" x="2005" y="0"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 88" width="55" height="50" cocos2d_pX="127.3" cocos2d_pY="122.85" x="1620" y="629"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 87" width="60" height="50" cocos2d_pX="135.4" cocos2d_pY="125.9" x="1433" y="613"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 86" width="69" height="50" cocos2d_pX="144.5" cocos2d_pY="129.7" x="1862" y="594"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 85" width="76" height="50" cocos2d_pX="150.9" cocos2d_pY="132.2" x="1519" y="510"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 84" width="79" height="50" cocos2d_pX="154.1" cocos2d_pY="133.35" x="1597" y="577"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 89" width="55" height="50" cocos2d_pX="120.6" cocos2d_pY="120.05" x="925" y="626"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 82" width="55" height="50" cocos2d_pX="117.75" cocos2d_pY="118.05" x="1563" y="629"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 385" width="87" height="63" cocos2d_pX="105.65" cocos2d_pY="110.15" x="1950" y="511"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 75" width="39" height="34" cocos2d_pX="76.2" cocos2d_pY="86.15" x="951" y="590"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 384" width="217" height="105" cocos2d_pX="342.5" cocos2d_pY="134.6" x="0" y="232"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 383" width="184" height="168" cocos2d_pX="309.95" cocos2d_pY="158.45" x="1065" y="174"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 382" width="141" height="86" cocos2d_pX="266.95" cocos2d_pY="115.1" x="672" y="403"/>
+    <SubTexture name="weapon3Graphic-shape 521" width="47" height="65" cocos2d_pX="82.45" cocos2d_pY="79.45" x="992" y="604"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 81" width="57" height="50" cocos2d_pX="131.45" cocos2d_pY="95.2" x="1170" y="617"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 80" width="62" height="50" cocos2d_pX="136.05" cocos2d_pY="95.2" x="361" y="605"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 79" width="68" height="50" cocos2d_pX="142.45" cocos2d_pY="95.2" x="222" y="605"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 78" width="77" height="50" cocos2d_pX="150.4" cocos2d_pY="95.2" x="548" y="578"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 77" width="82" height="50" cocos2d_pX="156.3" cocos2d_pY="95.15" x="1513" y="562"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 76" width="89" height="50" cocos2d_pX="162.6" cocos2d_pY="95.05" x="336" y="512"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 74" width="52" height="49" cocos2d_pX="126.05" cocos2d_pY="94.85" x="750" y="636"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 381" width="120" height="49" cocos2d_pX="126.5" cocos2d_pY="84.45" x="1391" y="562"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 68" width="38" height="38" cocos2d_pX="70.65" cocos2d_pY="62.55" x="1140" y="575"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 380" width="204" height="125" cocos2d_pX="298.95" cocos2d_pY="58" x="232" y="227"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 379" width="196" height="172" cocos2d_pX="267" cocos2d_pY="97.75" x="1065" y="0"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 378" width="156" height="89" cocos2d_pX="238.05" cocos2d_pY="59.9" x="1604" y="370"/>
+    <SubTexture name="weapon3Graphic-shape 520" width="53" height="54" cocos2d_pX="63.45" cocos2d_pY="52.95" x="1763" y="625"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 73" width="80" height="58" cocos2d_pX="112.25" cocos2d_pY="62.55" x="1868" y="534"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 71" width="61" height="49" cocos2d_pX="120.2" cocos2d_pY="49.75" x="1370" y="613"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 70" width="67" height="51" cocos2d_pX="129.65" cocos2d_pY="47.5" x="292" y="605"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 69" width="77" height="54" cocos2d_pX="137.45" cocos2d_pY="46.85" x="1950" y="576"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 67" width="80" height="55" cocos2d_pX="142.55" cocos2d_pY="46.55" x="1229" y="560"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 66" width="78" height="58" cocos2d_pX="110.6" cocos2d_pY="62.55" x="0" y="558"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 72" width="54" height="49" cocos2d_pX="115.25" cocos2d_pY="52.05" x="1933" y="632"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 377" width="106" height="70" cocos2d_pX="102.45" cocos2d_pY="71.85" x="548" y="506"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 60" width="44" height="40" cocos2d_pX="60.85" cocos2d_pY="49.25" x="412" y="665"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 376" width="182" height="181" cocos2d_pX="233.55" cocos2d_pY="18.8" x="1437" y="0"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 375" width="193" height="185" cocos2d_pX="204.9" cocos2d_pY="53.15" x="683" y="0"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 374" width="148" height="117" cocos2d_pX="188.4" cocos2d_pY="22.4" x="1065" y="344"/>
+    <SubTexture name="weapon3Graphic-shape 519" width="66" height="43" cocos2d_pX="52.75" cocos2d_pY="40.5" x="1495" y="614"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 65" width="73" height="75" cocos2d_pX="89.4" cocos2d_pY="49.25" x="1968" y="291"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 63" width="59" height="60" cocos2d_pX="96.8" cocos2d_pY="26.9" x="430" y="603"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 62" width="62" height="64" cocos2d_pX="100.95" cocos2d_pY="26.05" x="1712" y="461"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 61" width="65" height="67" cocos2d_pX="106.55" cocos2d_pY="23.75" x="995" y="460"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 59" width="69" height="71" cocos2d_pX="112.1" cocos2d_pY="22.3" x="1526" y="437"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 58" width="72" height="73" cocos2d_pX="88.75" cocos2d_pY="49.25" x="1358" y="294"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 64" width="55" height="52" cocos2d_pX="92.6" cocos2d_pY="23.25" x="0" y="618"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 373" width="90" height="88" cocos2d_pX="75.75" cocos2d_pY="77.3" x="1776" y="497"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 52" width="40" height="39" cocos2d_pX="41.95" cocos2d_pY="38.85" x="951" y="510"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 50" width="60" height="84" cocos2d_pX="61.7" cocos2d_pY="38.85" x="1897" y="365"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 372" width="136" height="214" cocos2d_pX="142.75" cocos2d_pY="0.95" x="683" y="187"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 371" width="162" height="199" cocos2d_pX="128.45" cocos2d_pY="18.15" x="1804" y="164"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 370" width="118" height="130" cocos2d_pX="116.9" cocos2d_pY="-4.15" x="1777" y="365"/>
+    <SubTexture name="weapon3Graphic-shape 518" width="66" height="37" cocos2d_pX="38.25" cocos2d_pY="33.8" x="1677" y="631"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 57" width="61" height="87" cocos2d_pX="63.2" cocos2d_pY="38.85" x="1002" y="289"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 56" width="51" height="66" cocos2d_pX="66.05" cocos2d_pY="12.9" x="491" y="603"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 55" width="51" height="73" cocos2d_pX="68.75" cocos2d_pY="12.05" x="993" y="529"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 54" width="52" height="80" cocos2d_pX="71.55" cocos2d_pY="11.45" x="1002" y="378"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 53" width="55" height="89" cocos2d_pX="75.55" cocos2d_pY="9.55" x="1358" y="369"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 51" width="57" height="93" cocos2d_pX="77.2" cocos2d_pY="8.05" x="1002" y="194"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 369" width="69" height="94" cocos2d_pX="43.95" cocos2d_pY="77.2" x="1358" y="198"/>
+    <SubTexture name="weapon3Graphic-shape 517" width="222" height="222" cocos2d_pX="110" cocos2d_pY="180" x="459" y="0"/>
+    <SubTexture name="weapon3Graphic-shape 516" width="225" height="225" cocos2d_pX="110" cocos2d_pY="180" x="232" y="0"/>
+    <SubTexture name="weapon3Graphic-shape 515" width="230" height="230" cocos2d_pX="110" cocos2d_pY="180" x="0" y="0"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 44" width="39" height="37" cocos2d_pX="21.3" cocos2d_pY="32.15" x="951" y="551"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 368" width="105" height="217" cocos2d_pX="59.15" cocos2d_pY="-13.1" x="1251" y="198"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 305" width="168" height="184" cocos2d_pX="82.75" cocos2d_pY="-17.95" x="1607" y="184"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 367" width="86" height="141" cocos2d_pX="42.85" cocos2d_pY="-16.65" x="1250" y="417"/>
+    <SubTexture name="weapon3Graphic-shape 514" width="61" height="35" cocos2d_pX="10.55" cocos2d_pY="32.15" x="195" y="657"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 49" width="51" height="87" cocos2d_pX="26.2" cocos2d_pY="32.15" x="821" y="286"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 47" width="51" height="67" cocos2d_pX="26.2" cocos2d_pY="-3.25" x="1338" y="542"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 46" width="51" height="75" cocos2d_pX="26.2" cocos2d_pY="-3.25" x="1180" y="463"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 45" width="51" height="80" cocos2d_pX="26.2" cocos2d_pY="-3.25" x="1338" y="460"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 43" width="51" height="84" cocos2d_pX="26.2" cocos2d_pY="-3.3" x="821" y="375"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 42" width="51" height="81" cocos2d_pX="26.2" cocos2d_pY="32.15" x="1897" y="451"/>
+    <SubTexture name="sprite 116" width="87" height="87" cocos2d_pX="0" cocos2d_pY="0" x="862" y="510"/>
+    <SubTexture name="weapon0pgk-Graphic-shape 48" width="51" height="58" cocos2d_pX="26.2" cocos2d_pY="-3.1" x="1041" y="616"/>
+    <SubTexture name="weapon5pgk-weaponGraphic-shape 366" width="51" height="97" cocos2d_pX="12.75" cocos2d_pY="76.15" x="821" y="187"/>
+    <SubTexture name="heroLegGraphic-shape 40" width="83" height="36" cocos2d_pX="42.7" cocos2d_pY="36.15" x="1678" y="593"/>
+    <SubTexture name="heroLegGraphic-shape 39" width="86" height="36" cocos2d_pX="48.15" cocos2d_pY="37.1" x="1774" y="587"/>
+    <SubTexture name="heroLegGraphic-shape 38" width="67" height="33" cocos2d_pX="33.9" cocos2d_pY="32.8" x="658" y="647"/>
+    <SubTexture name="heroLegGraphic-shape 37" width="67" height="33" cocos2d_pX="33.3" cocos2d_pY="32.85" x="1818" y="646"/>
+    <SubTexture name="heroLegGraphic-shape 36" width="67" height="35" cocos2d_pX="33.8" cocos2d_pY="37.3" x="126" y="638"/>
+    <SubTexture name="heroLegGraphic-shape 35" width="67" height="36" cocos2d_pX="33.8" cocos2d_pY="35.6" x="544" y="630"/>
+    <SubTexture name="heroLegGraphic-shape 34" width="67" height="35" cocos2d_pX="33.9" cocos2d_pY="33.5" x="57" y="638"/>
+    <SubTexture name="heroLegGraphic-shape 33" width="73" height="35" cocos2d_pX="35.65" cocos2d_pY="32.75" x="1229" y="617"/>
+    <SubTexture name="heroLegGraphic-shape 32" width="74" height="34" cocos2d_pX="38.7" cocos2d_pY="32.8" x="1094" y="616"/>
+    <SubTexture name="heroLegGraphic-shape 31" width="76" height="66" cocos2d_pX="40.3" cocos2d_pY="48.7" x="1526" y="369"/>
+    <SubTexture name="heroDead-sprite 2410" width="96" height="142" cocos2d_pX="48.05" cocos2d_pY="139.9" x="574" y="362"/>
+    <SubTexture name="heroBodyGraphic-shape 29" width="113" height="114" cocos2d_pX="56.4" cocos2d_pY="143.3" x="1597" y="461"/>
+    <SubTexture name="heroBodyGraphic-shape 28" width="109" height="112" cocos2d_pX="58.65" cocos2d_pY="140.9" x="225" y="491"/>
+    <SubTexture name="heroBodyGraphic-shape 27" width="116" height="110" cocos2d_pX="69.05" cocos2d_pY="138.9" x="1062" y="463"/>
+    <SubTexture name="heroBodyGraphic-shape 26" width="119" height="108" cocos2d_pX="69.35" cocos2d_pY="136.6" x="874" y="400"/>
+    <SubTexture name="heroBodyGraphic-shape 25" width="116" height="106" cocos2d_pX="65.15" cocos2d_pY="135.2" x="107" y="489"/>
+    <SubTexture name="heroBodyGraphic-shape 24" width="94" height="113" cocos2d_pX="47.6" cocos2d_pY="136.8" x="672" y="491"/>
+    <SubTexture name="heroBodyGraphic-shape 23" width="104" height="119" cocos2d_pX="51.4" cocos2d_pY="137.2" x="442" y="482"/>
+    <SubTexture name="heroBodyGraphic-shape 22" width="109" height="138" cocos2d_pX="52.65" cocos2d_pY="141.25" x="1415" y="369"/>
+    <SubTexture name="heroBodyGraphic-shape 21" width="123" height="135" cocos2d_pX="59.15" cocos2d_pY="143.55" x="226" y="354"/>
+    <SubTexture name="heroDead-元件 3" width="140" height="39" cocos2d_pX="-7.05" cocos2d_pY="19" x="80" y="597"/>
+    <SubTexture name="heroDead-元件 2" width="92" height="39" cocos2d_pX="30.55" cocos2d_pY="28" x="336" y="564"/>
+    <SubTexture name="heroDead-Graphic-shape 558" width="126" height="51" cocos2d_pX="62.1" cocos2d_pY="26.9" x="1391" y="509"/>
+    <SubTexture name="heroDead-元件3" width="92" height="39" cocos2d_pX="45.55" cocos2d_pY="19" x="1046" y="575"/>
+    <SubTexture name="heroDead-元件 1" width="76" height="39" cocos2d_pX="36.1" cocos2d_pY="27.5" x="672" y="606"/>
+  </TextureAtlas>
+</skeleton>

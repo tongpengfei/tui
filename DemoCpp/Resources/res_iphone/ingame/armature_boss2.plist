@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>frames</key>
+    <dict>
+      <key>MovieClip-sprite 1966.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{120,172},{86,116}}</string>
+        <key>offset</key>
+        <string>{0,0}</string>
+        <key>rotated</key>
+        <false/>
+        <key>sourceColorRect</key>
+        <string>{{0,0},{86,116}}</string>
+        <key>sourceSize</key>
+        <string>{86,116}</string>
+      </dict>
+      <key>MovieClip-sprite 1963.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{335,0},{115,165}}</string>
+        <key>offset</key>
+        <string>{0,0}</string>
+        <key>rotated</key>
+        <false/>
+        <key>sourceColorRect</key>
+        <string>{{0,0},{115,165}}</string>
+        <key>sourceSize</key>
+        <string>{115,165}</string>
+      </dict>
+      <key>MovieClip-sprite 1960.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{0,172},{118,84}}</string>
+        <key>offset</key>
+        <string>{0,0}</string>
+        <key>rotated</key>
+        <false/>
+        <key>sourceColorRect</key>
+        <string>{{0,0},{118,84}}</string>
+        <key>sourceSize</key>
+        <string>{118,84}</string>
+      </dict>
+      <key>MovieClip-sprite 1957.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{0,0},{333,170}}</string>
+        <key>offset</key>
+        <string>{0,0}</string>
+        <key>rotated</key>
+        <false/>
+        <key>sourceColorRect</key>
+        <string>{{0,0},{333,170}}</string>
+        <key>sourceSize</key>
+        <string>{333,170}</string>
+      </dict>
+      <key>MovieClip-sprite 1954.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{208,172},{82,110}}</string>
+        <key>offset</key>
+        <string>{0,0}</string>
+        <key>rotated</key>
+        <false/>
+        <key>sourceColorRect</key>
+        <string>{{0,0},{82,110}}</string>
+        <key>sourceSize</key>
+        <string>{82,110}</string>
+      </dict>
+      <key>MovieClip-sprite 1951.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{335,167},{109,156}}</string>
+        <key>offset</key>
+        <string>{0,0}</string>
+        <key>rotated</key>
+        <false/>
+        <key>sourceColorRect</key>
+        <string>{{0,0},{109,156}}</string>
+        <key>sourceSize</key>
+        <string>{109,156}</string>
+      </dict>
+      <key>MovieClip-sprite 1948.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{452,0},{32,20}}</string>
+        <key>offset</key>
+        <string>{0,0}</string>
+        <key>rotated</key>
+        <false/>
+        <key>sourceColorRect</key>
+        <string>{{0,0},{32,20}}</string>
+        <key>sourceSize</key>
+        <string>{32,20}</string>
+      </dict>
+      <key>MovieClip-sprite 1945.png</key>
+      <dict>
+        <key>frame</key>
+        <string>{{0,325},{355,48}}</string>
+        <key>offset</key>
+        <string>{0,0}</string>
+        <key>rotated</key>
+        <false/>
+        <key>sourceColorRect</key>
+        <string>{{0,0},{355,48}}</string>
+        <key>sourceSize</key>
+        <string>{355,48}</string>
+      </dict>
+    </dict>
+    <key>metadata</key>
+    <dict>
+      <key>format</key>
+      <integer>2</integer>
+      <key>realTextureFileName</key>
+      <string>armature_boss2.png</string>
+      <key>textureFileName</key>
+      <string>armature_boss2.png</string>
+      <key>size</key>
+      <string>{512,512}</string>
+    </dict>
+  </dict>
+</plist>
