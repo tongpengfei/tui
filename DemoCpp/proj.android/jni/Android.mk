@@ -29,6 +29,8 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 ../../Classes/module/LevelManager.cpp \
 ../../Classes/tui/TuiBase.cpp \
 ../../Classes/tui/TuiManager.cpp \
+../../../CocosWidget/ArmatureBtn.cpp \
+../../../CocosWidget/NumericStepper.cpp \
 ../../../CocosWidget/Button.cpp \
 ../../../CocosWidget/CheckBox.cpp \
 ../../../CocosWidget/ColorView.cpp \
