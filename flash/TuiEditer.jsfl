@@ -112,8 +112,6 @@ getKeyframeIndices = function(layer, startFrameIndex, endFrameIndex){
 	}
 	return list;
 }
-
-
 /**
  @brief 获取某个图层的所有关键帧
  @param layer:Layer object 图层对象
@@ -131,7 +129,6 @@ getKeyframeObjects = function( layer ){
 	}
 	return list;
 }
-
 /**
  @brief 获取一个帧上的所有元素
  @param frame:Frame object 帧对象
@@ -141,7 +138,6 @@ getElementObjects = function( frame ){
 	if( !frame ) return [];
 	return frame.elements;
 }
-
 /**
  @brief 获取元素的类型
  @param element:Element object 元素对象
@@ -366,21 +362,27 @@ UIControlType = {};
 UIControlType.kPanel = "panel";
 UIControlType.kMovie = "movie Clip";
 UIControlType.kImage = "image";
+UIControlType.kImage9 = "image9";
 UIControlType.kButton = "button";
 UIControlType.kSlider = "slider";
 UIControlType.kProgress = "progress";
 UIControlType.kLabel = "label";
 UIControlType.kLabelAtlas = "labelAtlas";
+UIControlType.kRichText = "richText";
 UIControlType.kCheckBox = "checkBox";
+UIControlType.kEditBox = "editBox";
 UIControlType.kArmature = "armature";
 UIControlType.kAnim = "anim";
+UIControlType.kParticle = "particle";
 UIControlType.kNumbericStepper = "numStep";
 UIControlType.kArmatureBtn = "armatureBtn";
 UIControlType.kControlView = "controlView";
 UIControlType.kToggleView = "toggleView";
 UIControlType.kListView = "listView";
 UIControlType.kPageView = "pageView";
+UIControlType.kTableView = "tableView";
 UIControlType.kScrollView = "scrollView";
+UIControlType.kRelativeLayout = "relativeLayout";
 /////////////////////////////////////////////////////////////////////
 /** 控件的属性 */
 UIControlAttribute = {};
@@ -398,6 +400,11 @@ UIControlAttribute.kName = "name";
 UIControlAttribute.kEnableDrag = "enable_drag";
 /** 用到的图片 */
 UIControlAttribute.kImage = "image";
+/** 9宫格方向 */
+UIControlAttribute.kUp = "up";
+UIControlAttribute.kDown = "down";
+UIControlAttribute.kLeft = "left";
+UIControlAttribute.kRight = "right";
 /** 按钮的三个状态图 */
 UIControlAttribute.kbtnImg_normal = "normal";
 UIControlAttribute.kbtnImg_select = "select";
@@ -429,8 +436,6 @@ UIControlAttribute.kPlist = "plist";
 /** 摇杆的两个图片 */
 UIControlAttribute.kcontrol_baseboard = "baseboard";
 UIControlAttribute.kcontrol_joystick = "joystick";
-/** 点击事件 */
-UIControlAttribute.kClickEvent = "click_event";
 /** 坐标 */
 UIControlAttribute.kX = "x";
 UIControlAttribute.kY = "y";
@@ -447,7 +452,6 @@ UIControlAttribute.kScaleX = "scalex";
 UIControlAttribute.kScaleY = "scaley";
 /** 角度 */
 UIControlAttribute.kAngle = "angle";
-
 /**
  @brief 控件基类
  */
@@ -477,7 +481,6 @@ UIPanel.prototype.init = function(){
 UISlider = function(){
 	UISlider.superClass.call(this);
 }
-
 UISlider.extend( UIControl );
 UISlider.prototype.init = function(){
 	UISlider.superClass.prototype.init.call(this);
@@ -488,7 +491,6 @@ UISlider.prototype.init = function(){
 UIProgress = function(){
 	UIProgress.superClass.call(this);
 }
-
 UIProgress.extend( UIControl );
 UIProgress.prototype.init = function(){
 	UIProgress.superClass.prototype.init.call(this);
@@ -520,6 +522,15 @@ UIImage.extend( UIControl );
 UIImage.prototype.init = function(){
 	UIImage.superClass.prototype.init.call(this);
 	this.setAttribute( UIControlAttribute.kType, UIControlType.kImage );
+}
+/////////////////////9宫格图片///////////////////////////////////////////
+UIImage9 = function(){
+	UIImage9.superClass.call(this);
+}
+UIImage9.extend( UIControl );
+UIImage9.prototype.init = function(){
+	UIImage9.superClass.prototype.init.call(this);
+	this.setAttribute( UIControlAttribute.kType, UIControlType.kImage9 );
 }
 /////////////////////按钮/////////////////////////////////////////
 UIButton = function(){
@@ -620,11 +631,57 @@ UIScrollView.prototype.init = function(){
 	UIScrollView.superClass.prototype.init.call(this);
 	this.setAttribute( UIControlAttribute.kType, UIControlType.kScrollView );
 }
+/////////////////TableView//////////////////////////////////////////////
+UITableView = function(){
+	UITableView.superClass.call(this);
+}
+UITableView.extend( UIControl );
+UITableView.prototype.init = function(){
+	UITableView.superClass.prototype.init.call(this);
+	this.setAttribute( UIControlAttribute.kType, UIControlType.kTableView );
+}
+/////////////////Particle//////////////////////////////////////////////
+UIParticle = function(){
+	UIParticle.superClass.call(this);
+}
+UIParticle.extend( UIControl );
+UIParticle.prototype.init = function(){
+	UIParticle.superClass.prototype.init.call(this);
+	this.setAttribute( UIControlAttribute.kType, UIControlType.kParticle );
+}
+/////////////////EditBox//////////////////////////////////////////////
+UIEditBox = function(){
+	UIEditBox.superClass.call(this);
+}
+UIEditBox.extend( UIControl );
+UIEditBox.prototype.init = function(){
+	UIEditBox.superClass.prototype.init.call(this);
+	this.setAttribute( UIControlAttribute.kType, UIControlType.kEditBox );
+}
+/////////////////RichText//////////////////////////////////////////////
+UIRichText = function(){
+	UIRichText.superClass.call(this);
+}
+UIRichText.extend( UIControl );
+UIRichText.prototype.init = function(){
+	UIRichText.superClass.prototype.init.call(this);
+	this.setAttribute( UIControlAttribute.kType, UIControlType.kRichText );
+}
+/////////////////RelativeLayout//////////////////////////////////////////////
+UIRelativeLayout = function(){
+	UIRelativeLayout.superClass.call(this);
+}
+UIRelativeLayout.extend( UIControl );
+UIRelativeLayout.prototype.init = function(){
+	UIRelativeLayout.superClass.prototype.init.call(this);
+	this.setAttribute( UIControlAttribute.kType, UIControlType.kRelativeLayout );
+}
 /////////////////////////////////////////////////////////////////
 kSchemeIPhone4 = "iphone4";
 kSchemeIPhone5 = "iphone5";
 kSchemeIPad = "ipad";
 kScheme480x800 = "480x800";
+kScheme640x960 = "640x960";
 
 Scheme = function(){
 	Scheme.superClass.call(this, XMLNode.scheme );
@@ -654,7 +711,7 @@ SchemeIPhone4.extend( Scheme );
 SchemeIPhone4.prototype.init = function(){
 	SchemeIPhone4.superClass.prototype.init.call(this);
 	this.setAttribute( SchemeAttribute.kName, kSchemeIPhone4 );
-	this.setAttribute( SchemeAttribute.kIsRetina, 0 );
+	//this.setAttribute( SchemeAttribute.kIsRetina, 0 );
 	this.setModeToPortrait();
 }
 
@@ -677,7 +734,7 @@ SchemeIPhone5.extend( Scheme );
 SchemeIPhone5.prototype.init = function(){
 	SchemeIPhone5.superClass.prototype.init.call(this);
 	this.setAttribute( SchemeAttribute.kName, kSchemeIPhone5 );
-	this.setAttribute( SchemeAttribute.kIsRetina, 0 );
+	//this.setAttribute( SchemeAttribute.kIsRetina, 0 );
 	this.setModeToPortrait();
 }
 
@@ -700,7 +757,7 @@ SchemeIPad.extend( Scheme );
 SchemeIPad.prototype.init = function(){
 	SchemeIPad.superClass.prototype.init.call(this);
 	this.setAttribute( SchemeAttribute.kName, kSchemeIPad );
-	this.setAttribute( SchemeAttribute.kIsRetina, 0 );
+	//this.setAttribute( SchemeAttribute.kIsRetina, 0 );
 	this.setModeToLandscape();
 }
 
@@ -723,7 +780,7 @@ Scheme480x800.extend( Scheme );
 Scheme480x800.prototype.init = function(){
 	Scheme480x800.superClass.prototype.init.call(this);
 	this.setAttribute( SchemeAttribute.kName, kScheme480x800 );
-	this.setAttribute( SchemeAttribute.kIsRetina, 0 );
+	//this.setAttribute( SchemeAttribute.kIsRetina, 0 );
 	this.setModeToLandscape();
 }
 
@@ -737,6 +794,29 @@ Scheme480x800.prototype.setModeToLandscape = function(){
 Scheme480x800.prototype.setModeToPortrait = function(){
 	this.setAttribute( SchemeAttribute.kScreenWidth, 480 );
 	this.setAttribute( SchemeAttribute.kScreenHeight, 800 );
+}
+
+Scheme640x960 = function(){
+	Scheme640x960.superClass.call(this);
+}
+Scheme640x960.extend( Scheme );
+Scheme640x960.prototype.init = function(){
+	Scheme640x960.superClass.prototype.init.call(this);
+	this.setAttribute( SchemeAttribute.kName, kScheme640x960 );
+	//this.setAttribute( SchemeAttribute.kIsRetina, 0 );
+	this.setModeToLandscape();
+}
+
+/** 横向 */
+Scheme640x960.prototype.setModeToLandscape = function(){
+	this.setAttribute( SchemeAttribute.kScreenWidth, 960 );
+	this.setAttribute( SchemeAttribute.kScreenHeight, 640 );
+}
+
+/** 纵向 */
+Scheme640x960.prototype.setModeToPortrait = function(){
+	this.setAttribute( SchemeAttribute.kScreenWidth, 640 );
+	this.setAttribute( SchemeAttribute.kScreenHeight, 960 );
 }
 
 /////////////////////////////////////////////////////////////////////
@@ -841,14 +921,6 @@ FlaToXML.prototype.elementIsMc = function( element ){
 	return false;
 }
 
-/** 判断element是否为button */
-FlaToXML.prototype.elementIsButton = function( element ){
-	if(element.libraryItem == null) return false;
-	var type = element.libraryItem.itemType;
-	if( "button" == type ) return true;
-	return false;
-}
-
 /** 判断element是否为label */
 FlaToXML.prototype.elementIsText = function(element){
 	return (element.elementType == "text");
@@ -923,8 +995,6 @@ FlaToXML.prototype.convertElement = function( element , elementIndex){
 	var e_xml = null;
 	if( this.elementIsMc( element ) ){
 		e_xml = this.convertMC( element ,elementIndex);
-	}else if( this.elementIsButton( element ) ){
-		e_xml = this.convertButton( element,elementIndex );
 	}else if( this.elementIsText( element )){
 		e_xml = this.convertText( element,elementIndex);
 	}else{
@@ -954,16 +1024,16 @@ FlaToXML.prototype.convertMC = function( mc , elementIndex){
 	switch(mc.name.split("_")[0]){//获取mc的类型
 		
 		case "panel":
-			control_xml = new UIPanel();
-			control_xml.setAttribute( UIControlAttribute.kName, mc.name );
-			this.fullNormalAttirbute( control_xml, mc, elementIndex );
-			//获取mc的timeline
-			var timeline = mc.libraryItem.timeline;
-			this.fetchElement( timeline, control_xml );
-			this.th.obj[mc.name] = elementIndex;
+			control_xml = this.convertPanel(mc,elementIndex);
 			break;
+		case "relLayer":
+			control_xml = this.convertRelativeLayout(mc,elementIndex);
+			break;	
 		case "img":
 			control_xml = this.convertImg(mc,elementIndex);
+			break;
+		case "img9":
+			control_xml = this.convertImg9(mc,elementIndex);
 			break;
 		case "ckb":
 			control_xml = this.convertCheckBox(mc,elementIndex);
@@ -1001,24 +1071,77 @@ FlaToXML.prototype.convertMC = function( mc , elementIndex){
 		case "armBtn":
 			control_xml = this.convertArmatureBtn(mc,elementIndex);
 			break;
+		case "btn":
+			control_xml = this.convertButton(mc,elementIndex);
+			break;
 		case "numStep":
 			control_xml = this.convertNumberStepper(mc,elementIndex);
+			break;
+		case "ptl":
+			control_xml = this.convertParticle(mc,elementIndex);
+			break;
+		case "table":
+			control_xml = this.convertTableView(mc,elementIndex);
+			break;
+		case "edit":
+			control_xml = this.convertEditBox(mc,elementIndex);
+			break;
+		case "rtf":
+			control_xml = this.convertRichText(mc,elementIndex);
 			break;
 	}
 	return control_xml;
 }
 
+/** 转换panel */
+FlaToXML.prototype.convertPanel = function(panel,elementIndex){
+	var control_xml = new UIPanel();
+	control_xml.setAttribute( UIControlAttribute.kName, panel.name );
+	this.fullNormalAttirbute( control_xml, panel, elementIndex );
+	//获取mc的timeline
+	var timeline = panel.libraryItem.timeline;
+	this.fetchElement( timeline, control_xml );
+	
+	this.th.obj[panel.name] = elementIndex;
+	return control_xml;
+}
+/** 转换convertRelativeLayout */
+FlaToXML.prototype.convertRelativeLayout = function(relativeLayout,elementIndex){
+	var xml_relativeLayout = new UIRelativeLayout();
+	xml_relativeLayout.setAttribute( UIControlAttribute.kName, relativeLayout.name );
+	this.fullNormalAttirbute( xml_relativeLayout, relativeLayout ,elementIndex );
+	//获取mc的timeline
+	var timeline = relativeLayout.libraryItem.timeline;
+	this.fetchElement( timeline, xml_relativeLayout );
+	
+	this.th.obj[relativeLayout.name] = elementIndex;
+	return xml_relativeLayout;
+}
 /** 转换image */
 FlaToXML.prototype.convertImg = function( image , elementIndex){
 	var xml_img = new UIImage();
-	var imgPath = image.libraryItem.name + ".png";
-
-	xml_img.setAttribute( UIControlAttribute.kImage, imgPath );
+	xml_img.setAttribute( UIControlAttribute.kImage, image.libraryItem.name + ".png" );
 	xml_img.setAttribute( UIControlAttribute.kName, image.name );
 	this.fullNormalAttirbute( xml_img, image ,elementIndex );
 	
 	this.th.obj[image.name] = elementIndex;
 	return xml_img;
+}
+/** 转换image9 */
+FlaToXML.prototype.convertImg9 = function( image9 , elementIndex){
+	var xml_img9 = new UIImage9();
+	var nameArr = image9.name.split("_");		//img9_test_10_10_10_10
+	var imgName = nameArr[0]+"_"+nameArr[1];
+	xml_img9.setAttribute( UIControlAttribute.kUp,nameArr[2]);
+	xml_img9.setAttribute( UIControlAttribute.kDown,nameArr[3]);
+	xml_img9.setAttribute( UIControlAttribute.kLeft,nameArr[4]);
+	xml_img9.setAttribute( UIControlAttribute.kRight,nameArr[5]);
+	xml_img9.setAttribute( UIControlAttribute.kImage, image9.libraryItem.name + ".png" );
+	xml_img9.setAttribute( UIControlAttribute.kName, imgName );
+	this.fullNormalAttirbute( xml_img9, image9 ,elementIndex );
+	
+	this.th.obj[imgName] = elementIndex;
+	return xml_img9;
 }
 /** 转换anim */
 FlaToXML.prototype.convertAnim = function(anim ,elementIndex){
@@ -1071,7 +1194,7 @@ FlaToXML.prototype.convertSlider = function(slider,elementIndex){
 }
 /** 转换progress */
 FlaToXML.prototype.converProgress = function(prog,elementIndex){
-	var xml_prog = new UISlider();
+	var xml_prog = new UIProgress();
 	xml_prog.setAttribute( UIControlAttribute.kName, prog.name );
 	this.fullNormalAttirbute( xml_prog, prog ,elementIndex );
 	
@@ -1136,7 +1259,7 @@ FlaToXML.prototype.convertControlView = function(control,elementIndex){
 /** 转换toggleView */
 FlaToXML.prototype.convertToggleView = function(toggleView,elementIndex){
 	var xml_toggleView = new UIToggleView();
-	var nameArr = toggleView.name.split("_");
+	var nameArr = toggleView.name.split("_");//tgv_test_1
 	var exclusionId = nameArr.pop();
 	var viewName = nameArr.join("_");
 	xml_toggleView.setAttribute(UIControlAttribute.kName,viewName);
@@ -1199,6 +1322,40 @@ FlaToXML.prototype.convertScrollView = function(scrollView,elementIndex){
 	this.fullNormalAttirbute( xml_scrollView, scrollView ,elementIndex );
 	this.th.obj[scrollView.name] = elementIndex;
 	return xml_scrollView;
+}
+/** 转换粒子 */
+FlaToXML.prototype.convertParticle = function(particle,elementIndex){
+	var xml_particle = new UIParticle();
+	xml_particle.setAttribute( UIControlAttribute.kName, particle.name );
+	xml_particle.setAttribute(UIControlAttribute.kPlist,particle.libraryItem.name + ".plist");
+	this.fullNormalAttirbute( xml_particle, particle ,elementIndex );
+	this.th.obj[particle.name] = elementIndex;
+	return xml_particle;
+}
+/** 转换table */
+FlaToXML.prototype.convertTableView = function(table,elementIndex){
+	var xml_tableView = new UITableView();
+	xml_tableView.setAttribute( UIControlAttribute.kName, table.name );
+	this.fullNormalAttirbute( xml_tableView, table ,elementIndex );
+	this.th.obj[table.name] = elementIndex;
+	return xml_tableView;
+}
+/** 转换EditBox */
+FlaToXML.prototype.convertEditBox = function(editBox,elementIndex){
+	var xml_editBox = new UIEditBox();
+	xml_editBox.setAttribute( UIControlAttribute.kImage, editBox.libraryItem.name + ".png" );
+	xml_editBox.setAttribute( UIControlAttribute.kName, editBox.name );
+	this.fullNormalAttirbute( xml_editBox, editBox ,elementIndex );
+	this.th.obj[editBox.name] = elementIndex;
+	return xml_editBox;
+}
+/** 转换RichText */
+FlaToXML.prototype.convertRichText = function(richText,elementIndex){
+	var xml_richText = new UIRichText();
+	xml_richText.setAttribute( UIControlAttribute.kName, richText.name );
+	this.fullNormalAttirbute( xml_richText, richText ,elementIndex );
+	this.th.obj[richText.name] = elementIndex;
+	return xml_richText;
 }
 
 /**
@@ -1278,6 +1435,8 @@ getSupportScheme = function( schemename ){
 		scheme = new SchemeIPad();
 	}else if( schemename == kScheme480x800 ){
 		scheme = new Scheme480x800();
+	}else if( schemename = kScheme640x960 ){
+		scheme = new Scheme640x960();
 	}else{
 		alert( "未设定主题" );
 		return null;
@@ -1293,7 +1452,6 @@ getSupportScheme = function( schemename ){
  */
 export_current_layer = function( uiname, schemename, isportrait ){
 	var scheme = getSupportScheme( schemename );
-
 	if( isportrait == "1" ){
 		scheme.setModeToPortrait();
 	}else{
@@ -1340,7 +1498,6 @@ export_all_layer = function( uiname, schemename, isportrait ){
 	}else{
 		scheme.setModeToLandscape();
 	}
-
 	var convert = new FlaToXML();
 	convert.setExportLayerType( kExportLayerAll );
 	convert.convert( fl.getDocumentDOM(), null, uiname, scheme );
