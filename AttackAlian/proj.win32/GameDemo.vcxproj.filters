@@ -1,0 +1,597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\domain">
+      <UniqueIdentifier>{255c97c0-03b5-42ac-924e-c8a34dcb0ebe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{84f3465c-693d-43a4-85e6-fe49ca860ec3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\tui">
+      <UniqueIdentifier>{dda98b15-1e34-4a77-955c-e8ea61ddde0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\gameui">
+      <UniqueIdentifier>{938d2c4a-005d-4aeb-97f4-71d7e240f460}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\tinyxml">
+      <UniqueIdentifier>{86bf5dd8-7442-4f1f-8dc5-7d74259e20ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\CocosWidget">
+      <UniqueIdentifier>{288d5342-c020-40d7-98e9-9a6e3b62eb23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\CocosBase">
+      <UniqueIdentifier>{5649f60b-7045-4dea-afdc-18b47ecb0e6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\CocosNet">
+      <UniqueIdentifier>{a81bb874-f9ff-4dd0-b25a-bff88d27c55f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\domain\character">
+      <UniqueIdentifier>{3b05dec9-2ab0-48dd-8c94-316bacd6bfb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\domain\goods">
+      <UniqueIdentifier>{bd8161a4-530d-4e32-b80e-78282ebcf57e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\module">
+      <UniqueIdentifier>{4925f598-df1f-49f6-8679-5feb64faa93b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\gameui\welcome">
+      <UniqueIdentifier>{63d66504-bc05-423f-9803-32f4c40b2357}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\gameui\ingame">
+      <UniqueIdentifier>{07ba5a35-cbf8-4620-803d-5d01716c13d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\gameui\ingame\dialog">
+      <UniqueIdentifier>{266e361d-de26-43bd-8008-fc35cd34b8ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\gameui\store">
+      <UniqueIdentifier>{75bdcc55-73b0-4f64-ba0e-a5069828c52d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\gameui\level">
+      <UniqueIdentifier>{a27cee10-e99e-4400-9f55-58aafd3b8fa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\gameui\option">
+      <UniqueIdentifier>{d49312e9-2619-476a-8cb2-600407c62ef2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\gameui\ingame\helper">
+      <UniqueIdentifier>{d2a37d4a-9c29-41fe-b5ce-dad34287751c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\gameui\store\dialog">
+      <UniqueIdentifier>{d198aeec-f998-43ae-b21c-61c0a191635c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\gameui\store\helper">
+      <UniqueIdentifier>{c1dd4152-a5aa-4f5d-aaaa-344e8c9795dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\tui\utils">
+      <UniqueIdentifier>{f8590575-908c-4c93-97cb-c8348c9172aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\utils">
+      <UniqueIdentifier>{aa5626fa-0e4d-485c-bd87-c69c2f55aaf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\config">
+      <UniqueIdentifier>{db3a932e-d067-4471-908b-0eb6ed9d3a19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\gameui\ingame\config">
+      <UniqueIdentifier>{77480c95-d142-47f6-b924-5231ff87e40d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\net">
+      <UniqueIdentifier>{d0f8a7fe-2c23-4668-bcd7-c328364320d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\net\protocol">
+      <UniqueIdentifier>{a1753757-5886-4ffb-bbb8-2a914f870883}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\gameui\common">
+      <UniqueIdentifier>{7b17548b-2c58-49ae-8533-68d1b68d2503}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\gameui\common\dialog">
+      <UniqueIdentifier>{3dbdcd79-44aa-4eae-a44d-5fffa237a117}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\gameui\common\helper">
+      <UniqueIdentifier>{69f347a3-49c3-4aa9-9143-e76d8efb0c3b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\Button.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\CheckBox.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ColorView.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ControlView.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ExpandableListView.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\GradientView.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\GridPageView.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\GridView.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ImageView.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ImageViewScale9.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\Label.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\LabelAtlas.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\LabelBMFont.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\Layout.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ListView.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\Lua_cocos2dx_widget.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\PageView.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ProgressBar.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\Scale9Sprite.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ScrollView.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\Slider.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\TableView.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\TextArea.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\TextRich.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ToggleView.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\Widget.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\WidgetProtocol.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\WidgetWindow.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\WitlsMacros.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tui\TuiManager.cpp">
+      <Filter>lib\tui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tui\TuiBase.cpp">
+      <Filter>lib\tui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\tinyxml\tinystr.cpp">
+      <Filter>lib\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\tinyxml\tinyxml.cpp">
+      <Filter>lib\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\tinyxml\tinyxmlerror.cpp">
+      <Filter>lib\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\tinyxml\tinyxmlparser.cpp">
+      <Filter>lib\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosBase\CCBundle.cpp">
+      <Filter>lib\CocosBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosBase\CCMsgDelegate.cpp">
+      <Filter>lib\CocosBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosBase\CCMsgManager.cpp">
+      <Filter>lib\CocosBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosBase\CCSceneExtension.cpp">
+      <Filter>lib\CocosBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosBase\CCSceneExTransition.cpp">
+      <Filter>lib\CocosBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosBase\CCSceneManager.cpp">
+      <Filter>lib\CocosBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosNet\CCBuffer.cpp">
+      <Filter>lib\CocosNet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosNet\CCInetAddress.cpp">
+      <Filter>lib\CocosNet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosNet\CCNetDelegate.cpp">
+      <Filter>lib\CocosNet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosNet\CCSocket.cpp">
+      <Filter>lib\CocosNet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\domain\goods\GoodsBase.cpp">
+      <Filter>Classes\domain\goods</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\domain\goods\Medicine.cpp">
+      <Filter>Classes\domain\goods</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\domain\goods\Prop.cpp">
+      <Filter>Classes\domain\goods</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\domain\goods\Weapon.cpp">
+      <Filter>Classes\domain\goods</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\domain\character\CharacterBase.cpp">
+      <Filter>Classes\domain\character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\domain\character\Hero.cpp">
+      <Filter>Classes\domain\character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\domain\character\Monstor.cpp">
+      <Filter>Classes\domain\character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\domain\character\Boss.cpp">
+      <Filter>Classes\domain\character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\NumericStepper.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ArmatureBtn.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\gameui\welcome\Welcomeui.cpp">
+      <Filter>Classes\gameui\welcome</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\gameui\ingame\Ingameui.cpp">
+      <Filter>Classes\gameui\ingame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\gameui\ingame\dialog\Resuleui.cpp">
+      <Filter>Classes\gameui\ingame\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\gameui\store\Storeui.cpp">
+      <Filter>Classes\gameui\store</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\gameui\level\Levelui.cpp">
+      <Filter>Classes\gameui\level</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\gameui\option\Optionui.cpp">
+      <Filter>Classes\gameui\option</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\gameui\ingame\helper\MonstorMgr.cpp">
+      <Filter>Classes\gameui\ingame\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\gameui\ingame\helper\LevelHelper.cpp">
+      <Filter>Classes\gameui\ingame\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\gameui\ingame\helper\IngameNetWork.cpp">
+      <Filter>Classes\gameui\ingame\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tui\utils\AnimationUtil.cpp">
+      <Filter>lib\tui\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tui\utils\CsvUtil.cpp">
+      <Filter>lib\tui\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tui\utils\FileLoadUtil.cpp">
+      <Filter>lib\tui\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tui\utils\StringUtil.cpp">
+      <Filter>lib\tui\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\RelativeLayout.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\module\NetWorkMgr.cpp">
+      <Filter>Classes\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\module\DataProxy.cpp">
+      <Filter>Classes\module</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\gameui\common\dialog\Loading.cpp">
+      <Filter>Classes\gameui\common\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\gameui\common\dialog\MessageBox.cpp">
+      <Filter>Classes\gameui\common\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\gameui\common\helper\CommonAnimTask.cpp">
+      <Filter>Classes\gameui\common\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\gameui\ingame\helper\IngameAnimTask.cpp">
+      <Filter>Classes\gameui\ingame\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\gameui\store\helper\StoreAnimTask.cpp">
+      <Filter>Classes\gameui\store\helper</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\Button.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\CheckBox.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\cocos-widget.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ColorView.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ControlView.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ExpandableListView.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\GradientView.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\GridPageView.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\GridView.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ImageView.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ImageViewScale9.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\Label.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\LabelAtlas.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\LabelBMFont.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\Layout.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ListView.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\Lua_cocos2dx_widget.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\PageView.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ProgressBar.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\Scale9Sprite.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ScrollView.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\Slider.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\TableView.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\TextArea.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\TextRich.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ToggleView.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\Widget.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\WidgetMacros.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\WidgetProtocol.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\WidgetWindow.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\WitlsMacros.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tui\tuiconsts.h">
+      <Filter>lib\tui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tui\TuiManager.h">
+      <Filter>lib\tui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tui\tuiTagMap.h">
+      <Filter>lib\tui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tui\TuiBase.h">
+      <Filter>lib\tui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\domain\config.h">
+      <Filter>Classes\domain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tinyxml\tinystr.h">
+      <Filter>lib\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tinyxml\tinyxml.h">
+      <Filter>lib\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosBase\CCBaseMacros.h">
+      <Filter>lib\CocosBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosBase\CCBundle.h">
+      <Filter>lib\CocosBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosBase\CCMsgDelegate.h">
+      <Filter>lib\CocosBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosBase\CCMsgManager.h">
+      <Filter>lib\CocosBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosBase\CCSceneExtension.h">
+      <Filter>lib\CocosBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosBase\CCSceneExTransition.h">
+      <Filter>lib\CocosBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosBase\CCSceneManager.h">
+      <Filter>lib\CocosBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosBase\cocos-base.h">
+      <Filter>lib\CocosBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosNet\CCBuffer.h">
+      <Filter>lib\CocosNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosNet\CCInetAddress.h">
+      <Filter>lib\CocosNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosNet\CCNetDelegate.h">
+      <Filter>lib\CocosNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosNet\CCNetMacros.h">
+      <Filter>lib\CocosNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosNet\CCSocket.h">
+      <Filter>lib\CocosNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosNet\cocos-net.h">
+      <Filter>lib\CocosNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\domain\goods\GoodsBase.h">
+      <Filter>Classes\domain\goods</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\domain\goods\Medicine.h">
+      <Filter>Classes\domain\goods</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\domain\goods\Prop.h">
+      <Filter>Classes\domain\goods</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\domain\goods\Weapon.h">
+      <Filter>Classes\domain\goods</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\domain\character\CharacterBase.h">
+      <Filter>Classes\domain\character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\domain\character\Hero.h">
+      <Filter>Classes\domain\character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\domain\character\Monstor.h">
+      <Filter>Classes\domain\character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\domain\character\Boss.h">
+      <Filter>Classes\domain\character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\NumericStepper.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ArmatureBtn.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\gameui\welcome\Welcomeui.h">
+      <Filter>Classes\gameui\welcome</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\gameui\ingame\Ingameui.h">
+      <Filter>Classes\gameui\ingame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\gameui\ingame\dialog\Resuleui.h">
+      <Filter>Classes\gameui\ingame\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\gameui\store\Storeui.h">
+      <Filter>Classes\gameui\store</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\gameui\level\Levelui.h">
+      <Filter>Classes\gameui\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\gameui\option\Optionui.h">
+      <Filter>Classes\gameui\option</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\gameui\ingame\helper\MonstorMgr.h">
+      <Filter>Classes\gameui\ingame\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\gameui\ingame\helper\LevelHelper.h">
+      <Filter>Classes\gameui\ingame\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\gameui\ingame\helper\IngameNetWork.h">
+      <Filter>Classes\gameui\ingame\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tui\utils\AnimationUtil.h">
+      <Filter>lib\tui\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tui\utils\CsvUtil.h">
+      <Filter>lib\tui\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tui\utils\FileLoadUtil.h">
+      <Filter>lib\tui\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tui\utils\StringUtil.h">
+      <Filter>lib\tui\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\RelativeLayout.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\gameui\ingame\config\ResultCfg.h">
+      <Filter>Classes\gameui\ingame\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\gameui\ingame\config\IngameCfg.h">
+      <Filter>Classes\gameui\ingame\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\module\NetWorkMgr.h">
+      <Filter>Classes\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\module\DataProxy.h">
+      <Filter>Classes\module</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\gameui\common\dialog\Loading.h">
+      <Filter>Classes\gameui\common\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\gameui\common\dialog\MessageBox.h">
+      <Filter>Classes\gameui\common\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\gameui\common\helper\CommonAnimTask.h">
+      <Filter>Classes\gameui\common\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\gameui\ingame\helper\IngameAnimTask.h">
+      <Filter>Classes\gameui\ingame\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\gameui\store\helper\StoreAnimTask.h">
+      <Filter>Classes\gameui\store\helper</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -67,6 +67,7 @@ class CToggleView;
 //expand
 class ArmatureBtn;
 class NumericStepper;
+class RelativeLayout;
 
 NS_CC_WIDGET_END
 
@@ -100,5 +101,6 @@ NS_CC_WIDGET_END
 //expand
 #include "ArmatureBtn.h"
 #include "NumericStepper.h"
+#include "RelativeLayout.h"
 
 #endif //__CCWIDGET_H__

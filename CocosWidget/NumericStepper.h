@@ -13,10 +13,23 @@ class NumericStepper : public CLayout, public CValueChangeableProtocol
 public:
 
 	NumericStepper();
+	virtual bool init();
 	virtual bool init(const char *lnormal,const char *lselet,const char *ldisable,
 						const char *rnormal,const char *rselet,const char *rdisable,const char* bg);
+
+	static NumericStepper *create();
 	static NumericStepper *create(const char *lnormal,const char *lselet,const char *ldisable,
 									const char *rnormal,const char *rselet,const char *rdisable,const char* bg);
+
+	virtual void setlNormalSpriteFrameName(const char* pSpriteName);
+	virtual void setlSelectedSpriteFrameName(const char* pSpriteName);
+	virtual void setlDisabledSpriteFrameName(const char* pSpriteName);
+	
+	virtual void setrNormalSpriteFrameName(const char* pSpriteName);
+	virtual void setrSelectedSpriteFrameName(const char* pSpriteName);
+	virtual void setrDisabledSpriteFrameName(const char* pSpriteName);
+
+	virtual void setStepBgSpriteFrameName(const char* pSpriteName);
 
 	virtual CWidgetTouchModel onTouchBegan(CCTouch* pTouch);
 	void onTouchEnded(CCTouch* pTouch, float fDuration);
@@ -27,7 +40,8 @@ public:
 	int getValue();
 	void setStep(int v);
 	int getStep();
-
+private:
+	void resetSelf();//重置所有内部空间的坐标和尺寸
 protected:
 	CButton* m_btnLeft;
 	CButton* m_btnRight;

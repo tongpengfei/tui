@@ -45,6 +45,9 @@ CProgressBar::CProgressBar()
 , m_pBackgroundImage(NULL)
 , m_pBackgroundColor(NULL)
 , m_pBackgroundGradient(NULL)
+//expand
+, m_bShowValueLabel(false)
+, m_pLabel(NULL)
 {
 	
 }
@@ -85,7 +88,11 @@ bool CProgressBar::init()
 
 	setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
 	setContentSize(CCWIDGET_BASIC_DEFAULT_CONTENT_SIZE);
-
+	
+	//expand
+	m_pLabel = CLabel::create("123","",20);
+	m_pLabel->setVisible(m_bShowValueLabel);
+	this->addChild(m_pLabel);
 	return true;
 }
 
@@ -102,6 +109,10 @@ bool CProgressBar::initWithFile(const char* pProgress)
 void CProgressBar::setValue(int nValue)
 {
 	changeValueAndExecuteEvent(nValue, true);
+	//expand
+	if(m_pLabel->isVisible()){
+		m_pLabel->setString(CCString::createWithFormat("%d/%d",nValue,m_nMaxValue)->getCString());
+	}
 }
 
 void CProgressBar::changeValueAndExecuteEvent(int nValue, bool bExeEvent)
@@ -188,6 +199,13 @@ void CProgressBar::setDirection(CProgressBarDirection eDirection)
 		changeValueAndExecuteEvent(m_nValue, false);
 	}
 }
+//expand
+void CProgressBar::setShowValueLabel(bool b){
+	m_pLabel->setVisible(b);
+	if(b){
+		m_pLabel->setPosition(ccp(m_tProgressSize.width/2,m_tProgressSize.height/2));
+	}
+}
 
 CProgressBarDirection CProgressBar::getDirection() const
 {
@@ -198,6 +216,7 @@ bool CProgressBar::isProgressEnded() const
 {
 	return m_fLapsed >= m_fDuration;
 }
+
 
 void CProgressBar::startProgress(int nValue, float fDuration)
 {

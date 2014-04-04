@@ -1,0 +1,178 @@
+<skeleton name="armature_monster1" frameRate="24" version="2.2">
+  <armatures>
+    <armature name="armature_monster1">
+      <b name="Layer 3" x="0" y="-14.05" kX="0" kY="0" cX="0.38" cY="0.38" pX="0" pY="0" z="0">
+        <d name="Graphic-shape 558" pX="100" pY="13"/>
+      </b>
+      <b name="Layer 4" x="0" y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1">
+        <d name="Graphic-shape 559" pX="19.5" pY="61.6"/>
+        <d name="Graphic-shape 564" pX="90.8" pY="60.15"/>
+        <d name="Graphic-shape 565" pX="13.7" pY="60.65"/>
+        <d name="Graphic-shape 566" pX="13" pY="63.05"/>
+        <d name="Graphic-shape 567" pX="14.25" pY="64.4"/>
+        <d name="Graphic-shape 568" pX="14.6" pY="61"/>
+        <d name="Graphic-shape 569" pX="14.95" pY="66.6"/>
+        <d name="Graphic-shape 570" pX="14.8" pY="65.1"/>
+        <d name="Graphic-shape 571" pX="14.55" pY="66.15"/>
+        <d name="Graphic-shape 572" pX="13.55" pY="65.5"/>
+        <d name="Graphic-shape 573" pX="15.9" pY="69.3"/>
+        <d name="Graphic-shape 574" pX="14.85" pY="67.6"/>
+        <d name="Graphic-shape 577" pX="13.7" pY="26.25"/>
+      </b>
+      <b name="Layer 5" x="-34" y="-55.4" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2">
+        <d name="MovieClip-sprite 561" pX="2.35" pY="17.55"/>
+        <d name="Graphic-shape 579" pX="36.55" pY="22.45"/>
+      </b>
+      <b name="Layer 7" x="-43.2" y="-100" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3">
+        <d name="MovieClip-sprite 563" pX="0" pY="0.5"/>
+        <d name="Graphic-shape 575" pX="42.7" pY="102.55"/>
+        <d name="Graphic-shape 576" pX="51.95" pY="108.55"/>
+        <d name="Graphic-shape 580" pX="61.7" pY="114.2"/>
+        <d name="Graphic-shape 581" pX="56.7" pY="108.8"/>
+        <d name="Graphic-shape 582" pX="42.7" pY="75.1"/>
+        <d name="Graphic-shape 584" pX="52.8" pY="41.1"/>
+        <d name="Graphic-shape 585" pX="35.6" pY="12.1"/>
+      </b>
+      <b name="Layer 6" x="0" y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3">
+        <d name="Graphic-shape 583" pX="42.7" pY="37.05"/>
+      </b>
+      <b name="Layer 8" x="0" y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2">
+        <d name="Graphic-shape 578" pX="58.7" pY="105.6"/>
+      </b>
+    </armature>
+  </armatures>
+  <animations>
+    <animation name="armature_monster1">
+      <mov name="live" dr="24" to="6" drTW="24" lp="0" twE="NaN">
+        <b name="Layer 3" sc="1" dl="0">
+          <f x="0" y="-14.05" cocos2d_x="0" cocos2d_y="-14.05" kX="0" kY="0" cX="0.38" cY="0.38" pX="0" pY="0" z="0" dI="0" dr="24"/>
+        </b>
+        <b name="Layer 4" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="0" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="1" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="2" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="3" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="4" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="5" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="6" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="7" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="8" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="9" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="10" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="11" dr="2"/>
+        </b>
+        <b name="Layer 5" sc="1" dl="0">
+          <f x="-34" y="-55.4" cocos2d_x="-34" cocos2d_y="-55.4" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" twE="0" dr="1"/>
+          <f x="-34" y="-55.4" cocos2d_x="-34" cocos2d_y="-55.4" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="1"/>
+          <f x="-34.05" y="-54.2" cocos2d_x="-34.05" cocos2d_y="-54.2" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" twE="0" dr="1"/>
+          <f x="-34.05" y="-54.2" cocos2d_x="-34.05" cocos2d_y="-54.2" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="1"/>
+          <f x="-34.05" y="-51.5" cocos2d_x="-34.05" cocos2d_y="-51.5" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" twE="0" dr="1"/>
+          <f x="-34.05" y="-51.5" cocos2d_x="-34.05" cocos2d_y="-51.5" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="1"/>
+          <f x="-34.05" y="-54.2" cocos2d_x="-34.05" cocos2d_y="-54.2" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" twE="0" dr="1"/>
+          <f x="-34.05" y="-54.2" cocos2d_x="-34.05" cocos2d_y="-54.2" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="1"/>
+          <f x="-34" y="-55.4" cocos2d_x="-34" cocos2d_y="-55.4" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" twE="0" dr="1"/>
+          <f x="-34" y="-55.4" cocos2d_x="-34" cocos2d_y="-55.4" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="1"/>
+          <f x="-34.05" y="-54.2" cocos2d_x="-34.05" cocos2d_y="-54.2" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" twE="0" dr="1"/>
+          <f x="-34.05" y="-54.2" cocos2d_x="-34.05" cocos2d_y="-54.2" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="1"/>
+          <f x="-34.05" y="-51.5" cocos2d_x="-34.05" cocos2d_y="-51.5" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" twE="0" dr="1"/>
+          <f x="-34.05" y="-51.5" cocos2d_x="-34.05" cocos2d_y="-51.5" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="1"/>
+          <f x="-34.05" y="-54.2" cocos2d_x="-34.05" cocos2d_y="-54.2" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" twE="0" dr="1"/>
+          <f x="-34.05" y="-54.2" cocos2d_x="-34.05" cocos2d_y="-54.2" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="1"/>
+          <f x="-34" y="-55.4" cocos2d_x="-34" cocos2d_y="-55.4" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" twE="0" dr="1"/>
+          <f x="-34" y="-55.4" cocos2d_x="-34" cocos2d_y="-55.4" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="1"/>
+          <f x="-34.05" y="-54.2" cocos2d_x="-34.05" cocos2d_y="-54.2" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" twE="0" dr="1"/>
+          <f x="-34.05" y="-54.2" cocos2d_x="-34.05" cocos2d_y="-54.2" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="1"/>
+          <f x="-34.05" y="-51.5" cocos2d_x="-34.05" cocos2d_y="-51.5" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" twE="0" dr="1"/>
+          <f x="-34.05" y="-51.5" cocos2d_x="-34.05" cocos2d_y="-51.5" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="1"/>
+          <f x="-34.05" y="-54.2" cocos2d_x="-34.05" cocos2d_y="-54.2" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="2"/>
+        </b>
+        <b name="Layer 7" sc="1" dl="0">
+          <f x="-43.2" y="-100" cocos2d_x="-43.2" cocos2d_y="-100" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" twE="0" dr="1"/>
+          <f x="-43.2" y="-100" cocos2d_x="-43.2" cocos2d_y="-100" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" dr="1"/>
+          <f x="-43.2" y="-99" cocos2d_x="-43.2" cocos2d_y="-99" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" twE="0" dr="1"/>
+          <f x="-43.2" y="-99" cocos2d_x="-43.2" cocos2d_y="-99" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" dr="1"/>
+          <f x="-43.2" y="-97" cocos2d_x="-43.2" cocos2d_y="-97" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" twE="0" dr="1"/>
+          <f x="-43.2" y="-97" cocos2d_x="-43.2" cocos2d_y="-97" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" dr="1"/>
+          <f x="-43.2" y="-99" cocos2d_x="-43.2" cocos2d_y="-99" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" twE="0" dr="1"/>
+          <f x="-43.2" y="-99" cocos2d_x="-43.2" cocos2d_y="-99" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" dr="1"/>
+          <f x="-43.2" y="-100" cocos2d_x="-43.2" cocos2d_y="-100" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" twE="0" dr="1"/>
+          <f x="-43.2" y="-100" cocos2d_x="-43.2" cocos2d_y="-100" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" dr="1"/>
+          <f x="-43.2" y="-99" cocos2d_x="-43.2" cocos2d_y="-99" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" twE="0" dr="1"/>
+          <f x="-43.2" y="-99" cocos2d_x="-43.2" cocos2d_y="-99" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" dr="1"/>
+          <f x="-43.2" y="-97" cocos2d_x="-43.2" cocos2d_y="-97" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" twE="0" dr="1"/>
+          <f x="-43.2" y="-97" cocos2d_x="-43.2" cocos2d_y="-97" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" dr="1"/>
+          <f x="-43.2" y="-99" cocos2d_x="-43.2" cocos2d_y="-99" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" twE="0" dr="1"/>
+          <f x="-43.2" y="-99" cocos2d_x="-43.2" cocos2d_y="-99" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" dr="1"/>
+          <f x="-43.2" y="-100" cocos2d_x="-43.2" cocos2d_y="-100" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" twE="0" dr="1"/>
+          <f x="-43.2" y="-100" cocos2d_x="-43.2" cocos2d_y="-100" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" dr="1"/>
+          <f x="-43.2" y="-99" cocos2d_x="-43.2" cocos2d_y="-99" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" twE="0" dr="1"/>
+          <f x="-43.2" y="-99" cocos2d_x="-43.2" cocos2d_y="-99" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" dr="1"/>
+          <f x="-43.2" y="-97" cocos2d_x="-43.2" cocos2d_y="-97" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" twE="0" dr="1"/>
+          <f x="-43.2" y="-97" cocos2d_x="-43.2" cocos2d_y="-97" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" dr="1"/>
+          <f x="-43.2" y="-99" cocos2d_x="-43.2" cocos2d_y="-99" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" dr="2"/>
+        </b>
+      </mov>
+      <mov name="die" dr="16" to="6" drTW="16" lp="0" twE="NaN">
+        <b name="Layer 3" sc="1" dl="0">
+          <f x="0" y="-14.05" cocos2d_x="0" cocos2d_y="-14.05" kX="0" kY="0" cX="0.38" cY="0.38" pX="0" pY="0" z="0" dI="0" dr="16"/>
+        </b>
+        <b name="Layer 4" sc="1" dl="0">
+          <f dr="3" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="12" dr="13"/>
+        </b>
+        <b name="Layer 5" sc="1" dl="0">
+          <f dr="4" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="1" dr="12"/>
+        </b>
+        <b name="Layer 6" sc="1" dl="0">
+          <f dr="7" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" dr="9"/>
+        </b>
+        <b name="Layer 7" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="1" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="2" dr="1"/>
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="3" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="4" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="5" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="4" dI="6" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="4" dI="7" dr="8"/>
+        </b>
+        <b name="Layer 8" sc="1" dl="0">
+          <f dr="3" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="1"/>
+          <f dr="12" dI="-1"/>
+        </b>
+      </mov>
+    </animation>
+  </animations>
+  <TextureAtlas name="armature_monster1" width="512" height="512">
+    <SubTexture name="Graphic-shape 578" width="116" height="111" cocos2d_pX="58.7" cocos2d_pY="105.6" x="327" y="0"/>
+    <SubTexture name="Graphic-shape 583" width="83" height="40" cocos2d_pX="42.7" cocos2d_pY="37.05" x="426" y="224"/>
+    <SubTexture name="Graphic-shape 585" width="70" height="18" cocos2d_pX="35.6" cocos2d_pY="12.1" x="32" y="268"/>
+    <SubTexture name="Graphic-shape 584" width="97" height="47" cocos2d_pX="52.8" cocos2d_pY="41.1" x="0" y="219"/>
+    <SubTexture name="Graphic-shape 582" width="83" height="81" cocos2d_pX="42.7" cocos2d_pY="75.1" x="426" y="141"/>
+    <SubTexture name="Graphic-shape 581" width="112" height="115" cocos2d_pX="56.7" cocos2d_pY="108.8" x="0" y="102"/>
+    <SubTexture name="Graphic-shape 580" width="123" height="120" cocos2d_pX="61.7" cocos2d_pY="114.2" x="202" y="0"/>
+    <SubTexture name="Graphic-shape 576" width="97" height="114" cocos2d_pX="51.95" cocos2d_pY="108.55" x="327" y="113"/>
+    <SubTexture name="Graphic-shape 575" width="83" height="104" cocos2d_pX="42.7" cocos2d_pY="102.55" x="114" y="102"/>
+    <SubTexture name="MovieClip-sprite 563" width="83" height="79" cocos2d_pX="0" cocos2d_pY="0.5" x="199" y="185"/>
+    <SubTexture name="Graphic-shape 579" width="71" height="24" cocos2d_pX="36.55" cocos2d_pY="22.45" x="187" y="266"/>
+    <SubTexture name="MovieClip-sprite 561" width="71" height="59" cocos2d_pX="2.35" cocos2d_pY="17.55" x="114" y="208"/>
+    <SubTexture name="Graphic-shape 577" width="34" height="27" cocos2d_pX="13.7" cocos2d_pY="26.25" x="104" y="269"/>
+    <SubTexture name="Graphic-shape 574" width="35" height="68" cocos2d_pX="14.85" cocos2d_pY="67.6" x="445" y="0"/>
+    <SubTexture name="Graphic-shape 573" width="34" height="69" cocos2d_pX="15.9" cocos2d_pY="69.3" x="445" y="70"/>
+    <SubTexture name="Graphic-shape 572" width="29" height="63" cocos2d_pX="13.55" cocos2d_pY="65.5" x="481" y="70"/>
+    <SubTexture name="Graphic-shape 571" width="30" height="63" cocos2d_pX="14.55" cocos2d_pY="66.15" x="393" y="229"/>
+    <SubTexture name="Graphic-shape 570" width="30" height="63" cocos2d_pX="14.8" cocos2d_pY="65.1" x="284" y="248"/>
+    <SubTexture name="Graphic-shape 569" width="31" height="67" cocos2d_pX="14.95" cocos2d_pY="66.6" x="326" y="229"/>
+    <SubTexture name="Graphic-shape 568" width="30" height="60" cocos2d_pX="14.6" cocos2d_pY="61" x="0" y="268"/>
+    <SubTexture name="Graphic-shape 567" width="30" height="62" cocos2d_pX="14.25" cocos2d_pY="64.4" x="457" y="266"/>
+    <SubTexture name="Graphic-shape 566" width="30" height="62" cocos2d_pX="13" cocos2d_pY="63.05" x="425" y="266"/>
+    <SubTexture name="Graphic-shape 565" width="32" height="61" cocos2d_pX="13.7" cocos2d_pY="60.65" x="359" y="229"/>
+    <SubTexture name="Graphic-shape 564" width="111" height="61" cocos2d_pX="90.8" cocos2d_pY="60.15" x="199" y="122"/>
+    <SubTexture name="Graphic-shape 559" width="40" height="61" cocos2d_pX="19.5" cocos2d_pY="61.6" x="284" y="185"/>
+    <SubTexture name="Graphic-shape 558" width="200" height="100" cocos2d_pX="100" cocos2d_pY="13" x="0" y="0"/>
+  </TextureAtlas>
+</skeleton>

@@ -6,12 +6,15 @@ NumericStepper::NumericStepper()
 :m_value(15)
 ,m_step(1)
 {
+	setThisObject(this);
+	setCascadeOpacityEnabled(true);
+	setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
 }
 
 NumericStepper *NumericStepper::create(const char *lnormal,const char *lselet,const char *ldisable, 
-										const char *rnormal,const char *rselet,const char *rdisable,const char* bg){
-	
-	NumericStepper *numericStepper = new NumericStepper();
+									   const char *rnormal,const char *rselet,const char *rdisable,const char* bg)
+{
+	 NumericStepper *numericStepper = new NumericStepper();
 	if (numericStepper && numericStepper->init(lnormal,lselet,ldisable,rnormal,rselet,rdisable,bg))
 	{
 		numericStepper->autorelease();
@@ -21,34 +24,91 @@ NumericStepper *NumericStepper::create(const char *lnormal,const char *lselet,co
 	return NULL;
 }
 
+NumericStepper* NumericStepper::create()
+{
+	NumericStepper* pRet = new NumericStepper();
+	if( pRet && pRet->init() )
+	{
+		pRet->autorelease();
+		return pRet;
+	}
+	CC_SAFE_DELETE(pRet);
+	return NULL;
+}
+
+bool NumericStepper::init(){
+	
+	m_btnLeft = CButton::create();
+	m_btnRight = CButton::create();
+	m_bg = CImageView::create();
+	m_labNum = CLabel::create("15","",m_bg->getContentSize().height-2,m_bg->getContentSize(),kCCTextAlignmentCenter);
+
+	m_btnLeft->setOnClickListener(this,ccw_click_selector(NumericStepper::event_btn_left));
+	m_btnRight->setOnClickListener(this,ccw_click_selector(NumericStepper::event_btn_right));
+
+	this->addChild(m_btnLeft);
+	this->addChild(m_btnRight);
+	this->addChild(m_bg);
+	this->addChild(m_labNum);
+	return true;
+}
+
 bool NumericStepper::init(const char *lnormal,const char *lselet,const char *ldisable, 
 						  const char *rnormal,const char *rselet,const char *rdisable,const char* bg){
 
 	m_btnLeft = CButton::create(lnormal,lselet,ldisable);
 	m_btnRight = CButton::create(rnormal,rselet,rdisable);
 	m_bg = CImageView::create(bg);
-	m_labNum = CLabel::create("15","",16,m_bg->getContentSize(),kCCTextAlignmentCenter);
+	m_labNum = CLabel::create("15","",m_bg->getContentSize().height-2,m_bg->getContentSize(),kCCTextAlignmentCenter);
 
-	m_btnLeft->setPosition(m_btnLeft->getContentSize().width/2,m_btnLeft->getContentSize().height/2);
+	
 	m_btnLeft->setOnClickListener(this,ccw_click_selector(NumericStepper::event_btn_left));
-	m_bg->setPosition(ccp(m_btnLeft->getPositionX()+m_btnLeft->getContentSize().width/2+m_bg->getContentSize().width/2,
-						m_btnLeft->getPositionY()));
-	m_btnRight->setPosition((m_bg->getPositionX()+m_bg->getContentSize().width/2+m_btnRight->getContentSize().width/2),
-						m_btnLeft->getPositionY());
 	m_btnRight->setOnClickListener(this,ccw_click_selector(NumericStepper::event_btn_right));
-	m_labNum->setPosition(m_bg->getPosition());
 
 	this->addChild(m_btnLeft);
 	this->addChild(m_btnRight);
 	this->addChild(m_bg);
 	this->addChild(m_labNum);
-
-	setThisObject(this);
-	setCascadeOpacityEnabled(true);
-
-	this->setContentSize(CCSize(m_btnLeft->getContentSize().width+m_bg->getContentSize().width+m_btnRight->getContentSize().width,
-								m_bg->getContentSize().height));
+	resetSelf();
 	return true;
+}
+
+
+void NumericStepper::setlNormalSpriteFrameName( const char* pSpriteName ){
+	m_btnLeft->setNormalSpriteFrameName(pSpriteName);
+	resetSelf();
+}
+
+void NumericStepper::setlSelectedSpriteFrameName( const char* pSpriteName ){
+	m_btnLeft->setSelectedSpriteFrameName(pSpriteName);
+	resetSelf();
+}
+
+void NumericStepper::setlDisabledSpriteFrameName(const char* pSpriteName){
+	m_btnLeft->setDisabledSpriteFrameName(pSpriteName);
+	resetSelf();
+}
+
+void NumericStepper::setrNormalSpriteFrameName(const char* pSpriteName){
+	m_btnRight->setNormalSpriteFrameName(pSpriteName);
+	resetSelf();
+}
+
+void NumericStepper::setrSelectedSpriteFrameName(const char* pSpriteName){
+	m_btnRight->setSelectedSpriteFrameName(pSpriteName);
+	resetSelf();
+}
+
+void NumericStepper::setrDisabledSpriteFrameName(const char* pSpriteName){
+	m_btnRight->setDisabledSpriteFrameName(pSpriteName);
+	resetSelf();
+}
+
+void NumericStepper::setStepBgSpriteFrameName(const char* pSpriteName){
+	CCSpriteFrame *pFrame = CCSpriteFrameCache::sharedSpriteFrameCache()->spriteFrameByName(pSpriteName);
+	m_bg->setDisplayFrame(pFrame);
+	m_labNum->setFontSize(m_bg->getContentSize().height-2);//字体大小根据stepBg的高度而变化
+	resetSelf();
 }
 
 CWidgetTouchModel NumericStepper::onTouchBegan(CCTouch* pTouch){
@@ -92,6 +152,17 @@ void NumericStepper::event_btn_left(CCObject* s){
 
 void NumericStepper::event_btn_right(CCObject* s){
 	setValue(m_value + m_step);
+}
+
+void NumericStepper::resetSelf(){
+	CLayout::setContentSize(CCSize(m_btnLeft->getContentSize().width+m_bg->getContentSize().width+m_btnRight->getContentSize().width,
+		m_bg->getContentSize().height));
+
+	m_btnLeft->setPosition(m_btnLeft->getContentSize().width/2,m_btnLeft->getContentSize().height/2);
+	m_bg->setPosition(ccp(m_btnLeft->getPositionX()+m_btnLeft->getContentSize().width/2+m_bg->getContentSize().width/2,
+		m_btnLeft->getPositionY()));
+	m_labNum->setPosition(m_bg->getPosition());
+	m_btnRight->setPosition((m_bg->getPositionX()+m_bg->getContentSize().width/2+m_btnRight->getContentSize().width/2),m_btnLeft->getPositionY());
 }
 /************************************************************************/
 //	GET/SET/IS

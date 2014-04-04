@@ -33,6 +33,7 @@ THE SOFTWARE.
 #include "WidgetProtocol.h"
 #include "ColorView.h"
 #include "GradientView.h"
+#include "Label.h"//expand
 
 NS_CC_WIDGET_BEGIN
 
@@ -75,6 +76,9 @@ public:
 	int getMaxValue() const;
 	void setMinValue(int nMinValue);
 	int getMinValue() const;
+	//expand
+	void setShowValueLabel(bool b);//是否在中间显示数值
+
 	void setDirection(CProgressBarDirection eDirection);
 	CProgressBarDirection getDirection() const;
 	void startProgress(int nValue, float fDuration);
@@ -116,6 +120,9 @@ protected:
 
 	CCSprite* m_pProgressSprite;
 	CProgressBarDirection m_eDirection;
+	//expand
+	bool m_bShowValueLabel;
+	CLabel *m_pLabel;
 };
 
 

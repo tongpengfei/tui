@@ -1,0 +1,110 @@
+<skeleton name="armature_monster2" frameRate="24" version="2.2">
+  <armatures>
+    <armature name="armature_monster2">
+      <b name="wing" x="0" y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0">
+        <d name="Graphic-shape 591" pX="49.1" pY="136.7"/>
+        <d name="Graphic-shape 593" pX="81.35" pY="191.75"/>
+        <d name="Graphic-shape 594" pX="72" pY="85.7"/>
+        <d name="Graphic-shape 595" pX="105.95" pY="110.75"/>
+        <d name="Graphic-shape 596" pX="86.9" pY="119.6"/>
+        <d name="Graphic-shape 597" pX="58.5" pY="121.75"/>
+        <d name="Graphic-shape 598" pX="96.7" pY="128.2"/>
+        <d name="Graphic-shape 599" pX="100.2" pY="156.65"/>
+        <d name="Graphic-shape 600" pX="93.95" pY="153"/>
+        <d name="Graphic-shape 601" pX="52.5" pY="121.85"/>
+        <d name="Graphic-shape 602" pX="38.2" pY="93.05"/>
+        <d name="Graphic-shape 604" pX="58.7" pY="105.6"/>
+        <d name="Graphic-shape 606" pX="56.7" pY="108.8"/>
+        <d name="Graphic-shape 609" pX="35.6" pY="24.75"/>
+      </b>
+      <b name="shader" parent="body" x="0" y="0" kX="0" kY="0" cX="0.34" cY="0.34" pX="0" pY="0" z="0">
+        <d name="Graphic-shape 558" pX="100" pY="68.75"/>
+      </b>
+      <b name="hand" parent="body" x="0" y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1">
+        <d name="Graphic-shape 590" pX="28" pY="53.95"/>
+      </b>
+      <b name="body" x="0" y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2">
+        <d name="Graphic-shape 592" pX="32.15" pY="93.15"/>
+        <d name="Graphic-shape 603" pX="51.95" pY="99.35"/>
+        <d name="Graphic-shape 605" pX="61.7" pY="114.2"/>
+        <d name="Graphic-shape 607" pX="42.15" pY="75.1"/>
+        <d name="Graphic-shape 608" pX="52.8" pY="41.1"/>
+      </b>
+    </armature>
+  </armatures>
+  <animations>
+    <animation name="armature_monster2">
+      <mov name="live" dr="24" to="6" drTW="24" lp="0" twE="NaN">
+        <b name="wing" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="0" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="0.67" cY="0.67" pX="0" pY="0" z="0" dI="1" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="2" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="0.67" cY="0.67" pX="0" pY="0" z="0" dI="3" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="0.67" cY="0.67" pX="0" pY="0" z="0" dI="4" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="0.67" cY="0.67" pX="0" pY="0" z="0" dI="5" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="0.67" cY="0.67" pX="0" pY="0" z="0" dI="6" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="0.67" cY="0.67" pX="0" pY="0" z="0" dI="7" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="0.67" cY="0.67" pX="0" pY="0" z="0" dI="8" dr="2"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="9" dr="2"/>
+          <f dr="4" dI="-1"/>
+        </b>
+        <b name="shader" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="0.34" cY="0.34" pX="0" pY="0" z="0" dI="0" dr="24"/>
+        </b>
+        <b name="hand" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="0" dr="24"/>
+        </b>
+        <b name="body" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="24"/>
+        </b>
+      </mov>
+      <mov name="die" dr="9" to="6" drTW="9" lp="0" twE="NaN">
+        <b name="wing" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="10" dr="1"/>
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="11" dr="1"/>
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="12" dr="1"/>
+          <f dr="2" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="13" dr="2"/>
+        </b>
+        <b name="shader" sc="1" dl="0">
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="0.34" cY="0.34" pX="0" pY="0" z="1" dI="0" dr="9"/>
+        </b>
+        <b name="body" sc="1" dl="0">
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="1" dr="1"/>
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="2" dr="1"/>
+          <f dr="1" dI="-1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="3" dr="1"/>
+          <f x="0" y="0" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="1" dI="4" dr="1"/>
+          <f dr="2" dI="-1"/>
+        </b>
+      </mov>
+    </animation>
+  </animations>
+  <TextureAtlas name="armature_monster2" width="512" height="512">
+    <SubTexture name="Graphic-shape 608" width="97" height="47" cocos2d_pX="52.8" cocos2d_pY="41.1" x="0" y="326"/>
+    <SubTexture name="Graphic-shape 607" width="84" height="81" cocos2d_pX="42.15" cocos2d_pY="75.1" x="99" y="276"/>
+    <SubTexture name="Graphic-shape 605" width="123" height="120" cocos2d_pX="61.7" cocos2d_pY="114.2" x="202" y="0"/>
+    <SubTexture name="Graphic-shape 603" width="97" height="105" cocos2d_pX="51.95" cocos2d_pY="99.35" x="0" y="219"/>
+    <SubTexture name="Graphic-shape 592" width="73" height="75" cocos2d_pX="32.15" cocos2d_pY="93.15" x="114" y="199"/>
+    <SubTexture name="Graphic-shape 590" width="59" height="16" cocos2d_pX="28" cocos2d_pY="53.95" x="445" y="75"/>
+    <SubTexture name="Graphic-shape 558" width="200" height="100" cocos2d_pX="100" cocos2d_pY="68.75" x="0" y="0"/>
+    <SubTexture name="Graphic-shape 609" width="77" height="30" cocos2d_pX="35.6" cocos2d_pY="24.75" x="0" y="375"/>
+    <SubTexture name="Graphic-shape 606" width="112" height="115" cocos2d_pX="56.7" cocos2d_pY="108.8" x="0" y="102"/>
+    <SubTexture name="Graphic-shape 604" width="116" height="111" cocos2d_pX="58.7" cocos2d_pY="105.6" x="327" y="75"/>
+    <SubTexture name="Graphic-shape 602" width="79" height="95" cocos2d_pX="38.2" cocos2d_pY="93.05" x="114" y="102"/>
+    <SubTexture name="Graphic-shape 601" width="98" height="66" cocos2d_pX="52.5" cocos2d_pY="121.85" x="185" y="315"/>
+    <SubTexture name="Graphic-shape 600" width="159" height="73" cocos2d_pX="93.95" cocos2d_pY="153" x="327" y="0"/>
+    <SubTexture name="Graphic-shape 599" width="161" height="43" cocos2d_pX="100.2" cocos2d_pY="156.65" x="285" y="323"/>
+    <SubTexture name="Graphic-shape 598" width="155" height="52" cocos2d_pX="96.7" cocos2d_pY="128.2" x="298" y="269"/>
+    <SubTexture name="Graphic-shape 597" width="107" height="92" cocos2d_pX="58.5" cocos2d_pY="121.75" x="189" y="221"/>
+    <SubTexture name="Graphic-shape 596" width="143" height="79" cocos2d_pX="86.9" cocos2d_pY="119.6" x="312" y="188"/>
+    <SubTexture name="Graphic-shape 595" width="162" height="39" cocos2d_pX="105.95" cocos2d_pY="110.75" x="285" y="368"/>
+    <SubTexture name="Graphic-shape 594" width="123" height="29" cocos2d_pX="72" cocos2d_pY="85.7" x="172" y="409"/>
+    <SubTexture name="Graphic-shape 593" width="115" height="97" cocos2d_pX="81.35" cocos2d_pY="191.75" x="195" y="122"/>
+    <SubTexture name="Graphic-shape 591" width="71" height="71" cocos2d_pX="49.1" cocos2d_pY="136.7" x="99" y="359"/>
+  </TextureAtlas>
+</skeleton>
