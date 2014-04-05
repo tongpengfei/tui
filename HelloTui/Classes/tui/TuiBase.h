@@ -15,11 +15,12 @@ USING_NS_CC;
 class TuiBase : public CCSceneExtension {
 public:
 	TuiBase();
+	virtual ~TuiBase();
 	virtual CCNode *getControl(int tagPanel,int tagControl);
 	virtual CCNode *getPanel(int tagPanel);
 
 protected:
-
+	CC_SYNTHESIZE(bool, m_isAutoRemoveUnusedSpriteFrame, AutoRemoveUnusedSpriteFrame);
 private:
 };
 

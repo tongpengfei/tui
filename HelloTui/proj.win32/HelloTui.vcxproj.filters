@@ -22,7 +22,7 @@
     <Filter Include="lib\tui">
       <UniqueIdentifier>{da841f95-45db-4f4e-905a-27e9fd0b3526}</UniqueIdentifier>
     </Filter>
-    <Filter Include="lib\utils">
+    <Filter Include="lib\tui\utils">
       <UniqueIdentifier>{d9ddd618-3013-404d-b0ff-1f07d96c3ebc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -165,23 +165,26 @@
     <ClCompile Include="..\Classes\tui\TuiManager.cpp">
       <Filter>lib\tui</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\utils\AnimationUtil.cpp">
-      <Filter>lib\utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\utils\CsvUtil.cpp">
-      <Filter>lib\utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\utils\FileLoadUtil.cpp">
-      <Filter>lib\utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\utils\StringUtil.cpp">
-      <Filter>lib\utils</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\MyFirstTui.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\MySecondTui.cpp">
       <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\RelativeLayout.cpp">
+      <Filter>lib\CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tui\utils\AnimationUtil.cpp">
+      <Filter>lib\tui\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tui\utils\CsvUtil.cpp">
+      <Filter>lib\tui\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tui\utils\FileLoadUtil.cpp">
+      <Filter>lib\tui\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\tui\utils\StringUtil.cpp">
+      <Filter>lib\tui\utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -335,23 +338,26 @@
     <ClInclude Include="..\Classes\tui\tuiTagMap.h">
       <Filter>lib\tui</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\utils\AnimationUtil.h">
-      <Filter>lib\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\utils\CsvUtil.h">
-      <Filter>lib\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\utils\FileLoadUtil.h">
-      <Filter>lib\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\utils\StringUtil.h">
-      <Filter>lib\utils</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\MyFirstTui.h">
       <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\MySecondTui.h">
       <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\RelativeLayout.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tui\utils\AnimationUtil.h">
+      <Filter>lib\tui\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tui\utils\CsvUtil.h">
+      <Filter>lib\tui\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tui\utils\FileLoadUtil.h">
+      <Filter>lib\tui\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tui\utils\StringUtil.h">
+      <Filter>lib\tui\utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

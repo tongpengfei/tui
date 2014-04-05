@@ -1507,8 +1507,8 @@ export_all_layer = function( uiname, schemename, isportrait ){
 cls();
 var tui = export_current_layer( "myUI", kScheme480x800 , "0" );//xml名字，分辨率，横纵方向
 var hcontent = tui.th.parseContent();
-var saveXmlPath = "file:///F|/WorkSpace/C++WorkSpace/cocos2d-x-2.2.1/projects/AttackAlian/Resources/tui/480x800.xml";//保存xml的路径
-var saveHPath = "file:///F|/WorkSpace/C++WorkSpace/cocos2d-x-2.2.1/projects/AttackAlian/Classes/tui/tuiTagMap.h";//保存h的路径
+var saveXmlPath = "file:///F|/WorkSpace/C++WorkSpace/cocos2d-x-2.2.1/projects/HelloTui/Resources/tui/480x800.xml";//保存xml的路径
+var saveHPath = "file:///F|/WorkSpace/C++WorkSpace/cocos2d-x-2.2.1/projects/HelloTui/Classes/tui/tuiTagMap.h";//保存h的路径
 FLfile.write(saveXmlPath,tui.txml.xml);
 FLfile.write(saveHPath,hcontent);
 trace(tui.txml.xml);

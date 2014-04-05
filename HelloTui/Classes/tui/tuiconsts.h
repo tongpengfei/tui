@@ -5,16 +5,12 @@
 static const char* kTuiNodeScheme = "scheme";
 static const char* kTuiNodeControl= "control";
 
-/** tui support scheme */
-static const char* sSchemeNameIPhone4 = "iphone4";
-static const char* sSchemeNameIPhone5 = "iphone5";
-static const char* sSchemeNameIPad = "ipad";
-static const char* sSchemeNameIPadMini = "ipadmini";
-
 /** tui support control type */
 static const char* kTuiContainerPanel = "panel";
+static const char* kTuiContainerRelativeLayout = "relativeLayout";
 static const char* kTuiContainerScroll = "scrollView";
 static const char* kTuiControlImage = "image";
+static const char* kTuiControlImage9 = "image9";
 static const char* kTuiControlButton = "button";
 static const char* kTuiControlToggleView = "toggleView";
 static const char* kTuiControlCheckBox = "checkBox";
@@ -29,5 +25,8 @@ static const char* kTuicontrolNumbericStepper = "numStep";
 static const char* kTuiControlControl = "controlView";
 static const char* kTuiControlListView = "listView";
 static const char* kTuiControlPageView = "pageView";
+static const char* kTuiControlPaticle = "particle";
+static const char* kTuiControlTable = "tableView";
+static const char* kTuiControlEditBox = "editBox";
 
 #endif//TUICONSTS_H

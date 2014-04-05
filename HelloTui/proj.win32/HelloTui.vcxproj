@@ -65,7 +65,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\external;$(ProjectDir)..\..\..\external\chipmunk\include\chipmunk;$(ProjectDir)..\..\..\CocosDenshion\include;$(ProjectDir)..\..\..\extensions;..\Classes;..\Classes\utils;..\Classes\tui;..\..\CocosBase;..\..\CocosWidget;..\..\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\cocos2dx;$(ProjectDir)..\..\..\cocos2dx\include;$(ProjectDir)..\..\..\cocos2dx\kazmath\include;$(ProjectDir)..\..\..\cocos2dx\platform\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32;$(ProjectDir)..\..\..\cocos2dx\platform\third_party\win32\OGLES;$(ProjectDir)..\..\..\external;$(ProjectDir)..\..\..\external\chipmunk\include\chipmunk;$(ProjectDir)..\..\..\CocosDenshion\include;$(ProjectDir)..\..\..\extensions;..\Classes;..\..\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -153,6 +153,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\..\CocosWidget\NumericStepper.cpp" />
     <ClCompile Include="..\..\CocosWidget\PageView.cpp" />
     <ClCompile Include="..\..\CocosWidget\ProgressBar.cpp" />
+    <ClCompile Include="..\..\CocosWidget\RelativeLayout.cpp" />
     <ClCompile Include="..\..\CocosWidget\Scale9Sprite.cpp" />
     <ClCompile Include="..\..\CocosWidget\ScrollView.cpp" />
     <ClCompile Include="..\..\CocosWidget\Slider.cpp" />
@@ -174,10 +175,10 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\Classes\MySecondTui.cpp" />
     <ClCompile Include="..\Classes\tui\TuiBase.cpp" />
     <ClCompile Include="..\Classes\tui\TuiManager.cpp" />
-    <ClCompile Include="..\Classes\utils\AnimationUtil.cpp" />
-    <ClCompile Include="..\Classes\utils\CsvUtil.cpp" />
-    <ClCompile Include="..\Classes\utils\FileLoadUtil.cpp" />
-    <ClCompile Include="..\Classes\utils\StringUtil.cpp" />
+    <ClCompile Include="..\Classes\tui\utils\AnimationUtil.cpp" />
+    <ClCompile Include="..\Classes\tui\utils\CsvUtil.cpp" />
+    <ClCompile Include="..\Classes\tui\utils\FileLoadUtil.cpp" />
+    <ClCompile Include="..\Classes\tui\utils\StringUtil.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -210,6 +211,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\..\CocosWidget\NumericStepper.h" />
     <ClInclude Include="..\..\CocosWidget\PageView.h" />
     <ClInclude Include="..\..\CocosWidget\ProgressBar.h" />
+    <ClInclude Include="..\..\CocosWidget\RelativeLayout.h" />
     <ClInclude Include="..\..\CocosWidget\Scale9Sprite.h" />
     <ClInclude Include="..\..\CocosWidget\ScrollView.h" />
     <ClInclude Include="..\..\CocosWidget\Slider.h" />
@@ -232,10 +234,10 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\tui\tuiconsts.h" />
     <ClInclude Include="..\Classes\tui\TuiManager.h" />
     <ClInclude Include="..\Classes\tui\tuiTagMap.h" />
-    <ClInclude Include="..\Classes\utils\AnimationUtil.h" />
-    <ClInclude Include="..\Classes\utils\CsvUtil.h" />
-    <ClInclude Include="..\Classes\utils\FileLoadUtil.h" />
-    <ClInclude Include="..\Classes\utils\StringUtil.h" />
+    <ClInclude Include="..\Classes\tui\utils\AnimationUtil.h" />
+    <ClInclude Include="..\Classes\tui\utils\CsvUtil.h" />
+    <ClInclude Include="..\Classes\tui\utils\FileLoadUtil.h" />
+    <ClInclude Include="..\Classes\tui\utils\StringUtil.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

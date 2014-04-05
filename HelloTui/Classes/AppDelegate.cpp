@@ -21,7 +21,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     pDirector->setOpenGLView(pEGLView);
 	//ÅäÖÃ½çÃæ
-	TuiManager::sharedManager()->setPathXml("480x800.xml");
+	TuiManager::sharedManager()->loadXml("480x800.xml");
 	CCSize screenSize = TuiManager::sharedManager()->getScreen();
 
 	CCEGLView::sharedOpenGLView()->setDesignResolutionSize(screenSize.width, screenSize.height, 
