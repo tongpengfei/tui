@@ -173,6 +173,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\MyFirstTui.cpp" />
     <ClCompile Include="..\Classes\MySecondTui.cpp" />
+    <ClCompile Include="..\Classes\MyThirdui.cpp" />
     <ClCompile Include="..\Classes\tui\TuiBase.cpp" />
     <ClCompile Include="..\Classes\tui\TuiManager.cpp" />
     <ClCompile Include="..\Classes\tui\utils\AnimationUtil.cpp" />
@@ -230,6 +231,7 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\MyFirstTui.h" />
     <ClInclude Include="..\Classes\MySecondTui.h" />
+    <ClInclude Include="..\Classes\MyThirdui.h" />
     <ClInclude Include="..\Classes\tui\TuiBase.h" />
     <ClInclude Include="..\Classes\tui\tuiconsts.h" />
     <ClInclude Include="..\Classes\tui\TuiManager.h" />

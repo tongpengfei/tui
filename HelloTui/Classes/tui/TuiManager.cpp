@@ -70,6 +70,18 @@ void TuiManager::parseControl(CCNode* container,TiXmlElement* e,TiXmlNode* item)
 			parseControl(relLayer,ee,iitem);
 		}
 
+	}else if(strcmp(e->Attribute("type"),kTuiContainerLayout) == 0){//layout
+		float w = atof(e->Attribute("width"));
+		float h = atof(e->Attribute("height"));
+		CLayout *playout = createLayout(tag,x,y,w,h);
+		playout->ignoreAnchorPointForPosition(true);
+		container->addChild(playout);
+		//递归
+		for( TiXmlNode* iitem = item->FirstChild( kTuiNodeControl );iitem; iitem = iitem->NextSibling(kTuiNodeControl)){
+			TiXmlElement* ee = iitem->ToElement();
+			parseControl(playout,ee,iitem);
+		}
+
 	}else if(strcmp(e->Attribute("type"),kTuiControlImage) == 0){//image
 		const char* file = e->Attribute("image");
 		CImageView *pImg = createImage(tag,file,x,y);
@@ -162,9 +174,30 @@ void TuiManager::parseControl(CCNode* container,TiXmlElement* e,TiXmlNode* item)
 		float w = atof(e->Attribute("width"));
 		float h = atof(e->Attribute("height"));
 		const char* img = e->Attribute("image");
+		float num = atof(e->Attribute("num"));
 		CListView* pList = createListView(tag,img,x,y,w,h);
 		container->addChild(pList);
 
+		for(int i=0; i<num;i++){//添加item
+			TiXmlNode* iitem = item->FirstChild( kTuiNodeControl );
+			TiXmlElement* layoutElem = iitem->ToElement();
+			w = atof(layoutElem->Attribute("width"));
+			h = atof(layoutElem->Attribute("height"));
+
+			CLayout *pLayout = createLayout(i,0,0,w,h);
+			for( TiXmlNode* iiitem = iitem->FirstChild( kTuiNodeControl );iiitem; iiitem = iiitem->NextSibling(kTuiNodeControl)){
+				TiXmlElement* ee = iiitem->ToElement();
+				parseControl(pLayout,ee,iiitem);
+			}
+			CCObject* pObj = NULL;
+			CCARRAY_FOREACH(pLayout->getChildren(),pObj){//偏移坐标 因为CLayout的零点在左下角
+				CCNode* pChild = (CCNode*)pObj;
+				pChild->setPosition(pChild->getPositionX()+w/2,pChild->getPositionY()+h/2);
+			}
+			pList->insertNodeAtLast(pLayout);
+		}
+		pList->reloadData();
+		
 	}else if(strcmp(e->Attribute("type"),kTuiControlPageView) == 0){//pageView
 		float w = atof(e->Attribute("width"));
 		float h = atof(e->Attribute("height"));
@@ -230,6 +263,13 @@ CWidgetWindow *TuiManager::createPanel(float tag,float x,float y){
 	return pSprite;
 }
 
+CLayout *TuiManager::createLayout(float tag,float x,float y,float w,float h){
+	CLayout *pLayout = CLayout::create(CCSizeMake(w,h));
+	pLayout->setPosition(ccp(x,y));
+	pLayout->setTag(tag);
+	return pLayout;
+}
+
 RelativeLayout *TuiManager::createRelativeLayout(float tag,float x,float y,float w,float h){
 	RelativeLayout *pRelLayer = RelativeLayout::create(CCSize(w,h));
 	pRelLayer->setPosition(ccp(x,-y));
@@ -249,6 +289,7 @@ CScrollView *TuiManager::createScrollView(float tag,float x,float y,float w,floa
 CListView *TuiManager::createListView(float tag,const char* img,float x,float y,float w,float h){
 	CListView *pList = CListView::create(CCSize(w,h));
 	m_isUseSpriteFrame ? pList->setBackgroundSpriteFrameName(img) : pList->setBackgroundImage(img);
+	//pList->setContentSize(pList->getBackgroundImage()->getContentSize());
 	pList->setDirection(eScrollViewDirectionVertical);
 	pList->setPosition(ccp(x,-y));
 	pList->setTag(tag);
@@ -492,6 +533,8 @@ CCEditBox* TuiManager::createEditBox(float tag,const char* file,float x,float y,
 	pEditBox->setTag(tag);
 	return pEditBox;
 }
+
+
 
 void TuiManager::loadXml(const char* xml){
 	m_xmlPath = xml;

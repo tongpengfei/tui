@@ -2,6 +2,7 @@
 #include "HelloWorldScene.h"
 #include "MyFirstTui.h"
 #include "MySecondTui.h"
+#include "MyThirdui.h"
 #include "tui/TuiManager.h"
 
 USING_NS_CC;
@@ -21,7 +22,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     pDirector->setOpenGLView(pEGLView);
 	//ÅäÖÃ½çÃæ
-	TuiManager::sharedManager()->loadXml("480x800.xml");
+	TuiManager::sharedManager()->loadXml("tui/480x800.xml");
 	CCSize screenSize = TuiManager::sharedManager()->getScreen();
 
 	CCEGLView::sharedOpenGLView()->setDesignResolutionSize(screenSize.width, screenSize.height, 
@@ -37,9 +38,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	//×¢²á³¡¾°
 	REGISTER_SCENE_FUNC(MyFirstTui);
 	REGISTER_SCENE_FUNC(MySecondTui);
+	REGISTER_SCENE_FUNC(MyThirdui);
     // run
     //pDirector->runWithScene(pScene);
-	CCSceneManager::sharedManager()->runWithScene(LoadScene("MyFirstTui"));
+	CCSceneManager::sharedManager()->runWithScene(LoadScene("MyThirdui"));
 
 
     return true;

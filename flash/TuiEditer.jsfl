@@ -250,11 +250,10 @@ TXML.prototype.getNodeName = function(){
 }
 
 TXML.prototype.addChild = function( o ){
-	if( !o ){
-		alert( o );
+	if( o ){
+		o.parent = this;
+		this.children.push( o );
 	}
-	o.parent = this;
-	this.children.push( o );
 }
 
 TXML.prototype.registerAttribute = function( k, v ){
@@ -382,6 +381,7 @@ UIControlType.kListView = "listView";
 UIControlType.kPageView = "pageView";
 UIControlType.kTableView = "tableView";
 UIControlType.kScrollView = "scrollView";
+UIControlType.kLayout = "layout";
 UIControlType.kRelativeLayout = "relativeLayout";
 /////////////////////////////////////////////////////////////////////
 /** 控件的属性 */
@@ -392,6 +392,8 @@ UIControlAttribute.kTag = "tag";
 UIControlAttribute.kType = "type";
 /** 控件的文本 */
 UIControlAttribute.kText = "text";
+/** item数量 */
+UIControlAttribute.kNum = "num";
 /** 控件文本尺寸 */
 UIControlAttribute.kTextSize = "textSize";
 /** 控件的名字,在程序中控制用 */
@@ -667,6 +669,15 @@ UIRichText.prototype.init = function(){
 	UIRichText.superClass.prototype.init.call(this);
 	this.setAttribute( UIControlAttribute.kType, UIControlType.kRichText );
 }
+/////////////////Layout//////////////////////////////////////////////
+UILayout = function(){
+	UILayout.superClass.call(this);
+}
+UILayout.extend( UIControl );
+UILayout.prototype.init = function(){
+	UILayout.superClass.prototype.init.call(this);
+	this.setAttribute( UIControlAttribute.kType, UIControlType.kLayout );
+}
 /////////////////RelativeLayout//////////////////////////////////////////////
 UIRelativeLayout = function(){
 	UIRelativeLayout.superClass.call(this);
@@ -917,7 +928,7 @@ FlaToXML.prototype.elementIsMc = function( element ){
 	if(element.libraryItem == null) return false;
 	var type = element.libraryItem.itemType;
 	if( "movie clip" == type ) return true;
-	if( "graphic" == type ) return true;
+	//if( "graphic" == type ) return true;
 	return false;
 }
 
@@ -991,12 +1002,14 @@ FlaToXML.prototype.convert = function( objfla, xmlfile, uiname, scheme ){
 }
 
 /** 转换元素为UICnotrol */
-FlaToXML.prototype.convertElement = function( element , elementIndex){
+FlaToXML.prototype.convertElement = function( element ,elementIndex ,extra){
 	var e_xml = null;
 	if( this.elementIsMc( element ) ){
-		e_xml = this.convertMC( element ,elementIndex);
+		e_xml = this.convertMC( element ,elementIndex ,extra);
 	}else if( this.elementIsText( element )){
-		e_xml = this.convertText( element,elementIndex);
+		e_xml = this.convertText( element,elementIndex ,extra);
+	}else if(element.instanceType == "bitmap"){
+		//bitmap 不处理
 	}else{
 		alert( "未知的类型: " + element.instanceType + " " + element.libraryItem.itemType );
 	}
@@ -1004,12 +1017,18 @@ FlaToXML.prototype.convertElement = function( element , elementIndex){
 }
 
 /** 填充一般属性 */
-FlaToXML.prototype.fullNormalAttirbute = function( xml, element ,elementIndex){	
-	xml.setAttribute( UIControlAttribute.kX, formatNumber( element.x ) );
-	xml.setAttribute( UIControlAttribute.kY, formatNumber( element.y ) );
+FlaToXML.prototype.fullNormalAttirbute = function( xml,th, element ,elementIndex ,extra){//额外参数
+	if(extra == undefined) extra = "";
 	
 	var ox = element.x - element.left;
 	var oy = element.y - element.top;
+	
+	xml.setAttribute( UIControlAttribute.kName,element.name + extra);
+	xml.setAttribute( UIControlAttribute.kX, formatNumber( element.x ) );
+	xml.setAttribute( UIControlAttribute.kY, formatNumber( element.y) );
+	
+	th.obj[element.name + extra] = elementIndex;
+
 	xml.setAttribute( UIControlAttribute.kOriginX, formatNumber(ox) );
 	xml.setAttribute( UIControlAttribute.kOriginY, formatNumber(oy) );
 	
@@ -1017,118 +1036,121 @@ FlaToXML.prototype.fullNormalAttirbute = function( xml, element ,elementIndex){
 	xml.setAttribute( UIControlAttribute.kHeight, formatNumber(element.height) );
 	xml.setAttribute( UIControlAttribute.kTag, formatNumber(elementIndex));
 }
-
 /** 转换movie clip */
-FlaToXML.prototype.convertMC = function( mc , elementIndex){
+FlaToXML.prototype.convertMC = function( mc ,elementIndex ,extra){
 	var control_xml = null;
 	switch(mc.name.split("_")[0]){//获取mc的类型
 		
 		case "panel":
-			control_xml = this.convertPanel(mc,elementIndex);
+			control_xml = this.convertPanel(mc,elementIndex ,extra);
 			break;
 		case "relLayer":
-			control_xml = this.convertRelativeLayout(mc,elementIndex);
+			control_xml = this.convertRelativeLayout(mc,elementIndex ,extra);
 			break;	
+		case "layout":
+			control_xml = this.convertLayout(mc,elementIndex ,extra);
+			break;
 		case "img":
-			control_xml = this.convertImg(mc,elementIndex);
+			control_xml = this.convertImg(mc,elementIndex ,extra);
 			break;
 		case "img9":
-			control_xml = this.convertImg9(mc,elementIndex);
+			control_xml = this.convertImg9(mc,elementIndex ,extra);
 			break;
 		case "ckb":
-			control_xml = this.convertCheckBox(mc,elementIndex);
+			control_xml = this.convertCheckBox(mc,elementIndex ,extra);
 			break;
 		case "slider":
-			control_xml = this.convertSlider(mc,elementIndex);
+			control_xml = this.convertSlider(mc,elementIndex ,extra);
 			break;
 		case "prog":
-			control_xml = this.converProgress(mc,elementIndex);
+			control_xml = this.converProgress(mc,elementIndex ,extra);
 			break;
 		case "armature":
-			control_xml = this.convertArmature(mc,elementIndex);
+			control_xml = this.convertArmature(mc,elementIndex ,extra);
 			break;
 		case "anim":
-			control_xml = this.convertAnim(mc,elementIndex);
+			control_xml = this.convertAnim(mc,elementIndex ,extra);
 			break;
 		case "ctlv":
-			control_xml = this.convertControlView(mc,elementIndex);
+			control_xml = this.convertControlView(mc,elementIndex ,extra);
 			break;
 		case "tgv":
-			control_xml = this.convertToggleView(mc,elementIndex);
+			control_xml = this.convertToggleView(mc,elementIndex ,extra);
 			break;
 		case "list":
-			control_xml = this.convertListView(mc,elementIndex);
+			control_xml = this.convertListView(mc,elementIndex ,extra);
 			break;
 		case "page":
-			control_xml = this.convertPageView(mc,elementIndex);
+			control_xml = this.convertPageView(mc,elementIndex ,extra);
 			break;
 		case "scrol":
-			control_xml = this.convertScrollView(mc,elementIndex);
+			control_xml = this.convertScrollView(mc,elementIndex ,extra);
 			break;
 		case "labAtlas":
-			control_xml = this.convertLabAtlas(mc,elementIndex);
+			control_xml = this.convertLabAtlas(mc,elementIndex ,extra);
 			break;
 		case "armBtn":
-			control_xml = this.convertArmatureBtn(mc,elementIndex);
+			control_xml = this.convertArmatureBtn(mc,elementIndex ,extra);
 			break;
 		case "btn":
-			control_xml = this.convertButton(mc,elementIndex);
+			control_xml = this.convertButton(mc,elementIndex ,extra);
 			break;
 		case "numStep":
-			control_xml = this.convertNumberStepper(mc,elementIndex);
+			control_xml = this.convertNumberStepper(mc,elementIndex ,extra);
 			break;
 		case "ptl":
-			control_xml = this.convertParticle(mc,elementIndex);
+			control_xml = this.convertParticle(mc,elementIndex ,extra);
 			break;
 		case "table":
-			control_xml = this.convertTableView(mc,elementIndex);
+			control_xml = this.convertTableView(mc,elementIndex ,extra);
 			break;
 		case "edit":
-			control_xml = this.convertEditBox(mc,elementIndex);
+			control_xml = this.convertEditBox(mc,elementIndex ,extra);
 			break;
 		case "rtf":
-			control_xml = this.convertRichText(mc,elementIndex);
+			control_xml = this.convertRichText(mc,elementIndex ,extra);
 			break;
 	}
 	return control_xml;
 }
 
 /** 转换panel */
-FlaToXML.prototype.convertPanel = function(panel,elementIndex){
+FlaToXML.prototype.convertPanel = function(panel,elementIndex ,extra){
 	var control_xml = new UIPanel();
-	control_xml.setAttribute( UIControlAttribute.kName, panel.name );
-	this.fullNormalAttirbute( control_xml, panel, elementIndex );
+	this.fullNormalAttirbute( control_xml,this.th, panel, elementIndex );
 	//获取mc的timeline
 	var timeline = panel.libraryItem.timeline;
 	this.fetchElement( timeline, control_xml );
-	
-	this.th.obj[panel.name] = elementIndex;
+
 	return control_xml;
 }
-/** 转换convertRelativeLayout */
-FlaToXML.prototype.convertRelativeLayout = function(relativeLayout,elementIndex){
+/** 转换RelativeLayout */
+FlaToXML.prototype.convertRelativeLayout = function(relativeLayout,elementIndex ,extra){
 	var xml_relativeLayout = new UIRelativeLayout();
-	xml_relativeLayout.setAttribute( UIControlAttribute.kName, relativeLayout.name );
-	this.fullNormalAttirbute( xml_relativeLayout, relativeLayout ,elementIndex );
+	this.fullNormalAttirbute( xml_relativeLayout, this.th,relativeLayout ,elementIndex ,extra);
 	//获取mc的timeline
 	var timeline = relativeLayout.libraryItem.timeline;
 	this.fetchElement( timeline, xml_relativeLayout );
-	
-	this.th.obj[relativeLayout.name] = elementIndex;
 	return xml_relativeLayout;
 }
+/** 转换Layout */
+FlaToXML.prototype.convertLayout = function(layout,elementIndex ,extra){
+	var xml_Layout = new UILayout();
+	this.fullNormalAttirbute( xml_Layout,this.th, layout ,elementIndex ,extra);
+	//获取mc的timeline
+	var timeline = layout.libraryItem.timeline;
+	this.fetchElement( timeline, xml_Layout );
+	return xml_Layout;
+}
 /** 转换image */
-FlaToXML.prototype.convertImg = function( image , elementIndex){
+FlaToXML.prototype.convertImg = function( image , elementIndex ,extra){
 	var xml_img = new UIImage();
 	xml_img.setAttribute( UIControlAttribute.kImage, image.libraryItem.name + ".png" );
-	xml_img.setAttribute( UIControlAttribute.kName, image.name );
-	this.fullNormalAttirbute( xml_img, image ,elementIndex );
-	
-	this.th.obj[image.name] = elementIndex;
+	this.fullNormalAttirbute( xml_img,this.th, image ,elementIndex ,extra);
 	return xml_img;
 }
 /** 转换image9 */
-FlaToXML.prototype.convertImg9 = function( image9 , elementIndex){
+FlaToXML.prototype.convertImg9 = function( image9 , elementIndex ,extra){
 	var xml_img9 = new UIImage9();
 	var nameArr = image9.name.split("_");		//img9_test_10_10_10_10
 	var imgName = nameArr[0]+"_"+nameArr[1];
@@ -1137,89 +1159,71 @@ FlaToXML.prototype.convertImg9 = function( image9 , elementIndex){
 	xml_img9.setAttribute( UIControlAttribute.kLeft,nameArr[4]);
 	xml_img9.setAttribute( UIControlAttribute.kRight,nameArr[5]);
 	xml_img9.setAttribute( UIControlAttribute.kImage, image9.libraryItem.name + ".png" );
-	xml_img9.setAttribute( UIControlAttribute.kName, imgName );
-	this.fullNormalAttirbute( xml_img9, image9 ,elementIndex );
-	
-	this.th.obj[imgName] = elementIndex;
+	this.fullNormalAttirbute( xml_img9,this.th, image9 ,elementIndex ,extra);
 	return xml_img9;
 }
 /** 转换anim */
-FlaToXML.prototype.convertAnim = function(anim ,elementIndex){
+FlaToXML.prototype.convertAnim = function(anim ,elementIndex ,extra){
 	var xml_anim = new UIAnim();
-	xml_anim.setAttribute( UIControlAttribute.kName, anim.name );
 	xml_anim.setAttribute(UIControlAttribute.kPlist,anim.libraryItem.name + ".plist");
 	xml_anim.setAttribute(UIControlAttribute.kPng,anim.libraryItem.name + ".png");
-	this.fullNormalAttirbute( xml_anim, anim ,elementIndex );
-	
-	this.th.obj[anim.name] = elementIndex;
+	this.fullNormalAttirbute( xml_anim,this.th, anim ,elementIndex ,extra);
 	return xml_anim;
 }
 /** 转换button */
-FlaToXML.prototype.convertButton = function( button ,elementIndex){
+FlaToXML.prototype.convertButton = function( button ,elementIndex ,extra){
 	var xml_btn = new UIButton();
-	xml_btn.setAttribute( UIControlAttribute.kName, button.name );
-	
-	this.fullNormalAttirbute( xml_btn, button ,elementIndex );
+	this.fullNormalAttirbute( xml_btn,this.th, button ,elementIndex ,extra);
 	xml_btn.setAttribute( UIControlAttribute.kbtnImg_normal, button.libraryItem.name + "_normal.png" );
 	xml_btn.setAttribute( UIControlAttribute.kbtnImg_select, button.libraryItem.name + "_select.png" );
 	xml_btn.setAttribute( UIControlAttribute.kbtnImg_disable, button.libraryItem.name + "_disable.png" );
-	this.th.obj[button.name] = elementIndex;
 	return xml_btn;
 }
 /** 转换checkBox */
-FlaToXML.prototype.convertCheckBox = function(checkBox,elementIndex){
+FlaToXML.prototype.convertCheckBox = function(checkBox,elementIndex ,extra){
 	var xml_checkBox = new UICheckBox();
-	xml_checkBox.setAttribute( UIControlAttribute.kName, checkBox.name );
-	this.fullNormalAttirbute( xml_checkBox, checkBox ,elementIndex );
+	this.fullNormalAttirbute( xml_checkBox,this.th, checkBox ,elementIndex ,extra);
 	xml_checkBox.setAttribute( UIControlAttribute.kbtnImg_normal1, checkBox.libraryItem.name + "_normal1.png" );
 	xml_checkBox.setAttribute( UIControlAttribute.kbtnImg_normal2, checkBox.libraryItem.name + "_normal2.png" );
 	xml_checkBox.setAttribute( UIControlAttribute.kbtnImg_select1, checkBox.libraryItem.name + "_select1.png" );
 	xml_checkBox.setAttribute( UIControlAttribute.kbtnImg_select2, checkBox.libraryItem.name + "_select2.png" );
 	xml_checkBox.setAttribute( UIControlAttribute.kbtnImg_disable1, checkBox.libraryItem.name + "_disable1.png" );
 	xml_checkBox.setAttribute( UIControlAttribute.kbtnImg_disable2, checkBox.libraryItem.name + "_disable2.png" );
-	this.th.obj[checkBox.name] = elementIndex;
 	return xml_checkBox;
 }
 /** 转换slider */
-FlaToXML.prototype.convertSlider = function(slider,elementIndex){
+FlaToXML.prototype.convertSlider = function(slider,elementIndex ,extra){
 	var xml_slider = new UISlider();
-	xml_slider.setAttribute( UIControlAttribute.kName, slider.name );
-	this.fullNormalAttirbute( xml_slider, slider ,elementIndex );
+	this.fullNormalAttirbute( xml_slider,this.th, slider ,elementIndex ,extra);
 	
 	xml_slider.setAttribute(UIControlAttribute.ksliderImg_bg,slider.libraryItem.name + "_bg.png");
 	xml_slider.setAttribute(UIControlAttribute.ksliderImg_progress,slider.libraryItem.name + "_progress.png");
 	xml_slider.setAttribute(UIControlAttribute.ksliderImg_thumb,slider.libraryItem.name + "_thumb.png");
-	this.th.obj[slider.name] = elementIndex;
 	return xml_slider;
 }
 /** 转换progress */
-FlaToXML.prototype.converProgress = function(prog,elementIndex){
+FlaToXML.prototype.converProgress = function(prog,elementIndex ,extra){
 	var xml_prog = new UIProgress();
-	xml_prog.setAttribute( UIControlAttribute.kName, prog.name );
-	this.fullNormalAttirbute( xml_prog, prog ,elementIndex );
+	this.fullNormalAttirbute( xml_prog,this.th, prog ,elementIndex ,extra);
 	
 	xml_prog.setAttribute(UIControlAttribute.ksliderImg_bg,prog.libraryItem.name + "_bg.png");
 	xml_prog.setAttribute(UIControlAttribute.ksliderImg_progress,prog.libraryItem.name + "_progress.png");
-	this.th.obj[prog.name] = elementIndex;
 	return xml_prog;
 }
 /** 转换armature */
-FlaToXML.prototype.convertArmature = function(armature,elementIndex){
+FlaToXML.prototype.convertArmature = function(armature,elementIndex ,extra){
 	var xml_armature = new UIArmature();
-	xml_armature.setAttribute( UIControlAttribute.kName, armature.name );
-	this.fullNormalAttirbute( xml_armature, armature ,elementIndex );
+	this.fullNormalAttirbute( xml_armature, this.th,armature ,elementIndex ,extra);
 	
 	xml_armature.setAttribute(UIControlAttribute.karmature_xml,armature.libraryItem.name + ".xml");
 	xml_armature.setAttribute(UIControlAttribute.kPng,armature.libraryItem.name + ".png");
 	xml_armature.setAttribute(UIControlAttribute.kPlist,armature.libraryItem.name + ".plist");
-	this.th.obj[armature.name] = elementIndex;
 	return xml_armature;
 }
 /** 转换label */
-FlaToXML.prototype.convertText = function(label,elementIndex){
+FlaToXML.prototype.convertText = function(label,elementIndex ,extra){
 	var xml_label = new UILabel();
-	xml_label.setAttribute( UIControlAttribute.kName, label.name );
-	this.fullNormalAttirbute( xml_label, label ,elementIndex );
+	this.fullNormalAttirbute( xml_label,this.th, label ,elementIndex ,extra);
 	//for(var k in label.textRuns[0].textAttrs){
 	//	trace("k: "+k + " "+label.textRuns[0].textAttrs[k]);
 	//}
@@ -1233,77 +1237,72 @@ FlaToXML.prototype.convertText = function(label,elementIndex){
 	//trace("label text:"+label.textRuns[0].characters);
 	xml_label.setAttribute(UIControlAttribute.kText,text);
 	xml_label.setAttribute(UIControlAttribute.kTextSize,label.textRuns[0].textAttrs.size);
-	this.th.obj[label.name] = elementIndex;
 	return xml_label;
 }
 /** 转换LabelAtlas */
-FlaToXML.prototype.convertLabAtlas = function(labAtlas,elementIndex){
+FlaToXML.prototype.convertLabAtlas = function(labAtlas,elementIndex ,extra){
 	var xml_labAtlas = new UILabelAtlas();
-	xml_labAtlas.setAttribute(UIControlAttribute.kName,labAtlas.name);
-	this.fullNormalAttirbute( xml_labAtlas, labAtlas ,elementIndex );
+	this.fullNormalAttirbute( xml_labAtlas,this.th,labAtlas ,elementIndex ,extra);
 	var imgPath = labAtlas.libraryItem.name + ".png";
 	xml_labAtlas.setAttribute( UIControlAttribute.kImage, imgPath );
-	this.th.obj[labAtlas.name] = elementIndex;
 	return xml_labAtlas;
 }
 /** 转换controlView */
-FlaToXML.prototype.convertControlView = function(control,elementIndex){
+FlaToXML.prototype.convertControlView = function(control,elementIndex ,extra){
 	var xml_control = new UIControlView();
-	xml_control.setAttribute( UIControlAttribute.kName, control.name );
-	this.fullNormalAttirbute( xml_control, control ,elementIndex );
+	this.fullNormalAttirbute( xml_control,this.th, control ,elementIndex ,extra);
 	xml_control.setAttribute(UIControlAttribute.kcontrol_baseboard,control.libraryItem.name + "_baseboard.png");
 	xml_control.setAttribute(UIControlAttribute.kcontrol_joystick,control.libraryItem.name + "_joystick.png");
-	this.th.obj[control.name] = elementIndex;
 	return xml_control;
 }
 /** 转换toggleView */
-FlaToXML.prototype.convertToggleView = function(toggleView,elementIndex){
+FlaToXML.prototype.convertToggleView = function(toggleView,elementIndex ,extra){
 	var xml_toggleView = new UIToggleView();
 	var nameArr = toggleView.name.split("_");//tgv_test_1
 	var exclusionId = nameArr.pop();
 	var viewName = nameArr.join("_");
-	xml_toggleView.setAttribute(UIControlAttribute.kName,viewName);
 	xml_toggleView.setAttribute(UIControlAttribute.kExclusion,exclusionId);
-	this.fullNormalAttirbute( xml_toggleView, toggleView ,elementIndex );
+	this.fullNormalAttirbute( xml_toggleView, this.th,toggleView ,elementIndex ,extra);
 	xml_toggleView.setAttribute( UIControlAttribute.kbtnImg_normal, toggleView.libraryItem.name + "_normal.png" );
 	xml_toggleView.setAttribute( UIControlAttribute.kbtnImg_select, toggleView.libraryItem.name + "_select.png" );
 	xml_toggleView.setAttribute( UIControlAttribute.kbtnImg_disable, toggleView.libraryItem.name + "_disable.png" );
-	this.th.obj[viewName] = elementIndex;
 	return xml_toggleView;
 }
 /** 转换listView */
-FlaToXML.prototype.convertListView = function(listView,elementIndex){
-	var xml_toggleView = new UIListView();
-	xml_toggleView.setAttribute( UIControlAttribute.kName, listView.name );
-	this.fullNormalAttirbute( xml_toggleView, listView ,elementIndex );
-	xml_toggleView.setAttribute(UIControlAttribute.kImage,listView.libraryItem.name + ".png");
-	this.th.obj[listView.name] = elementIndex;
-	return xml_toggleView;
+FlaToXML.prototype.convertListView = function(listView,elementIndex ,extra){
+	var xml_listView = new UIListView();
+	//xml_listView.setAttribute( UIControlAttribute.kName, listView.name );
+	this.fullNormalAttirbute( xml_listView,this.th, listView ,elementIndex ,extra);
+	xml_listView.setAttribute(UIControlAttribute.kImage,listView.libraryItem.name + ".png");
+	var nameArr = listView.name.split("_");
+	if(nameArr.length == 3){
+		var num = nameArr.pop();//复制item
+		xml_listView.setAttribute(UIControlAttribute.kNum,num);
+	}
+	//获取mc的timeline
+	var timeline = listView.libraryItem.timeline;
+	this.fetchElement( timeline, xml_listView );
+	return xml_listView;
 }
 /** 转换pageView  */
-FlaToXML.prototype.convertPageView = function(pageView,elementIndex){
+FlaToXML.prototype.convertPageView = function(pageView,elementIndex ,extra){
 	var xml_pageView = new UIPageView();
-	xml_pageView.setAttribute( UIControlAttribute.kName, pageView.name );
-	this.fullNormalAttirbute( xml_pageView, pageView ,elementIndex );
-	this.th.obj[pageView.name] = elementIndex;
+	this.fullNormalAttirbute( xml_pageView,this.th, pageView ,elementIndex ,extra);
 	return xml_pageView;
 }
 /** 转换armatureBtn */
-FlaToXML.prototype.convertArmatureBtn = function(armatureBtn,elementIndex){
+FlaToXML.prototype.convertArmatureBtn = function(armatureBtn,elementIndex ,extra){
 	var xml_armatureBtn = new UIArmatureBtn();
-	xml_armatureBtn.setAttribute( UIControlAttribute.kName, armatureBtn.name );
-	this.fullNormalAttirbute( xml_armatureBtn, armatureBtn ,elementIndex );
+	this.fullNormalAttirbute( xml_armatureBtn,this.th, armatureBtn ,elementIndex ,extra);
 	xml_armatureBtn.setAttribute(UIControlAttribute.karmature_xml,armatureBtn.libraryItem.name + ".xml");
 	xml_armatureBtn.setAttribute(UIControlAttribute.kPng,armatureBtn.libraryItem.name + ".png");
 	xml_armatureBtn.setAttribute(UIControlAttribute.kPlist,armatureBtn.libraryItem.name + ".plist");
-	this.th.obj[armatureBtn.name] = elementIndex;
 	return xml_armatureBtn;
 }
 /** 转换numberStepper */
-FlaToXML.prototype.convertNumberStepper = function(numStep,elementIndex){
+FlaToXML.prototype.convertNumberStepper = function(numStep,elementIndex ,extra){
 	var xml_numStep = new UINumbericStepper();
-	xml_numStep.setAttribute( UIControlAttribute.kName, numStep.name );
-	this.fullNormalAttirbute( xml_numStep, numStep ,elementIndex );
+	this.fullNormalAttirbute( xml_numStep,this.th, numStep ,elementIndex ,extra);
 	xml_numStep.setAttribute(UIControlAttribute.kbtn_lnormal,numStep.libraryItem.name + "_lnomal.png");
 	xml_numStep.setAttribute(UIControlAttribute.kbtn_lselect,numStep.libraryItem.name + "_lselect.png");
 	xml_numStep.setAttribute(UIControlAttribute.kbtn_ldisable,numStep.libraryItem.name + "_ldisable.png");
@@ -1311,53 +1310,40 @@ FlaToXML.prototype.convertNumberStepper = function(numStep,elementIndex){
 	xml_numStep.setAttribute(UIControlAttribute.kbtn_rselect,numStep.libraryItem.name + "_rselect.png");
 	xml_numStep.setAttribute(UIControlAttribute.kbtn_rdisable,numStep.libraryItem.name + "_rdisable.png");
 	xml_numStep.setAttribute(UIControlAttribute.kstepbg,numStep.libraryItem.name + "_stepbg.png");
-	
-	this.th.obj[numStep.name] = elementIndex;
 	return xml_numStep;
 }
 /** 转换scrollView */
-FlaToXML.prototype.convertScrollView = function(scrollView,elementIndex){
+FlaToXML.prototype.convertScrollView = function(scrollView,elementIndex ,extra){
 	var xml_scrollView = new UIScrollView();
-	xml_scrollView.setAttribute( UIControlAttribute.kName, scrollView.name );
-	this.fullNormalAttirbute( xml_scrollView, scrollView ,elementIndex );
-	this.th.obj[scrollView.name] = elementIndex;
+	this.fullNormalAttirbute( xml_scrollView,this.th, scrollView ,elementIndex ,extra);
 	return xml_scrollView;
 }
 /** 转换粒子 */
-FlaToXML.prototype.convertParticle = function(particle,elementIndex){
+FlaToXML.prototype.convertParticle = function(particle,elementIndex ,extra){
 	var xml_particle = new UIParticle();
-	xml_particle.setAttribute( UIControlAttribute.kName, particle.name );
 	xml_particle.setAttribute(UIControlAttribute.kPlist,particle.libraryItem.name + ".plist");
-	this.fullNormalAttirbute( xml_particle, particle ,elementIndex );
-	this.th.obj[particle.name] = elementIndex;
+	this.fullNormalAttirbute( xml_particle,this.th, particle ,elementIndex ,extra);
 	return xml_particle;
 }
 /** 转换table */
-FlaToXML.prototype.convertTableView = function(table,elementIndex){
+FlaToXML.prototype.convertTableView = function(table,elementIndex ,extra){
 	var xml_tableView = new UITableView();
-	xml_tableView.setAttribute( UIControlAttribute.kName, table.name );
-	this.fullNormalAttirbute( xml_tableView, table ,elementIndex );
-	this.th.obj[table.name] = elementIndex;
+	this.fullNormalAttirbute( xml_tableView,this.th, table ,elementIndex ,extra);
 	return xml_tableView;
 }
 /** 转换EditBox */
-FlaToXML.prototype.convertEditBox = function(editBox,elementIndex){
+FlaToXML.prototype.convertEditBox = function(editBox,elementIndex ,extra){
 	var xml_editBox = new UIEditBox();
 	xml_editBox.setAttribute( UIControlAttribute.kImage, editBox.libraryItem.name + ".png" );
-	xml_editBox.setAttribute( UIControlAttribute.kName, editBox.name );
-	this.fullNormalAttirbute( xml_editBox, editBox ,elementIndex );
-	this.th.obj[editBox.name] = elementIndex;
+	this.fullNormalAttirbute( xml_editBox,this.th, editBox ,elementIndex ,extra);
 	return xml_editBox;
 }
 /** 转换RichText */
-FlaToXML.prototype.convertRichText = function(richText,elementIndex){
+FlaToXML.prototype.convertRichText = function(richText,elementIndex ,extra){
 	var xml_richText = new UIRichText();
-	xml_richText.setAttribute( UIControlAttribute.kName, richText.name );
-	this.fullNormalAttirbute( xml_richText, richText ,elementIndex );
-	this.th.obj[richText.name] = elementIndex;
+	this.fullNormalAttirbute( xml_richText,this.th, richText ,elementIndex ,extra);
 	return xml_richText;
 }
-
 /**
  @brief 从某个layer里提取元素
  */
@@ -1385,7 +1371,7 @@ FlaToXML.prototype.fetchElementFromLayer = function( layer, layer_index, parentx
  @brief 从timeline里提取element,并填加到父节点 
  @param parentxml:TXML 父节点
  */
-FlaToXML.prototype.fetchElement = function( timeline, parentxml ){
+FlaToXML.prototype.fetchElement = function( timeline, parentxml ,extra ){
 	//trace( "FlaToXML: 提取fla里的元素" );
 	//获取时间轴
 	//var time_line = this.obj_fla.getTimeline();
@@ -1408,7 +1394,7 @@ FlaToXML.prototype.fetchElement = function( timeline, parentxml ){
 				//	  + this.getElementUIType( element ) + "实例名" + element.libraryItem.name );
 				//trace( "类型是:[" + element.libraryItem.itemType +"]将被转换成" + this.getElementUIType( element ) );
 				//trace( "实例名:" + element.libraryItem.name );
-				var exml = this.convertElement( element ,this.cid++ );
+				var exml = this.convertElement( element ,this.cid++ ,extra);
 				parentxml.addChild( exml );
 			}
 		}
@@ -1477,7 +1463,6 @@ export_visible_layer = function( uiname, schemename, isportrait ){
 	}else{
 		scheme.setModeToLandscape();
 	}
-	
 	var convert = new FlaToXML();
 	convert.setExportLayerType( kExportLayerVisible );
 	convert.convert( fl.getDocumentDOM(), null, uiname, scheme );

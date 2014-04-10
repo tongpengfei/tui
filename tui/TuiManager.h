@@ -20,6 +20,7 @@ public:
 public:
 
 	CWidgetWindow *createPanel(float tag,float x,float y);
+	CLayout *createLayout(float tag,float x,float y,float w,float h);
 	RelativeLayout *createRelativeLayout(float tag,float x,float y,float w,float h);
 	CScrollView *createScrollView(float tag,float x,float y,float w,float h);
 	CListView *createListView(float tag,const char* img,float x,float y,float w,float h);

@@ -186,6 +186,9 @@
     <ClCompile Include="..\Classes\tui\utils\StringUtil.cpp">
       <Filter>lib\tui\utils</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\MyThirdui.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -358,6 +361,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\tui\utils\StringUtil.h">
       <Filter>lib\tui\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MyThirdui.h">
+      <Filter>Classes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
