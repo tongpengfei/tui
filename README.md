@@ -24,7 +24,7 @@ Tui-x和Tui的解析库是完全不兼容，在原始的Tui中，按钮发出的
 首先要配置在TuiEditer.jsfl里面配置导出xml和.h的路径，请在FlashCS里面导入TuiEditer.jsfl，然后滚到最下面有两个配置路径。
 然后配置如何在工程里使用。在AppDelegate.cpp里的applicationDidFinishLaunching中加上
 
-TuiManager::sharedManager()->setPathXml("tui/480x800.xml"); //读取xml文件内容
+TuiManager::sharedManager()->loadXml("tui/480x800.xml"); //读取xml文件内容
 CCSize screenSize = TuiManager::sharedManager()->getScreen(); //设置屏幕分辨率
 
 CCEGLView::sharedOpenGLView()->setDesignResolutionSize(screenSize.width, screenSize.height, kResolutionNoBorder); //无边框

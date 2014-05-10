@@ -48,7 +48,6 @@ protected:
 private:
 	static TuiManager* m_instance;
 
-	const char* m_xmlPath;
 	const char* m_fileContent;//xml解析后的字符数组
 	bool m_isUseSpriteFrame;
 };

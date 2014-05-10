@@ -1,5 +1,5 @@
-#ifndef __BASE_H__
-#define __BASE_H__
+#ifndef __TUI_BASE_H__
+#define __TUI_BASE_H__
 
 #include "tuiTagMap.h"
 #include "cocos2d.h"
@@ -17,7 +17,7 @@ public:
 	TuiBase();
 	virtual ~TuiBase();
 	virtual CCNode *getControl(int tagPanel,int tagControl);
-	virtual CCNode *getPanel(int tagPanel);
+	virtual CCNode *getPanel(int tagPanel) = 0;
 
 protected:
 	CC_SYNTHESIZE(bool, m_isAutoRemoveUnusedSpriteFrame, AutoRemoveUnusedSpriteFrame);
