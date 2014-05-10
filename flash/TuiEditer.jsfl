@@ -206,14 +206,21 @@ setY = function(element, y){
 /////////////////////////////////////////////////////////////////////
 /* tag映射头文件 */
 TH = function(){
-	this.obj = new Object();
+	this.obj = [];			//实体
+	this.nameSpaceDic = new Object();	//组件命名空间集
 	this.parseContent = function(){
-		var content = "#ifndef __TAG_TUI__ \r\n#define __TAG_TUI__ \r\n\r\n";
-		for(var key in this.obj){
-			content += "static const int "+key.toUpperCase()+" = "+this.obj[key]+" ;\r\n";
+		var head = "#ifndef __TAG_TUI__ \r\n#define __TAG_TUI__ \r\n\r\n";
+		var middle = "";
+		for(var i=0;i<this.obj.length;i++){
+			var item = this.obj[i];
+			var tag = item["index"];
+			if(this.nameSpaceDic[(parseInt(tag))] != undefined)
+				middle += "}\r\n" + this.nameSpaceDic[(parseInt(tag))];		//拼凑nameSpace
+			middle += "	static const int "+item["controlName"].toUpperCase()+" = "+tag+" ;\r\n";
 		}
-		content += "\r\n#endif";
-		return content;
+		middle = middle.substr(1,middle.length) + "}\r\n";
+		tail = "\r\n#endif";
+		return head + middle + tail;
 	}
 }
 /////////////////////////////////////////////////////////////////////
@@ -396,6 +403,16 @@ UIControlAttribute.kText = "text";
 UIControlAttribute.kNum = "num";
 /** 控件文本尺寸 */
 UIControlAttribute.kTextSize = "textSize";
+UIControlAttribute.kTextFont = "textFont";
+UIControlAttribute.kTextRed = "red";
+UIControlAttribute.kTextGreen = "green";
+UIControlAttribute.kTextBlue = "blue";
+UIControlAttribute.kStrokeRed = "strokeRed";
+UIControlAttribute.kStrokeGreen = "strokeGreen";
+UIControlAttribute.kStrokeBlue = "strokeBlue";
+UIControlAttribute.kStrokeSize = "strokeSize";
+UIControlAttribute.kShadowDistance = "shadowDistance";
+UIControlAttribute.kShadowBlur = "shadowBlur";
 /** 控件的名字,在程序中控制用 */
 UIControlAttribute.kName = "name";
 /** 是否可托动 */
@@ -900,9 +917,8 @@ FlaToXML = function(){
 	this.init();
 }
 
-FlaToXML.prototype.init = function(){
-}
-FlaToXML.prototype.cid = 1;//组件id
+FlaToXML.prototype.init = function(){}	//初始化
+FlaToXML.prototype.cid = 1;				//组件id(tag)
 /**
  @brief 设置导出哪些层
  @param v{ kExportLayerCurrent, kExportLayerVisible, kExportLayerAll }
@@ -928,7 +944,6 @@ FlaToXML.prototype.elementIsMc = function( element ){
 	if(element.libraryItem == null) return false;
 	var type = element.libraryItem.itemType;
 	if( "movie clip" == type ) return true;
-	//if( "graphic" == type ) return true;
 	return false;
 }
 
@@ -1017,20 +1032,19 @@ FlaToXML.prototype.convertElement = function( element ,elementIndex ,extra){
 }
 
 /** 填充一般属性 */
-FlaToXML.prototype.fullNormalAttirbute = function( xml,th, element ,elementIndex ,extra){//额外参数
-	if(extra == undefined) extra = "";
+FlaToXML.prototype.fullNormalAttirbute = function( xml,th, element ,elementIndex){//额外参数
 	
-	var ox = element.x - element.left;
-	var oy = element.y - element.top;
+	//var ox = element.x - element.left;
+	//var oy = element.y - element.top;
 	
-	xml.setAttribute( UIControlAttribute.kName,element.name + extra);
+	xml.setAttribute( UIControlAttribute.kName,element.name);
 	xml.setAttribute( UIControlAttribute.kX, formatNumber( element.x ) );
 	xml.setAttribute( UIControlAttribute.kY, formatNumber( element.y) );
 	
-	th.obj[element.name + extra] = elementIndex;
+	th.obj.push({"controlName":element.name,"index":elementIndex});
 
-	xml.setAttribute( UIControlAttribute.kOriginX, formatNumber(ox) );
-	xml.setAttribute( UIControlAttribute.kOriginY, formatNumber(oy) );
+	//xml.setAttribute( UIControlAttribute.kOriginX, formatNumber(ox) );
+	//xml.setAttribute( UIControlAttribute.kOriginY, formatNumber(oy) );
 	
 	xml.setAttribute( UIControlAttribute.kWidth, formatNumber(element.width) );
 	xml.setAttribute( UIControlAttribute.kHeight, formatNumber(element.height) );
@@ -1137,9 +1151,10 @@ FlaToXML.prototype.convertRelativeLayout = function(relativeLayout,elementIndex 
 FlaToXML.prototype.convertLayout = function(layout,elementIndex ,extra){
 	var xml_Layout = new UILayout();
 	this.fullNormalAttirbute( xml_Layout,this.th, layout ,elementIndex ,extra);
+
 	//获取mc的timeline
 	var timeline = layout.libraryItem.timeline;
-	this.fetchElement( timeline, xml_Layout );
+	this.fetchElement( timeline, xml_Layout,extra );
 	return xml_Layout;
 }
 /** 转换image */
@@ -1224,9 +1239,31 @@ FlaToXML.prototype.convertArmature = function(armature,elementIndex ,extra){
 FlaToXML.prototype.convertText = function(label,elementIndex ,extra){
 	var xml_label = new UILabel();
 	this.fullNormalAttirbute( xml_label,this.th, label ,elementIndex ,extra);
-	//for(var k in label.textRuns[0].textAttrs){
-	//	trace("k: "+k + " "+label.textRuns[0].textAttrs[k]);
-	//}
+/*
+	for(var k in label.textRuns[0].textAttrs){
+		trace("key:"+k + "  "+label.textRuns[0].textAttrs[k]);
+	}
+*/	
+var strokeSize = 0;
+var shadowBlur = 0;
+var shadowDistance = 0;
+var r2=0;var g2=0;var b2=0;
+if(label.filters != undefined){
+	for(var k in label.filters){
+		var itemFilter = label.filters[k];
+		if(itemFilter.name == "glowFilter"){//描边
+			strokeSize = (itemFilter.blurX + itemFilter.blurY) / 2;
+			var strokeColor = itemFilter.color;
+			r2 = parseInt(strokeColor.substr(1,2),16);
+			g2 = parseInt(strokeColor.substr(3,2),16);
+			b2 = parseInt(strokeColor.substr(5,2),16);
+		}
+		if(itemFilter.name == "dropShadowFilter"){//阴影
+			shadowBlur = (itemFilter.blurX + itemFilter.blurY) / 2;
+			shadowDistance = itemFilter.distance;
+		}
+	}
+}
 	var text = "";
 	for(var j=0; j<label.textRuns.length; j++){
 		var item = label.textRuns[j];
@@ -1234,9 +1271,25 @@ FlaToXML.prototype.convertText = function(label,elementIndex ,extra){
 			text += item.characters[i];
 		}
 	}
-	//trace("label text:"+label.textRuns[0].characters);
+	var hexColor = label.textRuns[0].textAttrs.fillColor;
+	
+	var r = parseInt(hexColor.substr(1,2),16);
+	var g = parseInt(hexColor.substr(3,2),16);
+	var b = parseInt(hexColor.substr(5,2),16);
+	
 	xml_label.setAttribute(UIControlAttribute.kText,text);
 	xml_label.setAttribute(UIControlAttribute.kTextSize,label.textRuns[0].textAttrs.size);
+	xml_label.setAttribute(UIControlAttribute.kTextFont,label.textRuns[0].textAttrs.face);
+	xml_label.setAttribute(UIControlAttribute.kTextRed,r);
+	xml_label.setAttribute(UIControlAttribute.kTextGreen,g);
+	xml_label.setAttribute(UIControlAttribute.kTextBlue,b);
+	//描边和阴影
+	xml_label.setAttribute(UIControlAttribute.kStrokeRed,r2);
+	xml_label.setAttribute(UIControlAttribute.kStrokeGreen,g2);
+	xml_label.setAttribute(UIControlAttribute.kStrokeBlue,b2);
+	xml_label.setAttribute(UIControlAttribute.kStrokeSize,strokeSize);
+	xml_label.setAttribute(UIControlAttribute.kShadowDistance,shadowDistance);
+	xml_label.setAttribute(UIControlAttribute.kShadowBlur,shadowBlur);
 	return xml_label;
 }
 /** 转换LabelAtlas */
@@ -1258,11 +1311,14 @@ FlaToXML.prototype.convertControlView = function(control,elementIndex ,extra){
 /** 转换toggleView */
 FlaToXML.prototype.convertToggleView = function(toggleView,elementIndex ,extra){
 	var xml_toggleView = new UIToggleView();
+	var oldName = toggleView.name;
 	var nameArr = toggleView.name.split("_");//tgv_test_1
-	var exclusionId = nameArr.pop();
+	var exclusionId = nameArr.pop();//切割掉最后的_1
 	var viewName = nameArr.join("_");
-	xml_toggleView.setAttribute(UIControlAttribute.kExclusion,exclusionId);
+	toggleView.name = viewName;//xml中的名字
 	this.fullNormalAttirbute( xml_toggleView, this.th,toggleView ,elementIndex ,extra);
+	toggleView.name = oldName;//还原名字
+	xml_toggleView.setAttribute(UIControlAttribute.kExclusion,exclusionId);
 	xml_toggleView.setAttribute( UIControlAttribute.kbtnImg_normal, toggleView.libraryItem.name + "_normal.png" );
 	xml_toggleView.setAttribute( UIControlAttribute.kbtnImg_select, toggleView.libraryItem.name + "_select.png" );
 	xml_toggleView.setAttribute( UIControlAttribute.kbtnImg_disable, toggleView.libraryItem.name + "_disable.png" );
@@ -1271,17 +1327,19 @@ FlaToXML.prototype.convertToggleView = function(toggleView,elementIndex ,extra){
 /** 转换listView */
 FlaToXML.prototype.convertListView = function(listView,elementIndex ,extra){
 	var xml_listView = new UIListView();
-	//xml_listView.setAttribute( UIControlAttribute.kName, listView.name );
-	this.fullNormalAttirbute( xml_listView,this.th, listView ,elementIndex ,extra);
-	xml_listView.setAttribute(UIControlAttribute.kImage,listView.libraryItem.name + ".png");
+	var oldName = listView.name;
 	var nameArr = listView.name.split("_");
 	if(nameArr.length == 3){
 		var num = nameArr.pop();//复制item
 		xml_listView.setAttribute(UIControlAttribute.kNum,num);
+		listView.name = nameArr.join("_");
 	}
+	this.fullNormalAttirbute( xml_listView,this.th, listView ,elementIndex ,extra);
+	listView.name = oldName;
+	xml_listView.setAttribute(UIControlAttribute.kImage,listView.libraryItem.name + ".png");
 	//获取mc的timeline
 	var timeline = listView.libraryItem.timeline;
-	this.fetchElement( timeline, xml_listView );
+	this.fetchElement( timeline, xml_listView ,"resetTag" );
 	return xml_listView;
 }
 /** 转换pageView  */
@@ -1352,15 +1410,12 @@ FlaToXML.prototype.fetchElementFromLayer = function( layer, layer_index, parentx
 	
 	for( var frame_index = 0; frame_index < nframe; ++frame_index ){
 		var frame = layer.frames[frame_index];
-			
+		this.th.nameSpaceDic[this.cid] = "namespace "+frame.name+" { \r\n";// 记录每帧的名字
 		var nelement = frame.elements.length;
 		for( var element_index = 0; element_index < nelement; ++element_index ){
 			
 			var element = frame.elements[element_index];
-			//trace("--->  "+element_index+"  "+element);
-			//trace( "第" + layer_index + "层" + layer.name + ",第" + frame_index + "帧,第" + element_index + "个元素是:" + element.name
-			//		  + "类型[" + element.libraryItem.itemType + "]将被转换成"
-			//		  + this.getElementUIType( element ) + "实例名" + element.libraryItem.name );
+			
 			var exml = this.convertElement( element ,this.cid++);
 			parentxml.addChild( exml );
 		}
@@ -1377,7 +1432,6 @@ FlaToXML.prototype.fetchElement = function( timeline, parentxml ,extra ){
 	//var time_line = this.obj_fla.getTimeline();
 	var time_line = timeline;
 	var nlayer = time_line.layerCount;
-//	for( var layer_index = 0; layer_index < nlayer; ++layer_index ){
 	for( var layer_index = nlayer-1; layer_index >= 0; --layer_index ){
 		var layer = time_line.layers[layer_index];
 
@@ -1390,11 +1444,8 @@ FlaToXML.prototype.fetchElement = function( timeline, parentxml ,extra ){
 			for( var element_index = 0; element_index < nelement; ++element_index ){
 				var element = frame.elements[element_index];
 				trace( "第" + layer_index + "层" + layer.name + ",第" + frame_index + "帧,第" + element_index + "个元素是:" + element.name);
-				//	  + "类型[" + element.libraryItem.itemType + "]将被转换成"
-				//	  + this.getElementUIType( element ) + "实例名" + element.libraryItem.name );
-				//trace( "类型是:[" + element.libraryItem.itemType +"]将被转换成" + this.getElementUIType( element ) );
-				//trace( "实例名:" + element.libraryItem.name );
-				var exml = this.convertElement( element ,this.cid++ ,extra);
+				var tag = extra == "resetTag" ? (element_index+1) : this.cid++ ;//重置tag
+				var exml = this.convertElement( element ,tag ,extra );
 				parentxml.addChild( exml );
 			}
 		}
@@ -1491,10 +1542,8 @@ export_all_layer = function( uiname, schemename, isportrait ){
 
 cls();
 var tui = export_current_layer( "myUI", kScheme480x800 , "0" );//xml名字，分辨率，横纵方向
-var hcontent = tui.th.parseContent();
 var saveXmlPath = "file:///F|/WorkSpace/C++WorkSpace/cocos2d-x-2.2.1/projects/HelloTui/Resources/tui/480x800.xml";//保存xml的路径
 var saveHPath = "file:///F|/WorkSpace/C++WorkSpace/cocos2d-x-2.2.1/projects/HelloTui/Classes/tui/tuiTagMap.h";//保存h的路径
 FLfile.write(saveXmlPath,tui.txml.xml);
-FLfile.write(saveHPath,hcontent);
+FLfile.write(saveHPath,tui.th.parseContent());
 trace(tui.txml.xml);
-trace(hcontent);
