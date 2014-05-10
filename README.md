@@ -12,7 +12,7 @@ Tui是一个创建cocos2d-x UI界面的解决方案，而builder用的则是Flas
 
 注意：
 
-Tui-x最终所生成的组件全部来自CocosWidget，所以大家一定要下载并配置好依赖库。由于Tui-x是需要用jsfl来导出xml和.h的，所以FlashCS编辑器要CS5.5以上，具体要如何可视化创建组件，大家请看教程word文档，有图有真相。
+Tui-x最终所生成的组件全部来自CocosWidget，cocos2dx2.2.1，所以大家一定要下载并配置好依赖库。由于Tui-x是需要用jsfl来导出xml和.h的，所以FlashCS编辑器要CS5.5以上，具体要如何可视化创建组件，大家请看教程word文档，有图有真相。
 
 说明：
 
