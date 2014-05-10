@@ -7,6 +7,8 @@ void MyFirstTui::onLoadScene(){
 	//×¢²áÊÂ¼þ
 	CButton* pBtnOk = (CButton*)getControl(PANEL_WELCOME,BTN_OK);
 	pBtnOk->setOnClickListener(this,ccw_click_selector(MyFirstTui::event_btn_ok));
+
+
 }
 
 void MyFirstTui::event_btn_ok(CCObject* pSender){

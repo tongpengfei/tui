@@ -289,7 +289,6 @@ CScrollView *TuiManager::createScrollView(float tag,float x,float y,float w,floa
 CListView *TuiManager::createListView(float tag,const char* img,float x,float y,float w,float h){
 	CListView *pList = CListView::create(CCSize(w,h));
 	m_isUseSpriteFrame ? pList->setBackgroundSpriteFrameName(img) : pList->setBackgroundImage(img);
-	//pList->setContentSize(pList->getBackgroundImage()->getContentSize());
 	pList->setDirection(eScrollViewDirectionVertical);
 	pList->setPosition(ccp(x,-y));
 	pList->setTag(tag);
@@ -537,11 +536,14 @@ CCEditBox* TuiManager::createEditBox(float tag,const char* file,float x,float y,
 
 
 void TuiManager::loadXml(const char* xml){
-	m_xmlPath = xml;
 
 	if(strlen(m_fileContent) == 0){//¼òµ¥µØ»º´æÏÂxml
 		unsigned long size;
-		m_fileContent = (const char*)CCFileUtils::sharedFileUtils()->getFileData( m_xmlPath , "r", &size);
+		m_fileContent = (const char*)CCFileUtils::sharedFileUtils()->getFileData( xml , "r", &size);
+	}else{
+		std::string s = m_fileContent;
+		s.clear();
+		loadXml(xml);
 	}
 }
 

@@ -1,9 +1,9 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
 #include "MyFirstTui.h"
 #include "MySecondTui.h"
 #include "MyThirdui.h"
 #include "tui/TuiManager.h"
+#include "MyFourthTui.h"
 
 USING_NS_CC;
 
@@ -33,16 +33,13 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
 
-    // create a scene. it's an autorelease object
-    //CCScene *pScene = HelloWorld::scene();
 	//×¢²á³¡¾°
 	REGISTER_SCENE_FUNC(MyFirstTui);
 	REGISTER_SCENE_FUNC(MySecondTui);
 	REGISTER_SCENE_FUNC(MyThirdui);
+	REGISTER_SCENE_FUNC(MyFourthTui);
     // run
-    //pDirector->runWithScene(pScene);
 	CCSceneManager::sharedManager()->runWithScene(LoadScene("MyThirdui"));
-
 
     return true;
 }

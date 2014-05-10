@@ -33,9 +33,6 @@
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\CocosBase\CCBundle.cpp">
       <Filter>lib\CocosBase</Filter>
     </ClCompile>
@@ -189,15 +186,15 @@
     <ClCompile Include="..\Classes\MyThirdui.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\MyFourthTui.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>Classes</Filter>
     </ClInclude>
     <ClInclude Include="..\..\CocosBase\CCBaseMacros.h">
@@ -363,6 +360,12 @@
       <Filter>lib\tui\utils</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\MyThirdui.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tui\TuiMacros.h">
+      <Filter>lib\tui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MyFourthTui.h">
       <Filter>Classes</Filter>
     </ClInclude>
   </ItemGroup>

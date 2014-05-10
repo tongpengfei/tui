@@ -10,6 +10,8 @@ public:
 	CREATE_SCENE_FUNC(MyThirdui);
 	virtual void onLoadScene();
 
+
+	CCNode *getPanel(int tagPanel);
 protected:
 private:
 };
