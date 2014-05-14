@@ -37,8 +37,8 @@ CCAnimation* AnimationUtil::createAnimWithNameAndNum(const char* name,int iNum, 
 		if(pFrame == NULL){
 			break;
 		}
-		pArray->addObject(pFrame);
 	}
+	pArray->addObject(pFrame);
 	
 	CCAnimation *pAnim = CCAnimation::createWithSpriteFrames(pArray);
 	pAnim->setRestoreOriginalFrame(true);

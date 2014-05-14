@@ -39,7 +39,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	REGISTER_SCENE_FUNC(MyThirdui);
 	REGISTER_SCENE_FUNC(MyFourthTui);
     // run
-	CCSceneManager::sharedManager()->runWithScene(LoadScene("MyThirdui"));
+	CCSceneManager::sharedManager()->runWithScene(LoadScene("MyFirstTui"));
 
     return true;
 }

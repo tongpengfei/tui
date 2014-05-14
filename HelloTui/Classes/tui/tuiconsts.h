@@ -8,6 +8,7 @@ static const char* kTuiNodeControl= "control";
 /** tui support control type */
 static const char* kTuiContainerPanel = "panel";
 static const char* kTuiContainerLayout = "layout";
+static const char* kTuiContainerRelativeLayout = "relativeLayout";
 static const char* kTuiContainerScroll = "scrollView";
 static const char* kTuiControlImage = "image";
 static const char* kTuiControlImage9 = "image9";
