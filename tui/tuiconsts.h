@@ -7,8 +7,8 @@ static const char* kTuiNodeControl= "control";
 
 /** tui support control type */
 static const char* kTuiContainerPanel = "panel";
-static const char* kTuiContainerLayout = "layout";
 static const char* kTuiContainerScroll = "scrollView";
+static const char* kTuiContainerLayout = "layout";
 static const char* kTuiControlImage = "image";
 static const char* kTuiControlImage9 = "image9";
 static const char* kTuiControlButton = "button";
@@ -25,8 +25,11 @@ static const char* kTuicontrolNumbericStepper = "numStep";
 static const char* kTuiControlControl = "controlView";
 static const char* kTuiControlListView = "listView";
 static const char* kTuiControlPageView = "pageView";
+static const char* kTuiControlGridView = "gridView";
 static const char* kTuiControlPaticle = "particle";
 static const char* kTuiControlTable = "tableView";
 static const char* kTuiControlEditBox = "editBox";
+static const char* kTuiControlRichText = "richText";
+static const char* kTuiControlMovieView = "movieView";
 
 #endif//TUICONSTS_H

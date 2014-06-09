@@ -5,6 +5,24 @@ TuiBase::TuiBase()
 {
 }
 
+TuiBase* TuiBase::create()
+{
+	TuiBase *pRet = new TuiBase();
+	if (pRet && pRet->init())
+	{
+		pRet->autorelease();
+		return pRet;
+	}
+	CC_SAFE_DELETE(pRet);
+	return NULL;
+}
+
+bool TuiBase::init()
+{
+	return true;
+}
+
+
 TuiBase::~TuiBase(){
 	if(m_isAutoRemoveUnusedSpriteFrame){
 		removeAllChildrenWithCleanup(true);
@@ -22,3 +40,10 @@ CCNode* TuiBase::getControl(int tagPanel,int tagControl){
 CCNode* TuiBase::getPanel(int tagPanel){
 	return NULL;
 }
+
+bool TuiBase::getAutoRemoveUnusedSpriteFrame()
+{
+	return m_isAutoRemoveUnusedSpriteFrame;
+}
+
+

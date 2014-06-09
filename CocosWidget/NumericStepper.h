@@ -11,7 +11,6 @@ NS_CC_WIDGET_BEGIN
 class NumericStepper : public CLayout, public CValueChangeableProtocol
 {
 public:
-
 	NumericStepper();
 	virtual bool init();
 	virtual bool init(const char *lnormal,const char *lselet,const char *ldisable,

@@ -52,6 +52,13 @@ public:
 		const CCSize& tDimensions, CCTextAlignment hAlignment);
 	static CLabel* create(const char *pString, const char *pFontName, float fFontSize,
 		const CCSize& tDimensions, CCTextAlignment hAlignment, CCVerticalTextAlignment vAlignment);
+	//expand 创建描边和阴影文本
+	static CLabel* createWithFontDefinition(const char *string, ccFontDefinition &textDefinition);
+	//expand 下划线
+	CC_SYNTHESIZE(bool,m_bUnderLine,UnderLine);
+	//expand 删除线
+	CC_SYNTHESIZE(bool,m_bMiddleLine,MiddleLine);
+	virtual void draw();
 
 public:
 	virtual CWidgetTouchModel onTouchBegan(CCTouch* pTouch);

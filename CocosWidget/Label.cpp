@@ -29,6 +29,8 @@ THE SOFTWARE.
 NS_CC_WIDGET_BEGIN
 
 CLabel::CLabel()
+:m_bUnderLine(false)//expand
+,m_bMiddleLine(false)//expand
 {
 	setThisObject(this);
 }
@@ -94,6 +96,19 @@ CLabel* CLabel::create(const char *pString, const char *pFontName, float fFontSi
 	return NULL;
 }
 
+CLabel* CLabel::createWithFontDefinition(const char *string, ccFontDefinition &textDefinition){
+	CLabel * pRet = new CLabel();
+	if(pRet && pRet->initWithStringAndTextDefinition(string, textDefinition))
+	{
+		pRet->setTouchEnabled(false);
+		pRet->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
+		pRet->autorelease();
+		return pRet;
+	}
+	CC_SAFE_DELETE(pRet);
+	return NULL;
+}
+
 bool CLabel::init()
 {
 	setTouchEnabled(false);
@@ -101,6 +116,23 @@ bool CLabel::init()
 
 	return CCLabelTTF::init();
 }
+
+void CLabel::draw(){
+	CCLabelTTF::draw();
+	if(!m_bUnderLine && !m_bMiddleLine)return;
+	//线颜色
+	ccDrawColor4B(_displayedColor.r,_displayedColor.g,_displayedColor.b,_displayedOpacity);
+	//线大小
+	ccPointSize(2);
+	CCSize contentSize = this->getContentSize();
+	if(m_bUnderLine){
+		ccDrawLine(CCPointZero, CCPoint(contentSize.width,0));
+	}
+	if(m_bMiddleLine){
+		ccDrawLine(CCPoint(0,contentSize.height/2), CCPoint(contentSize.width,contentSize.height/2));
+	}
+}
+
 
 CWidgetTouchModel CLabel::onTouchBegan(CCTouch* pTouch)
 {

@@ -1,26 +1,36 @@
 #ifndef __TUI_BASE_H__
 #define __TUI_BASE_H__
 
-#include "tuiTagMap.h"
 #include "cocos2d.h"
-#include "cocos-ext.h"
 
-#include "../../../CocosWidget/cocos-widget.h"
-#include "../../../CocosBase/cocos-base.h"
+#include "../CocosWidget/cocos-widget.h"
+#include "../extensions/cocos-ext.h"
 
-using namespace cocos2d::extension;
+#if USING_LUA == 0
+#include "../CocosBase/cocos-base.h"
+#endif
+
 using namespace cocos2d::cocoswidget;
 USING_NS_CC;
 
-class TuiBase : public CCSceneExtension {
+class TuiBase
+#if USING_LUA
+	: public CCScene 
+#else
+	: public CCSceneExtension
+#endif
+{
 public:
+	static TuiBase* create();
+	virtual bool init();
 	TuiBase();
 	virtual ~TuiBase();
 	virtual CCNode *getControl(int tagPanel,int tagControl);
-	virtual CCNode *getPanel(int tagPanel) = 0;
+	virtual CCNode *getPanel(int tagPanel);
 
+	bool getAutoRemoveUnusedSpriteFrame();
 protected:
-	CC_SYNTHESIZE(bool, m_isAutoRemoveUnusedSpriteFrame, AutoRemoveUnusedSpriteFrame);
+	bool m_isAutoRemoveUnusedSpriteFrame;
 private:
 };
 

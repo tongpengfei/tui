@@ -1,7 +1,7 @@
 #ifndef __ARMATURE_BTN__
 #define __ARMATURE_BTN__
 #include "cocos2d.h"
-#include "cocos-ext.h"
+#include "../extensions/cocos-ext.h"
 #include "Widget.h"
 
 using namespace cocos2d::extension;

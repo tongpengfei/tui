@@ -92,7 +92,7 @@ bool CProgressBar::init()
 	//expand
 	m_pLabel = CLabel::create("123","",20);
 	m_pLabel->setVisible(m_bShowValueLabel);
-	this->addChild(m_pLabel);
+	this->addChild(m_pLabel,10);
 	return true;
 }
 

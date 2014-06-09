@@ -249,7 +249,6 @@ void CListView::updateNodesPosition()
 				fAllNodesSize = fAllNodesSize - pNode->getContentSize().height;
 				pNode->setAnchorPoint(ListViewVerticalNodeAnchorPoint);
 				pNode->setPosition(CCPoint(0, fAllNodesSize));
-
 				m_pContainer->addChild(pNode);
 			}
 		}
