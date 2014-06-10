@@ -1,6 +1,6 @@
 /*
 ** Lua binding: Lua_cocos2dx_widget
-** Generated automatically by tolua++-1.0.92 on 06/07/14 23:11:57.
+** Generated automatically by tolua++-1.0.92 on 06/11/14 00:21:55.
 */
 
 /****************************************************************************
@@ -29,17 +29,15 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
-#include "../../CocosWidget/WidgetMacros.h"
+#include "WidgetMacros.h"
 
 #if USING_LUA
 extern "C" {
 #include "tolua_fix.h"
 }
 
-#include "../../CocosWidget/lua_cocos2dx_widget.h"
-#include "../../CocosWidget/cocos-widget.h"
-#include "../../tui/TuiManager.h"
-#include "../../tui/Tuibase.h"
+#include "lua_cocos2dx_widget.h"
+#include "cocos-widget.h"
 #include <map>
 #include <string>
 #include "cocos2d.h"
@@ -19883,6 +19881,72 @@ static int tolua_Lua_cocos2dx_widget_CLabel_removeOnLongClickScriptHandler00(lua
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: setUnderLine of class  CLabel */
+#ifndef TOLUA_DISABLE_tolua_Lua_cocos2dx_widget_CLabel_setUnderLine00
+static int tolua_Lua_cocos2dx_widget_CLabel_setUnderLine00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"CLabel",0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  CLabel* self = (CLabel*)  tolua_tousertype(tolua_S,1,0);
+  bool b = ((bool)  tolua_toboolean(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setUnderLine'", NULL);
+#endif
+  {
+   self->setUnderLine(b);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setUnderLine'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setMiddleLine of class  CLabel */
+#ifndef TOLUA_DISABLE_tolua_Lua_cocos2dx_widget_CLabel_setMiddleLine00
+static int tolua_Lua_cocos2dx_widget_CLabel_setMiddleLine00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"CLabel",0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  CLabel* self = (CLabel*)  tolua_tousertype(tolua_S,1,0);
+  bool b = ((bool)  tolua_toboolean(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setMiddleLine'", NULL);
+#endif
+  {
+   self->setMiddleLine(b);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setMiddleLine'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: getUserTag of class  CLabel */
 #ifndef TOLUA_DISABLE_tolua_Lua_cocos2dx_widget_CLabel_getUserTag00
 static int tolua_Lua_cocos2dx_widget_CLabel_getUserTag00(lua_State* tolua_S)
@@ -21093,6 +21157,39 @@ static int tolua_Lua_cocos2dx_widget_CLabelAtlas_getDescription00(lua_State* tol
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'getDescription'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setString of class  CLabelAtlas */
+#ifndef TOLUA_DISABLE_tolua_Lua_cocos2dx_widget_CLabelAtlas_setString00
+static int tolua_Lua_cocos2dx_widget_CLabelAtlas_setString00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"CLabelAtlas",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  CLabelAtlas* self = (CLabelAtlas*)  tolua_tousertype(tolua_S,1,0);
+  const char* tolua_var_1 = ((const char*)  tolua_tostring(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setString'", NULL);
+#endif
+  {
+   self->setString(tolua_var_1);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setString'.",&tolua_err);
  return 0;
 #endif
 }
@@ -23248,6 +23345,39 @@ static int tolua_Lua_cocos2dx_widget_CProgressBar_getMinValue00(lua_State* tolua
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'getMinValue'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: setShowValueLabel of class  CProgressBar */
+#ifndef TOLUA_DISABLE_tolua_Lua_cocos2dx_widget_CProgressBar_setShowValueLabel00
+static int tolua_Lua_cocos2dx_widget_CProgressBar_setShowValueLabel00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"CProgressBar",0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  CProgressBar* self = (CProgressBar*)  tolua_tousertype(tolua_S,1,0);
+  bool b = ((bool)  tolua_toboolean(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setShowValueLabel'", NULL);
+#endif
+  {
+   self->setShowValueLabel(b);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setShowValueLabel'.",&tolua_err);
  return 0;
 #endif
 }
@@ -28663,6 +28793,8 @@ TOLUA_API int tolua_Lua_cocos2dx_widget_open (lua_State* tolua_S)
    tolua_function(tolua_S,"removeOnClickScriptHandler",tolua_Lua_cocos2dx_widget_CLabel_removeOnClickScriptHandler00);
    tolua_function(tolua_S,"setOnLongClickScriptHandler",tolua_Lua_cocos2dx_widget_CLabel_setOnLongClickScriptHandler00);
    tolua_function(tolua_S,"removeOnLongClickScriptHandler",tolua_Lua_cocos2dx_widget_CLabel_removeOnLongClickScriptHandler00);
+   tolua_function(tolua_S,"setUnderLine",tolua_Lua_cocos2dx_widget_CLabel_setUnderLine00);
+   tolua_function(tolua_S,"setMiddleLine",tolua_Lua_cocos2dx_widget_CLabel_setMiddleLine00);
    tolua_function(tolua_S,"getUserTag",tolua_Lua_cocos2dx_widget_CLabel_getUserTag00);
    tolua_function(tolua_S,"setUserTag",tolua_Lua_cocos2dx_widget_CLabel_setUserTag00);
    tolua_function(tolua_S,"getId",tolua_Lua_cocos2dx_widget_CLabel_getId00);
@@ -28710,6 +28842,7 @@ TOLUA_API int tolua_Lua_cocos2dx_widget_open (lua_State* tolua_S)
    tolua_function(tolua_S,"getId",tolua_Lua_cocos2dx_widget_CLabelAtlas_getId00);
    tolua_function(tolua_S,"setId",tolua_Lua_cocos2dx_widget_CLabelAtlas_setId00);
    tolua_function(tolua_S,"getDescription",tolua_Lua_cocos2dx_widget_CLabelAtlas_getDescription00);
+   tolua_function(tolua_S,"setString",tolua_Lua_cocos2dx_widget_CLabelAtlas_setString00);
    tolua_function(tolua_S,"setDescription",tolua_Lua_cocos2dx_widget_CLabelAtlas_setDescription00);
    tolua_function(tolua_S,"isEnabled",tolua_Lua_cocos2dx_widget_CLabelAtlas_isEnabled00);
    tolua_function(tolua_S,"setEnabled",tolua_Lua_cocos2dx_widget_CLabelAtlas_setEnabled00);
@@ -28800,6 +28933,7 @@ TOLUA_API int tolua_Lua_cocos2dx_widget_open (lua_State* tolua_S)
    tolua_function(tolua_S,"getMaxValue",tolua_Lua_cocos2dx_widget_CProgressBar_getMaxValue00);
    tolua_function(tolua_S,"setMinValue",tolua_Lua_cocos2dx_widget_CProgressBar_setMinValue00);
    tolua_function(tolua_S,"getMinValue",tolua_Lua_cocos2dx_widget_CProgressBar_getMinValue00);
+   tolua_function(tolua_S,"setShowValueLabel",tolua_Lua_cocos2dx_widget_CProgressBar_setShowValueLabel00);
    tolua_function(tolua_S,"setDirection",tolua_Lua_cocos2dx_widget_CProgressBar_setDirection00);
    tolua_function(tolua_S,"getDirection",tolua_Lua_cocos2dx_widget_CProgressBar_getDirection00);
    tolua_function(tolua_S,"startProgress",tolua_Lua_cocos2dx_widget_CProgressBar_startProgress00);

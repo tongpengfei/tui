@@ -55,7 +55,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 	tolua_Lua_cocos2dx_widget_open(tolua_s);
 	tolua_Lua_cocos2dx_tui_open(tolua_s);
 
-	CCFileUtils::sharedFileUtils()->addSearchPath("luaScript");
+	CCFileUtils::sharedFileUtils()->addSearchPath("src");
 
     std::string path = CCFileUtils::sharedFileUtils()->fullPathForFilename("main.lua");
     pEngine->executeScriptFile(path.c_str());

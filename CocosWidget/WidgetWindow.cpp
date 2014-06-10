@@ -28,6 +28,7 @@ THE SOFTWARE.
 #if USING_LUA
 #include "CCLuaEngine.h"
 #endif
+#include "GUI/CCControlExtension/CCControl.h"
 using namespace std;
 
 NS_CC_WIDGET_BEGIN
@@ -284,6 +285,15 @@ void CWidgetWindow::setMultiTouchEnabled(bool bEnabled)
 void CWidgetWindow::setModalable(bool bModalable)
 {
 	m_bModalable = bModalable;
+	CCObject *pObj = NULL;
+	CCARRAY_FOREACH(getChildren(), pObj)
+	{
+		CWidgetWindow *pWindow = dynamic_cast<CWidgetWindow *>(pObj);
+		if (pWindow != nullptr) pWindow->setModalable(bModalable);
+		//混用组件EidtBox等
+		extension::CCControl *pControl = dynamic_cast<extension::CCControl*>(pObj);
+		if (pControl != nullptr) pControl->setEnabled(!bModalable);
+	}
 }
 
 bool CWidgetWindow::isModalable() const
@@ -384,6 +394,7 @@ void CWidgetWindow::onExit()
 
 bool CWidgetWindow::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
+	if (m_bModalable) return true;
 	if( m_bTouchEnabled && m_bVisible && m_pChildren && m_pChildren->count() > 0 )
 	{
 		CCPoint touchPointInView = convertToNodeSpace(pTouch->getLocation());

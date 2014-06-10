@@ -1506,8 +1506,8 @@ cls();
 var sceneName = fl.getDocumentDOM().name.replace(".fla","");
 var tui = export_current_layer("");//根节点名字
 tui.th.flaPath = "tui/tui_"+sceneName+".xml";//xml命名为fla
-var saveXmlPath = "file:///F|/WorkSpace/C++WorkSpace/cocos2d-x-2.2.1/projects/HelloLua/Resources/"+tui.th.flaPath;//保存xml的路径
-var saveHPath = "file:///F|/WorkSpace/C++WorkSpace/cocos2d-x-2.2.1/projects/HelloLua/Resources/luaScript/tagMap/Tag_"+sceneName+".lua";//保存lua的路径
+var saveXmlPath = "file:///F|/WorkSpace/C++WorkSpace/cocos2d-x-2.2.3/projects/HelloTuiLua/Resources/"+tui.th.flaPath;//保存xml的路径
+var saveHPath = "file:///F|/WorkSpace/C++WorkSpace/cocos2d-x-2.2.3/projects/HelloTuiLua/Resources/luaScript/tagMap/Tag_"+sceneName+".lua";//保存lua的路径
 FLfile.write(saveXmlPath,tui.txml.xml);
 FLfile.write(saveHPath,tui.th.parseContent());
 trace(tui.txml.xml);
