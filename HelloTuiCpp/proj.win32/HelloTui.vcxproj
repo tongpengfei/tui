@@ -173,8 +173,13 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClCompile Include="..\..\tui\utils\AnimationUtil.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\module\ResoureMgr.cpp" />
-    <ClCompile Include="..\Classes\scene\Main\dialog\MessageBox.cpp" />
+    <ClCompile Include="..\Classes\scene\Bag\Bagui.cpp" />
+    <ClCompile Include="..\Classes\scene\Main\dialog\MsgBox.cpp" />
     <ClCompile Include="..\Classes\scene\Main\Mainui.cpp" />
+    <ClCompile Include="..\Classes\scene\Recombine\Recombineui.cpp" />
+    <ClCompile Include="..\Classes\scene\ShowPhone\ShowPhoneui.cpp" />
+    <ClCompile Include="..\Classes\scene\Store\Storeui.cpp" />
+    <ClCompile Include="..\Classes\scene\Welcome\Welcomeui.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -231,10 +236,23 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
     <ClInclude Include="..\..\tui\utils\AnimationUtil.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\module\ResoureMgr.h" />
-    <ClInclude Include="..\Classes\scene\Main\dialog\MessageBox.h" />
+    <ClInclude Include="..\Classes\scene\Bag\BagCfg.h" />
+    <ClInclude Include="..\Classes\scene\Bag\Bagui.h" />
+    <ClInclude Include="..\Classes\scene\Main\dialog\MsgBox.h" />
     <ClInclude Include="..\Classes\scene\Main\MainCfg.h" />
     <ClInclude Include="..\Classes\scene\Main\Mainui.h" />
+    <ClInclude Include="..\Classes\scene\Recombine\Recombineui.h" />
+    <ClInclude Include="..\Classes\scene\ShowPhone\ShowPhoneCfg.h" />
+    <ClInclude Include="..\Classes\scene\ShowPhone\ShowPhoneui.h" />
+    <ClInclude Include="..\Classes\scene\Store\StoreCfg.h" />
+    <ClInclude Include="..\Classes\scene\Store\Storeui.h" />
+    <ClInclude Include="..\Classes\scene\Welcome\WelcomeCfg.h" />
+    <ClInclude Include="..\Classes\scene\Welcome\Welcomeui.h" />
+    <ClInclude Include="..\Classes\tagMap\tuiTag_bag.h" />
     <ClInclude Include="..\Classes\tagMap\tuiTag_main.h" />
+    <ClInclude Include="..\Classes\tagMap\tuiTag_recombineui.h" />
+    <ClInclude Include="..\Classes\tagMap\tuiTag_showPhone.h" />
+    <ClInclude Include="..\Classes\tagMap\tuiTag_store.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

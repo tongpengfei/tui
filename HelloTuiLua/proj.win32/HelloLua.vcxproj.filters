@@ -162,6 +162,9 @@
     <ClInclude Include="..\..\tui\utils\AnimationUtil.h">
       <Filter>lib\tui\utils</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\CircleMenu.h">
+      <Filter>lib\CocosWidget</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
@@ -277,6 +280,9 @@
     </ClCompile>
     <ClCompile Include="..\..\tui\utils\AnimationUtil.cpp">
       <Filter>lib\tui\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\CircleMenu.cpp">
+      <Filter>lib\CocosWidget</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

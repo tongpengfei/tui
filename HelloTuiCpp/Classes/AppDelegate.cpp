@@ -31,7 +31,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	//×¢²á³¡¾°
 	ResoureMgr::getInstance()->registScene();
     // run
-	CCSceneManager::sharedManager()->runWithScene(LoadScene("Main::Mainui"));
+	CCSceneManager::sharedManager()->runWithScene(LoadScene("Welcome::Welcomeui"));
 
     return true;
 }

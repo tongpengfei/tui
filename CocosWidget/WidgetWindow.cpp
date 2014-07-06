@@ -282,17 +282,21 @@ void CWidgetWindow::setMultiTouchEnabled(bool bEnabled)
 	}
 }
 
-void CWidgetWindow::setModalable(bool bModalable)
+void CWidgetWindow::setModalable(bool bModalable, bool isRootContainer /* = false */)
 {
 	m_bModalable = bModalable;
-	CCObject *pObj = NULL;
-	CCARRAY_FOREACH(getChildren(), pObj)
+	
+	CCArray *arr = getChildren();
+	for (int i = 0; i < arr->count();i++)
 	{
-		CWidgetWindow *pWindow = dynamic_cast<CWidgetWindow *>(pObj);
+		CWidgetWindow *pWindow = dynamic_cast<CWidgetWindow *>(arr->objectAtIndex(i));
 		if (pWindow != nullptr) pWindow->setModalable(bModalable);
 		//混用组件EidtBox等
-		extension::CCControl *pControl = dynamic_cast<extension::CCControl*>(pObj);
+		extension::CCControl *pControl = dynamic_cast<extension::CCControl*>(arr->objectAtIndex(i));
 		if (pControl != nullptr) pControl->setEnabled(!bModalable);
+	}
+	if (isRootContainer){
+		m_bModalable = false;
 	}
 }
 

@@ -28,9 +28,9 @@ public:
 	virtual CCNode *getControl(int tagPanel,int tagControl);
 	virtual CCNode *getPanel(int tagPanel);
 
-	bool getAutoRemoveUnusedSpriteFrame();
+	CC_SYNTHESIZE(bool, m_isAutoRemoveUnusedSpriteFrame, AutoRemoveUnusedSpriteFrame);
 protected:
-	bool m_isAutoRemoveUnusedSpriteFrame;
+
 private:
 };
 

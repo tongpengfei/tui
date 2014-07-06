@@ -71,7 +71,7 @@ void CCSceneExtension::onEnter()
 #if USING_COCOSWIDGET
 	setTouchPriority(CCSceneManager::sharedManager()->getTouchPriority());
 	
-	CCMsgManager::sharedManager()->registerMessageDelegate(this);
+	CCMsgManager::sharedManager()->registerMsgDelegate(this);
 	onEnterScene();
 	CWidgetWindow::onEnter();
 #else

@@ -1,6 +1,6 @@
 /*
 ** Lua binding: Lua_cocos2dx_tui
-** Generated automatically by tolua++-1.0.92 on 06/07/14 22:28:40.
+** Generated automatically by tolua++-1.0.92 on 07/04/14 22:52:18.
 */
 
 /****************************************************************************
@@ -29,18 +29,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
-#include "../../CocosWidget/WidgetMacros.h"
+#include "../CocosWidget/WidgetMacros.h"
+#include "TuiBase.h"
+#include "TuiManager.h"
+#include "utils/AnimationUtil.h"
 
 #if USING_LUA
 extern "C" {
 #include "tolua_fix.h"
 }
 
-#include "../../CocosWidget/lua_cocos2dx_widget.h"
-#include "../../CocosWidget/cocos-widget.h"
-#include "TuiBase.h"
-#include "TuiManager.h"
-#include "utils/AnimationUtil.h"
+#include "../CocosWidget/lua_cocos2dx_widget.h"
+#include "../CocosWidget/cocos-widget.h"
 #include <map>
 #include <string>
 #include "cocos2d.h"
@@ -69,10 +69,11 @@ static int tolua_collect_TuiBase (lua_State* tolua_S)
 static void tolua_reg_types (lua_State* tolua_S)
 {
  tolua_usertype(tolua_S,"CCAnimation");
- tolua_usertype(tolua_S,"CPageView");
  tolua_usertype(tolua_S,"AnimationUtil");
- tolua_usertype(tolua_S,"CSlider");
+ tolua_usertype(tolua_S,"CPageView");
  tolua_usertype(tolua_S,"CCParticleSystemQuad");
+ tolua_usertype(tolua_S,"CSlider");
+ tolua_usertype(tolua_S,"CGridPageView");
  tolua_usertype(tolua_S,"CToggleView");
  tolua_usertype(tolua_S,"CLabel");
  tolua_usertype(tolua_S,"MovieView");
@@ -193,6 +194,43 @@ static int tolua_Lua_cocos2dx_tui_TuiManager_parseScene00(lua_State* tolua_S)
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'parseScene'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: parseCell of class  TuiManager */
+#ifndef TOLUA_DISABLE_tolua_Lua_cocos2dx_tui_TuiManager_parseCell00
+static int tolua_Lua_cocos2dx_tui_TuiManager_parseCell00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"TuiManager",0,&tolua_err) ||
+     !tolua_isusertype(tolua_S,2,"CLayout",0,&tolua_err) ||
+     !tolua_isstring(tolua_S,3,0,&tolua_err) ||
+     !tolua_isstring(tolua_S,4,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,5,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  TuiManager* self = (TuiManager*)  tolua_tousertype(tolua_S,1,0);
+  CLayout* pCell = ((CLayout*)  tolua_tousertype(tolua_S,2,0));
+  const char* cellName = ((const char*)  tolua_tostring(tolua_S,3,0));
+  const char* xmlPath = ((const char*)  tolua_tostring(tolua_S,4,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'parseCell'", NULL);
+#endif
+  {
+   self->parseCell(pCell,cellName,xmlPath);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'parseCell'.",&tolua_err);
  return 0;
 #endif
 }
@@ -414,52 +452,6 @@ static int tolua_Lua_cocos2dx_tui_TuiManager_createListView00(lua_State* tolua_S
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'createListView'.",&tolua_err);
- return 0;
-#endif
-}
-#endif //#ifndef TOLUA_DISABLE
-
-/* method: createPageView of class  TuiManager */
-#ifndef TOLUA_DISABLE_tolua_Lua_cocos2dx_tui_TuiManager_createPageView00
-static int tolua_Lua_cocos2dx_tui_TuiManager_createPageView00(lua_State* tolua_S)
-{
-#ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"TuiManager",0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,4,0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,5,0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,6,0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,7,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,8,&tolua_err)
- )
-  goto tolua_lerror;
- else
-#endif
- {
-  TuiManager* self = (TuiManager*)  tolua_tousertype(tolua_S,1,0);
-  float tag = ((float)  tolua_tonumber(tolua_S,2,0));
-  float x = ((float)  tolua_tonumber(tolua_S,3,0));
-  float y = ((float)  tolua_tonumber(tolua_S,4,0));
-  float w = ((float)  tolua_tonumber(tolua_S,5,0));
-  float h = ((float)  tolua_tonumber(tolua_S,6,0));
-  float rotation = ((float)  tolua_tonumber(tolua_S,7,0));
-#ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'createPageView'", NULL);
-#endif
-  {
-   CPageView* tolua_ret = (CPageView*)  self->createPageView(tag,x,y,w,h,rotation);
-    int nID = (tolua_ret) ? (int)tolua_ret->m_uID : -1;
-    int* pLuaID = (tolua_ret) ? &tolua_ret->m_nLuaID : NULL;
-    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"CPageView");
-  }
- }
- return 1;
-#ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'createPageView'.",&tolua_err);
  return 0;
 #endif
 }
@@ -815,7 +807,7 @@ static int tolua_Lua_cocos2dx_tui_TuiManager_createLabel00(lua_State* tolua_S)
   int g2 = ((int)  tolua_tonumber(tolua_S,15,0));
   int b2 = ((int)  tolua_tonumber(tolua_S,16,0));
   float strokeSize = ((float)  tolua_tonumber(tolua_S,17,0));
-  float shadowDistance = ((float)  tolua_tonumber(tolua_S,18,0));
+  int shadowDistance = ((int)  tolua_tonumber(tolua_S,18,0));
   float shadowBlur = ((float)  tolua_tonumber(tolua_S,19,0));
   float rotation = ((float)  tolua_tonumber(tolua_S,20,0));
 #ifndef TOLUA_RELEASE
@@ -1234,12 +1226,17 @@ static int tolua_Lua_cocos2dx_tui_TuiManager_createTableView00(lua_State* tolua_
  if (
      !tolua_isusertype(tolua_S,1,"TuiManager",0,&tolua_err) ||
      !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isstring(tolua_S,3,0,&tolua_err) ||
      !tolua_isnumber(tolua_S,4,0,&tolua_err) ||
      !tolua_isnumber(tolua_S,5,0,&tolua_err) ||
      !tolua_isnumber(tolua_S,6,0,&tolua_err) ||
      !tolua_isnumber(tolua_S,7,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,8,&tolua_err)
+     !tolua_isnumber(tolua_S,8,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,9,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,10,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,11,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,12,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,13,&tolua_err)
  )
   goto tolua_lerror;
  else
@@ -1247,16 +1244,21 @@ static int tolua_Lua_cocos2dx_tui_TuiManager_createTableView00(lua_State* tolua_
  {
   TuiManager* self = (TuiManager*)  tolua_tousertype(tolua_S,1,0);
   float tag = ((float)  tolua_tonumber(tolua_S,2,0));
-  float x = ((float)  tolua_tonumber(tolua_S,3,0));
-  float y = ((float)  tolua_tonumber(tolua_S,4,0));
-  float w = ((float)  tolua_tonumber(tolua_S,5,0));
-  float h = ((float)  tolua_tonumber(tolua_S,6,0));
-  float rotation = ((float)  tolua_tonumber(tolua_S,7,0));
+  const char* img = ((const char*)  tolua_tostring(tolua_S,3,0));
+  int dir = ((int)  tolua_tonumber(tolua_S,4,0));
+  int num = ((int)  tolua_tonumber(tolua_S,5,0));
+  int cellWidth = ((int)  tolua_tonumber(tolua_S,6,0));
+  int cellHeight = ((int)  tolua_tonumber(tolua_S,7,0));
+  float x = ((float)  tolua_tonumber(tolua_S,8,0));
+  float y = ((float)  tolua_tonumber(tolua_S,9,0));
+  float w = ((float)  tolua_tonumber(tolua_S,10,0));
+  float h = ((float)  tolua_tonumber(tolua_S,11,0));
+  float rotation = ((float)  tolua_tonumber(tolua_S,12,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'createTableView'", NULL);
 #endif
   {
-   CTableView* tolua_ret = (CTableView*)  self->createTableView(tag,x,y,w,h,rotation);
+   CTableView* tolua_ret = (CTableView*)  self->createTableView(tag,img,dir,num,cellWidth,cellHeight,x,y,w,h,rotation);
     int nID = (tolua_ret) ? (int)tolua_ret->m_uID : -1;
     int* pLuaID = (tolua_ret) ? &tolua_ret->m_nLuaID : NULL;
     toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"CTableView");
@@ -1271,6 +1273,58 @@ static int tolua_Lua_cocos2dx_tui_TuiManager_createTableView00(lua_State* tolua_
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: createPageView of class  TuiManager */
+#ifndef TOLUA_DISABLE_tolua_Lua_cocos2dx_tui_TuiManager_createPageView00
+static int tolua_Lua_cocos2dx_tui_TuiManager_createPageView00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"TuiManager",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isstring(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,4,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,5,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,6,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,7,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,8,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,9,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,10,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,11,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  TuiManager* self = (TuiManager*)  tolua_tousertype(tolua_S,1,0);
+  float tag = ((float)  tolua_tonumber(tolua_S,2,0));
+  const char* img = ((const char*)  tolua_tostring(tolua_S,3,0));
+  int dir = ((int)  tolua_tonumber(tolua_S,4,0));
+  int num = ((int)  tolua_tonumber(tolua_S,5,0));
+  float x = ((float)  tolua_tonumber(tolua_S,6,0));
+  float y = ((float)  tolua_tonumber(tolua_S,7,0));
+  float w = ((float)  tolua_tonumber(tolua_S,8,0));
+  float h = ((float)  tolua_tonumber(tolua_S,9,0));
+  float rotation = ((float)  tolua_tonumber(tolua_S,10,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'createPageView'", NULL);
+#endif
+  {
+   CPageView* tolua_ret = (CPageView*)  self->createPageView(tag,img,dir,num,x,y,w,h,rotation);
+    int nID = (tolua_ret) ? (int)tolua_ret->m_uID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->m_nLuaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"CPageView");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'createPageView'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: createGridView of class  TuiManager */
 #ifndef TOLUA_DISABLE_tolua_Lua_cocos2dx_tui_TuiManager_createGridView00
 static int tolua_Lua_cocos2dx_tui_TuiManager_createGridView00(lua_State* tolua_S)
@@ -1280,12 +1334,17 @@ static int tolua_Lua_cocos2dx_tui_TuiManager_createGridView00(lua_State* tolua_S
  if (
      !tolua_isusertype(tolua_S,1,"TuiManager",0,&tolua_err) ||
      !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+     !tolua_isstring(tolua_S,3,0,&tolua_err) ||
      !tolua_isnumber(tolua_S,4,0,&tolua_err) ||
      !tolua_isnumber(tolua_S,5,0,&tolua_err) ||
      !tolua_isnumber(tolua_S,6,0,&tolua_err) ||
      !tolua_isnumber(tolua_S,7,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,8,&tolua_err)
+     !tolua_isnumber(tolua_S,8,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,9,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,10,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,11,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,12,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,13,&tolua_err)
  )
   goto tolua_lerror;
  else
@@ -1293,16 +1352,21 @@ static int tolua_Lua_cocos2dx_tui_TuiManager_createGridView00(lua_State* tolua_S
  {
   TuiManager* self = (TuiManager*)  tolua_tousertype(tolua_S,1,0);
   float tag = ((float)  tolua_tonumber(tolua_S,2,0));
-  float x = ((float)  tolua_tonumber(tolua_S,3,0));
-  float y = ((float)  tolua_tonumber(tolua_S,4,0));
-  float w = ((float)  tolua_tonumber(tolua_S,5,0));
-  float h = ((float)  tolua_tonumber(tolua_S,6,0));
-  float rotation = ((float)  tolua_tonumber(tolua_S,7,0));
+  const char* img = ((const char*)  tolua_tostring(tolua_S,3,0));
+  int column = ((int)  tolua_tonumber(tolua_S,4,0));
+  int num = ((int)  tolua_tonumber(tolua_S,5,0));
+  int cellWidth = ((int)  tolua_tonumber(tolua_S,6,0));
+  int cellHeight = ((int)  tolua_tonumber(tolua_S,7,0));
+  float x = ((float)  tolua_tonumber(tolua_S,8,0));
+  float y = ((float)  tolua_tonumber(tolua_S,9,0));
+  float w = ((float)  tolua_tonumber(tolua_S,10,0));
+  float h = ((float)  tolua_tonumber(tolua_S,11,0));
+  float rotation = ((float)  tolua_tonumber(tolua_S,12,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'createGridView'", NULL);
 #endif
   {
-   CGridView* tolua_ret = (CGridView*)  self->createGridView(tag,x,y,w,h,rotation);
+   CGridView* tolua_ret = (CGridView*)  self->createGridView(tag,img,column,num,cellWidth,cellHeight,x,y,w,h,rotation);
     int nID = (tolua_ret) ? (int)tolua_ret->m_uID : -1;
     int* pLuaID = (tolua_ret) ? &tolua_ret->m_nLuaID : NULL;
     toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"CGridView");
@@ -1312,6 +1376,66 @@ static int tolua_Lua_cocos2dx_tui_TuiManager_createGridView00(lua_State* tolua_S
 #ifndef TOLUA_RELEASE
  tolua_lerror:
  tolua_error(tolua_S,"#ferror in function 'createGridView'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: createGridPageView of class  TuiManager */
+#ifndef TOLUA_DISABLE_tolua_Lua_cocos2dx_tui_TuiManager_createGridPageView00
+static int tolua_Lua_cocos2dx_tui_TuiManager_createGridPageView00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"TuiManager",0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+     !tolua_isstring(tolua_S,3,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,4,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,5,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,6,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,7,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,8,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,9,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,10,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,11,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,12,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,13,0,&tolua_err) ||
+     !tolua_isnumber(tolua_S,14,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,15,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  TuiManager* self = (TuiManager*)  tolua_tousertype(tolua_S,1,0);
+  float tag = ((float)  tolua_tonumber(tolua_S,2,0));
+  const char* img = ((const char*)  tolua_tostring(tolua_S,3,0));
+  int dir = ((int)  tolua_tonumber(tolua_S,4,0));
+  int column = ((int)  tolua_tonumber(tolua_S,5,0));
+  int row = ((int)  tolua_tonumber(tolua_S,6,0));
+  int num = ((int)  tolua_tonumber(tolua_S,7,0));
+  int cellWidth = ((int)  tolua_tonumber(tolua_S,8,0));
+  int cellHeight = ((int)  tolua_tonumber(tolua_S,9,0));
+  float x = ((float)  tolua_tonumber(tolua_S,10,0));
+  float y = ((float)  tolua_tonumber(tolua_S,11,0));
+  float w = ((float)  tolua_tonumber(tolua_S,12,0));
+  float h = ((float)  tolua_tonumber(tolua_S,13,0));
+  float rotation = ((float)  tolua_tonumber(tolua_S,14,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'createGridPageView'", NULL);
+#endif
+  {
+   CGridPageView* tolua_ret = (CGridPageView*)  self->createGridPageView(tag,img,dir,column,row,num,cellWidth,cellHeight,x,y,w,h,rotation);
+    int nID = (tolua_ret) ? (int)tolua_ret->m_uID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->m_nLuaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"CGridPageView");
+  }
+ }
+ return 1;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'createGridPageView'.",&tolua_err);
  return 0;
 #endif
 }
@@ -1635,6 +1759,39 @@ static int tolua_Lua_cocos2dx_tui_TuiBase_getPanel00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+/* method: setAutoRemoveUnusedSpriteFrame of class  TuiBase */
+#ifndef TOLUA_DISABLE_tolua_Lua_cocos2dx_tui_TuiBase_setAutoRemoveUnusedSpriteFrame00
+static int tolua_Lua_cocos2dx_tui_TuiBase_setAutoRemoveUnusedSpriteFrame00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+ tolua_Error tolua_err;
+ if (
+     !tolua_isusertype(tolua_S,1,"TuiBase",0,&tolua_err) ||
+     !tolua_isboolean(tolua_S,2,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,3,&tolua_err)
+ )
+  goto tolua_lerror;
+ else
+#endif
+ {
+  TuiBase* self = (TuiBase*)  tolua_tousertype(tolua_S,1,0);
+  bool b = ((bool)  tolua_toboolean(tolua_S,2,0));
+#ifndef TOLUA_RELEASE
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setAutoRemoveUnusedSpriteFrame'", NULL);
+#endif
+  {
+   self->setAutoRemoveUnusedSpriteFrame(b);
+  }
+ }
+ return 0;
+#ifndef TOLUA_RELEASE
+ tolua_lerror:
+ tolua_error(tolua_S,"#ferror in function 'setAutoRemoveUnusedSpriteFrame'.",&tolua_err);
+ return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
 /* method: getAutoRemoveUnusedSpriteFrame of class  TuiBase */
 #ifndef TOLUA_DISABLE_tolua_Lua_cocos2dx_tui_TuiBase_getAutoRemoveUnusedSpriteFrame00
 static int tolua_Lua_cocos2dx_tui_TuiBase_getAutoRemoveUnusedSpriteFrame00(lua_State* tolua_S)
@@ -1753,12 +1910,12 @@ TOLUA_API int tolua_Lua_cocos2dx_tui_open (lua_State* tolua_S)
    tolua_function(tolua_S,"sharedManager",tolua_Lua_cocos2dx_tui_TuiManager_sharedManager00);
    tolua_function(tolua_S,"init",tolua_Lua_cocos2dx_tui_TuiManager_init00);
    tolua_function(tolua_S,"parseScene",tolua_Lua_cocos2dx_tui_TuiManager_parseScene00);
+   tolua_function(tolua_S,"parseCell",tolua_Lua_cocos2dx_tui_TuiManager_parseCell00);
    tolua_function(tolua_S,"setUseSpriteFrame",tolua_Lua_cocos2dx_tui_TuiManager_setUseSpriteFrame00);
    tolua_function(tolua_S,"createPanel",tolua_Lua_cocos2dx_tui_TuiManager_createPanel00);
    tolua_function(tolua_S,"createLayout",tolua_Lua_cocos2dx_tui_TuiManager_createLayout00);
    tolua_function(tolua_S,"createScrollView",tolua_Lua_cocos2dx_tui_TuiManager_createScrollView00);
    tolua_function(tolua_S,"createListView",tolua_Lua_cocos2dx_tui_TuiManager_createListView00);
-   tolua_function(tolua_S,"createPageView",tolua_Lua_cocos2dx_tui_TuiManager_createPageView00);
    tolua_function(tolua_S,"createImage",tolua_Lua_cocos2dx_tui_TuiManager_createImage00);
    tolua_function(tolua_S,"createImage9",tolua_Lua_cocos2dx_tui_TuiManager_createImage900);
    tolua_function(tolua_S,"createBtn",tolua_Lua_cocos2dx_tui_TuiManager_createBtn00);
@@ -1775,7 +1932,9 @@ TOLUA_API int tolua_Lua_cocos2dx_tui_open (lua_State* tolua_S)
    tolua_function(tolua_S,"createNumStep",tolua_Lua_cocos2dx_tui_TuiManager_createNumStep00);
    tolua_function(tolua_S,"createParticle",tolua_Lua_cocos2dx_tui_TuiManager_createParticle00);
    tolua_function(tolua_S,"createTableView",tolua_Lua_cocos2dx_tui_TuiManager_createTableView00);
+   tolua_function(tolua_S,"createPageView",tolua_Lua_cocos2dx_tui_TuiManager_createPageView00);
    tolua_function(tolua_S,"createGridView",tolua_Lua_cocos2dx_tui_TuiManager_createGridView00);
+   tolua_function(tolua_S,"createGridPageView",tolua_Lua_cocos2dx_tui_TuiManager_createGridPageView00);
    tolua_function(tolua_S,"createEditBox",tolua_Lua_cocos2dx_tui_TuiManager_createEditBox00);
    tolua_function(tolua_S,"createMovieView",tolua_Lua_cocos2dx_tui_TuiManager_createMovieView00);
   tolua_endmodule(tolua_S);
@@ -1793,6 +1952,7 @@ TOLUA_API int tolua_Lua_cocos2dx_tui_open (lua_State* tolua_S)
    tolua_function(tolua_S,"delete",tolua_Lua_cocos2dx_tui_TuiBase_delete00);
    tolua_function(tolua_S,"getControl",tolua_Lua_cocos2dx_tui_TuiBase_getControl00);
    tolua_function(tolua_S,"getPanel",tolua_Lua_cocos2dx_tui_TuiBase_getPanel00);
+   tolua_function(tolua_S,"setAutoRemoveUnusedSpriteFrame",tolua_Lua_cocos2dx_tui_TuiBase_setAutoRemoveUnusedSpriteFrame00);
    tolua_function(tolua_S,"getAutoRemoveUnusedSpriteFrame",tolua_Lua_cocos2dx_tui_TuiBase_getAutoRemoveUnusedSpriteFrame00);
   tolua_endmodule(tolua_S);
   tolua_cclass(tolua_S,"AnimationUtil","AnimationUtil","",NULL);

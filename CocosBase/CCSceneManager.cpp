@@ -32,6 +32,7 @@ NS_CC_BEGIN
 
 CCSceneManager::CCSceneManager()
 : m_bSendCleanupToScene(false)
+, m_bPopup(true)
 , m_pRunningScene(NULL)
 , m_pNextScene(NULL)
 {
@@ -178,7 +179,7 @@ void CCSceneManager::pushScene(CCSceneExtension* pScene, CCObject* pExtra)
 		m_lSceneSwitchQueue.back().bLockedSwitch = false;
 	}
 }
-//有bug
+
 void CCSceneManager::replaceScene(CCSceneExtension* pScene, CCObject* pExtra)
 {
 	CCAssert(m_pRunningScene, "Use runWithScene: instead to start the director");
@@ -245,7 +246,7 @@ void CCSceneManager::end()
 	CCDirector::sharedDirector()->end();
 }
 
-void CCSceneManager::runUIScene(CCSceneExtension* pScene, CCObject* pExtra)
+void CCSceneManager::runUIScene(CCSceneExtension* pScene, CCObject* pExtra /* = NULL */, bool isPopup /* = true */)
 {
 	CCAssert(pScene != NULL && !dynamic_cast<CCSceneExTransition*>(pScene), "should not null and not transition");
 
@@ -265,6 +266,17 @@ void CCSceneManager::runUIScene(CCSceneExtension* pScene, CCObject* pExtra)
 	{
 		m_lUISceneSwitchQueue.back().bLockedSwitch = false;
 	}
+
+	m_bPopup = isPopup;
+	if (m_bPopup)
+	{
+		for (auto uiScene : m_vRunningUIScenes)
+		{
+			if (pScene != uiScene)
+				uiScene->setModalable(true);
+		}
+		m_pRunningScene->setModalable(true,true);
+	}
 }
 
 void CCSceneManager::popUIScene(CCSceneExtension* pScene)
@@ -279,6 +291,16 @@ void CCSceneManager::popUIScene(CCSceneExtension* pScene)
 	tSceneSwitch.eType = eUISceneSwitchPopScene;
 	tSceneSwitch.bLockedSwitch = false;
 	m_lUISceneSwitchQueue.push_back(tSceneSwitch);
+
+	if (m_bPopup)
+	{
+		if (m_vRunningUIScenes.size() >= 2){
+			auto preUISceneIt = m_vRunningUIScenes.end() - 2;
+			(*preUISceneIt)->setModalable(false);
+		}
+		if (m_vRunningUIScenes.size() == 1)
+			m_pRunningScene->setModalable(false);
+	}
 }
 
 void CCSceneManager::popAllUIScene()
@@ -293,6 +315,15 @@ void CCSceneManager::popAllUIScene()
 		tSceneSwitch.eType = eUISceneSwitchPopScene;
 		tSceneSwitch.bLockedSwitch = false;
 		m_lUISceneSwitchQueue.push_back(tSceneSwitch);
+	}
+
+	if (m_bPopup)
+	{
+		for (auto uiScene : m_vRunningUIScenes)
+		{
+			uiScene->setModalable(false);
+		}
+		m_pRunningScene->setModalable(false);
 	}
 }
 

@@ -41,9 +41,3 @@ CCNode* TuiBase::getPanel(int tagPanel){
 	return NULL;
 }
 
-bool TuiBase::getAutoRemoveUnusedSpriteFrame()
-{
-	return m_isAutoRemoveUnusedSpriteFrame;
-}
-
-

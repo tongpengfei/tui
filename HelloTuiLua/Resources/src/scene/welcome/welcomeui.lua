@@ -1,6 +1,8 @@
 require "extern"
 require "tagMap/Tag_welcomeui"
 require "scene/welcome/dialog/msgBox"
+require "scene/bag/bagui"
+require "scene/recombine/recombineui"
 
 Welcomeui = class("Welcomeui",function()
 	return TuiBase:create()
@@ -41,6 +43,7 @@ local tgvOption = 		nil
 local munStepTest = 	nil
 local ckbTest =			nil
 local ctvlLeft = 		nil
+local editBox =  		nil
 local window =	  		nil
 
 local function event_ctvl_left(p_sender, fx, fy)
@@ -49,7 +52,9 @@ local function event_ctvl_left(p_sender, fx, fy)
 end
 
 local function event_armbtn_test(p_sender)
-	print("click!!")
+	local scene = Bagui:create()
+	CCDirector:sharedDirector():replaceScene(
+		CCTransitionFade:create(0.5, scene, ccc3(0,255,255)))
 end
 
 local function event_btn_pay(p_sender)

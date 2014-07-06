@@ -146,7 +146,7 @@ public:
 	void popToSceneStackLevel(int nLevel, CCObject* pExtra = NULL);
 
 	// opan a ui scene
-	void runUIScene(CCSceneExtension* pScene, CCObject* pExtra = NULL);
+	void runUIScene(CCSceneExtension* pScene, CCObject* pExtra = NULL, bool isPopup = true);
 
 	// close a ui scene
 	void popUIScene(CCSceneExtension* pScene);
@@ -223,6 +223,9 @@ protected:
 	const char* getSceneClassName(CCSceneExtension* pScene);
 
 protected:
+
+	bool m_bPopup;
+
 	// is send cleanup to next scene
 	bool m_bSendCleanupToScene;
 

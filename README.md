@@ -1,6 +1,8 @@
 Tui-x
 =====
 
+![](picture/pic1.png)
+
 This Tui-x is Tui's updated version,more light,more sample,more flexible
 
 简介：

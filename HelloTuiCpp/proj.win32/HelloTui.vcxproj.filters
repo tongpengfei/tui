@@ -40,6 +40,21 @@
     <Filter Include="lib\tui\utils">
       <UniqueIdentifier>{dd814a61-6778-4fe4-9bfb-355075b9d80e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\scene\store">
+      <UniqueIdentifier>{61a3aca9-046a-49a4-8570-e11b26fe4969}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\scene\showphone">
+      <UniqueIdentifier>{0562df14-c664-43be-816f-63595498ef42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\scene\bag">
+      <UniqueIdentifier>{d0ee2eaa-fba4-4e3a-8d85-a5dcaeca5964}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\scene\recombine">
+      <UniqueIdentifier>{47df911c-8bb1-47c0-89d8-66822f8c4152}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\scene\welcome">
+      <UniqueIdentifier>{925801c3-8743-4171-979e-7e87c483e1f6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -165,9 +180,6 @@
     <ClCompile Include="..\Classes\scene\Main\Mainui.cpp">
       <Filter>Classes\scene\main</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\scene\Main\dialog\MessageBox.cpp">
-      <Filter>Classes\scene\main\dialog</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\module\ResoureMgr.cpp">
       <Filter>Classes\module</Filter>
     </ClCompile>
@@ -179,6 +191,24 @@
     </ClCompile>
     <ClCompile Include="..\..\tui\utils\AnimationUtil.cpp">
       <Filter>lib\tui\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\Main\dialog\MsgBox.cpp">
+      <Filter>Classes\scene\main\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\Store\Storeui.cpp">
+      <Filter>Classes\scene\store</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\ShowPhone\ShowPhoneui.cpp">
+      <Filter>Classes\scene\showphone</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\Bag\Bagui.cpp">
+      <Filter>Classes\scene\bag</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\Recombine\Recombineui.cpp">
+      <Filter>Classes\scene\recombine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\scene\Welcome\Welcomeui.cpp">
+      <Filter>Classes\scene\welcome</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -323,9 +353,6 @@
     <ClInclude Include="..\Classes\tagMap\tuiTag_main.h">
       <Filter>Classes\tagMap</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\scene\Main\dialog\MessageBox.h">
-      <Filter>Classes\scene\main\dialog</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\module\ResoureMgr.h">
       <Filter>Classes\module</Filter>
     </ClInclude>
@@ -355,6 +382,48 @@
     </ClInclude>
     <ClInclude Include="..\..\tui\utils\AnimationUtil.h">
       <Filter>lib\tui\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\Main\dialog\MsgBox.h">
+      <Filter>Classes\scene\main\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\Store\StoreCfg.h">
+      <Filter>Classes\scene\store</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\Store\Storeui.h">
+      <Filter>Classes\scene\store</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\ShowPhone\ShowPhoneCfg.h">
+      <Filter>Classes\scene\showphone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\ShowPhone\ShowPhoneui.h">
+      <Filter>Classes\scene\showphone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\Bag\Bagui.h">
+      <Filter>Classes\scene\bag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\Bag\BagCfg.h">
+      <Filter>Classes\scene\bag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\Recombine\Recombineui.h">
+      <Filter>Classes\scene\recombine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tagMap\tuiTag_bag.h">
+      <Filter>Classes\tagMap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tagMap\tuiTag_showPhone.h">
+      <Filter>Classes\tagMap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tagMap\tuiTag_store.h">
+      <Filter>Classes\tagMap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\tagMap\tuiTag_recombineui.h">
+      <Filter>Classes\tagMap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\Welcome\WelcomeCfg.h">
+      <Filter>Classes\scene\welcome</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\scene\Welcome\Welcomeui.h">
+      <Filter>Classes\scene\welcome</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

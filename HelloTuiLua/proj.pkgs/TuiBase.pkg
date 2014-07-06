@@ -6,6 +6,7 @@ public:
 	virtual ~TuiBase();
 	virtual CCNode *getControl(int tagPanel,int tagControl);
 	virtual CCNode *getPanel(int tagPanel);
-
-	bool getAutoRemoveUnusedSpriteFrame();
+	
+	virtual void setAutoRemoveUnusedSpriteFrame(bool b);
+	virtual bool getAutoRemoveUnusedSpriteFrame();
 };

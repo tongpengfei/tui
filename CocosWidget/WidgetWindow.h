@@ -75,7 +75,7 @@ public:
 	void setMultiTouchEnabled(bool bEnabled);
 
 	// set modalable for window
-	void setModalable(bool bModalable);
+	void setModalable(bool bModalable, bool isRootContainer = false);
 
 	// is modalable
 	bool isModalable() const;

@@ -29,12 +29,12 @@ THE SOFTWARE.
 
 #include "cocos2d.h"
 // if using CocosWidget, go include cocos-widget.h here
-// #include "cocos-widget.h"
+#include "../../CocosWidget/cocos-widget.h"
 // end
 
 // using CocosWidget that change the USING_COCOSWIDGET to 1
 #ifndef USING_COCOSWIDGET
-#define USING_COCOSWIDGET 0
+#define USING_COCOSWIDGET 1
 #endif 
 
 NS_CC_BEGIN
