@@ -224,6 +224,7 @@ protected:
 
 protected:
 
+	//记录是否开启popup模式
 	bool m_bPopup;
 
 	// is send cleanup to next scene

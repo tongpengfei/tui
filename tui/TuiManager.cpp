@@ -210,7 +210,8 @@ void TuiManager::parseControl(CCNode* container,xml_node<char> *item)
 		CCArray *vet = pLayout->getChildren();
 		for (int i=0;i<vet->count();i++){	
 			CCNode *pChild = (CCNode*)vet->objectAtIndex(i);
-			pChild->setPosition(pChild->getPosition() + CCPoint(w / 2, h / 2));
+			if (pChild->getTag() > 0)
+				pChild->setPosition(pChild->getPosition() + CCPoint(w / 2, h / 2));
 		}
 
 	}else if(strcmp(item->first_attribute("type")->value(),kTuiControlListView) == 0){//listView

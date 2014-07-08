@@ -270,10 +270,11 @@ void CCSceneManager::runUIScene(CCSceneExtension* pScene, CCObject* pExtra /* = 
 	m_bPopup = isPopup;
 	if (m_bPopup)
 	{
-		for (auto uiScene : m_vRunningUIScenes)
+		vector<CCSceneExtension*>::iterator it;
+		for (it = m_vRunningUIScenes.begin(); it != m_vRunningUIScenes.end(); ++it)
 		{
-			if (pScene != uiScene)
-				uiScene->setModalable(true);
+			if (pScene != (*it))
+				(*it)->setModalable(true);
 		}
 		m_pRunningScene->setModalable(true,true);
 	}
@@ -319,9 +320,9 @@ void CCSceneManager::popAllUIScene()
 
 	if (m_bPopup)
 	{
-		for (auto uiScene : m_vRunningUIScenes)
+		for (; i < c; ++i)
 		{
-			uiScene->setModalable(false);
+			m_vRunningUIScenes[i]->setModalable(false);
 		}
 		m_pRunningScene->setModalable(false);
 	}
