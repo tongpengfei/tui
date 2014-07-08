@@ -274,7 +274,7 @@ void CCSceneManager::runUIScene(CCSceneExtension* pScene, CCObject* pExtra /* = 
 		for (it = m_vRunningUIScenes.begin(); it != m_vRunningUIScenes.end(); ++it)
 		{
 			if (pScene != (*it))
-				(*it)->setModalable(true);
+				(*it)->setModalable(true,true);
 		}
 		m_pRunningScene->setModalable(true,true);
 	}
