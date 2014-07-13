@@ -1,0 +1,12 @@
+class TuiBase : public CCScene {
+public:
+	static TuiBase*create();
+	virtual bool init();
+	TuiBase();
+	virtual ~TuiBase();
+	virtual CCNode *getControl(int tagPanel,int tagControl);
+	virtual CCNode *getPanel(int tagPanel);
+	
+	virtual void setAutoRemoveUnusedSpriteFrame(bool b);
+	virtual bool getAutoRemoveUnusedSpriteFrame();
+};

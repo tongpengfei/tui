@@ -1,0 +1,5 @@
+class AnimationUtil{
+public:
+	static CCAnimation* createAnimWithName(const char* name,float delay,unsigned int iLoops);
+	static CCAnimation* createAnimWithNameAndNum(const char* name,int iNum, float delay,unsigned int iLoops);
+};
