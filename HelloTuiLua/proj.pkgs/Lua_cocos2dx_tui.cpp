@@ -1,6 +1,6 @@
 /*
 ** Lua binding: Lua_cocos2dx_tui
-** Generated automatically by tolua++-1.0.92 on 07/04/14 22:52:18.
+** Generated automatically by tolua++-1.0.92 on 07/13/14 10:16:31.
 */
 
 /****************************************************************************
@@ -675,7 +675,8 @@ static int tolua_Lua_cocos2dx_tui_TuiManager_createSlider00(lua_State* tolua_S)
      !tolua_isnumber(tolua_S,6,0,&tolua_err) ||
      !tolua_isnumber(tolua_S,7,0,&tolua_err) ||
      !tolua_isnumber(tolua_S,8,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,9,&tolua_err)
+     !tolua_isnumber(tolua_S,9,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,10,&tolua_err)
  )
   goto tolua_lerror;
  else
@@ -686,14 +687,15 @@ static int tolua_Lua_cocos2dx_tui_TuiManager_createSlider00(lua_State* tolua_S)
   const char* bg = ((const char*)  tolua_tostring(tolua_S,3,0));
   const char* progress = ((const char*)  tolua_tostring(tolua_S,4,0));
   const char* thumb = ((const char*)  tolua_tostring(tolua_S,5,0));
-  float x = ((float)  tolua_tonumber(tolua_S,6,0));
-  float y = ((float)  tolua_tonumber(tolua_S,7,0));
-  float rotation = ((float)  tolua_tonumber(tolua_S,8,0));
+  int dir = ((int)  tolua_tonumber(tolua_S,6,0));
+  float x = ((float)  tolua_tonumber(tolua_S,7,0));
+  float y = ((float)  tolua_tonumber(tolua_S,8,0));
+  float rotation = ((float)  tolua_tonumber(tolua_S,9,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'createSlider'", NULL);
 #endif
   {
-   CSlider* tolua_ret = (CSlider*)  self->createSlider(tag,bg,progress,thumb,x,y,rotation);
+   CSlider* tolua_ret = (CSlider*)  self->createSlider(tag,bg,progress,thumb,dir,x,y,rotation);
     int nID = (tolua_ret) ? (int)tolua_ret->m_uID : -1;
     int* pLuaID = (tolua_ret) ? &tolua_ret->m_nLuaID : NULL;
     toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"CSlider");
@@ -722,7 +724,8 @@ static int tolua_Lua_cocos2dx_tui_TuiManager_createProgress00(lua_State* tolua_S
      !tolua_isnumber(tolua_S,5,0,&tolua_err) ||
      !tolua_isnumber(tolua_S,6,0,&tolua_err) ||
      !tolua_isnumber(tolua_S,7,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,8,&tolua_err)
+     !tolua_isnumber(tolua_S,8,0,&tolua_err) ||
+     !tolua_isnoobj(tolua_S,9,&tolua_err)
  )
   goto tolua_lerror;
  else
@@ -732,14 +735,15 @@ static int tolua_Lua_cocos2dx_tui_TuiManager_createProgress00(lua_State* tolua_S
   float tag = ((float)  tolua_tonumber(tolua_S,2,0));
   const char* bg = ((const char*)  tolua_tostring(tolua_S,3,0));
   const char* progress = ((const char*)  tolua_tostring(tolua_S,4,0));
-  float x = ((float)  tolua_tonumber(tolua_S,5,0));
-  float y = ((float)  tolua_tonumber(tolua_S,6,0));
-  float rotation = ((float)  tolua_tonumber(tolua_S,7,0));
+  int dir = ((int)  tolua_tonumber(tolua_S,5,0));
+  float x = ((float)  tolua_tonumber(tolua_S,6,0));
+  float y = ((float)  tolua_tonumber(tolua_S,7,0));
+  float rotation = ((float)  tolua_tonumber(tolua_S,8,0));
 #ifndef TOLUA_RELEASE
   if (!self) tolua_error(tolua_S,"invalid 'self' in function 'createProgress'", NULL);
 #endif
   {
-   CProgressBar* tolua_ret = (CProgressBar*)  self->createProgress(tag,bg,progress,x,y,rotation);
+   CProgressBar* tolua_ret = (CProgressBar*)  self->createProgress(tag,bg,progress,dir,x,y,rotation);
     int nID = (tolua_ret) ? (int)tolua_ret->m_uID : -1;
     int* pLuaID = (tolua_ret) ? &tolua_ret->m_nLuaID : NULL;
     toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"CProgressBar");
